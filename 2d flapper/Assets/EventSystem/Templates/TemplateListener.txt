@@ -1,0 +1,8 @@
+using System.Collections.Generic;
+using UnityEngine;
+namespace SOEvents
+{
+public class [Name]Listener : BaseGameEventListener<[type], [Name]Event, Unity[Name]Event> 
+{
+}
+}
