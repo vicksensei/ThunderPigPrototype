@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 8535309523800002312}
   - component: {fileID: 3953459956776157512}
   - component: {fileID: 1139545925880498118}
+  - component: {fileID: 6946220968244866047}
   m_Layer: 0
   m_Name: Player  TP
   m_TagString: Player
@@ -295,6 +296,34 @@ MonoBehaviour:
       - m_Target: {fileID: 204172446629243289}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: GravityOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6946220968244866047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204172446629243294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 6cb03ba8782529c43928b59cda54946a, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 204172446629243289}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: GravityOff
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

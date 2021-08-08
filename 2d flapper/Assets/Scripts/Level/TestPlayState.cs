@@ -20,9 +20,4 @@ public class TestPlayState : MonoBehaviour
         if (play) gameState.state = GameState.State.Playing;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
     void Flap()
     {
         rb.velocity = Vector2.up * SPEED;
-        wing.Play("TPFlapping");
+        wing.Play("TPFlapping"); GravityOn();
     }
 
     void Left()

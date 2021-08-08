@@ -11,6 +11,11 @@ public class HealthBar : MonoBehaviour
     [SerializeField]
     IntValue Health;
 
+    private void Awake()
+    {
+        Init();
+    }
+
     public void Init()
     {
         UpdateHealth();

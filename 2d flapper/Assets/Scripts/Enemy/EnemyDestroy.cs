@@ -24,7 +24,8 @@ public class EnemyDestroy : MonoBehaviour
         AnyCol.Raise();
         if (other.gameObject.tag == "Projectile")
         {
-            Instantiate(DestroyParticle, other.transform.position, Quaternion.identity);
+            if (DestroyParticle != null) ;
+                Instantiate(DestroyParticle, other.transform.position, Quaternion.identity);
             projectileCol.Raise();
             Destroy(other.gameObject);
             Destroy(gameObject);
