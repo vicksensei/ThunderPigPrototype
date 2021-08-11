@@ -15,22 +15,28 @@ public class ScoreManager : MonoBehaviour
     SOEvents.VoidEvent ScoreChanged;
     [SerializeField]
     SOEvents.VoidEvent HiScoreChanged;
+    [SerializeField]
+    SOEvents.VoidEvent waspBossTime;
 
     public void ResetScore()
     {
-        score.Vlaue = 0;
+        score.Value = 0;
         ScoreChanged.Raise();
     }
     public void AddToScore(int amount)
     {
-        score.Vlaue += amount;
+        score.Value += amount;
         ScoreChanged.Raise();
+        if(score.Value == 10)
+        {
+            waspBossTime.Raise();
+        }
     }
     public void SetHighScore()
     {
-        if(score.Vlaue > hiScore.Vlaue)
+        if(score.Value > hiScore.Value)
         {
-            hiScore.Vlaue = score.Vlaue;
+            hiScore.Value = score.Value;
             HiScoreChanged.Raise();
         }
     }

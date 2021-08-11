@@ -25,7 +25,7 @@ public class HealthBar : MonoBehaviour
     {
         ClearHealth();
      
-        for (int i = 0; i < Health.Vlaue; i++)
+        for (int i = 0; i < Health.Value; i++)
         {
             Instantiate(Image, transform);
         }

@@ -14,6 +14,8 @@ public class GameStateManager : MonoBehaviour
     SOEvents.VoidEvent StopGame;
 
 
+    GameState.State lastGameState;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +46,12 @@ public class GameStateManager : MonoBehaviour
     {
         gameState.state = GameState.State.End;
         Debug.Log("Gamestate: End");
+    }
+
+    public void BossFight()
+    {
+        gameState.state = GameState.State.BossFighting;
+        Debug.Log("Gamestate: Fighting Boss!");
     }
 
 }

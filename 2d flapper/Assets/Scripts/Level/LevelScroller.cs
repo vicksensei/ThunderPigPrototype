@@ -19,7 +19,7 @@ public class LevelScroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canScrollNow && gameState.state == GameState.State.Playing)
+        if (canScrollNow && (gameState.state == GameState.State.Playing || gameState.state == GameState.State.BossFighting))
         {
             Vector3 newPos = new Vector3(1 * ScrollSpeed.Value * Time.deltaTime, 0, 0);
             if (checkCircleMover())

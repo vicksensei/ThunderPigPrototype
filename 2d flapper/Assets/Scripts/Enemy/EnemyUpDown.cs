@@ -35,7 +35,7 @@ public class EnemyUpDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameState.state == GameState.State.Playing)
+        if (gameState.state == GameState.State.Playing || gameState.state == GameState.State.BossFighting)
         {
             float y = StartPos.y + (Mathf.PingPong(speed * Time.time, Height) * multiplier);
             Vector3 pos = new Vector3(transform.position.x, y, transform.position.z);

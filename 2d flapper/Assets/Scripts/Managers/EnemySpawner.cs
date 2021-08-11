@@ -10,6 +10,8 @@ public class EnemySpawner : MonoBehaviour
     GameObject upDownEnemy;
     [SerializeField]
     GameObject downUpEnemy;
+    [SerializeField]
+    GameObject circleEnemy;
 
     [Header("Coords")]
     [SerializeField]

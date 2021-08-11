@@ -21,6 +21,6 @@ public class ScoreDisplay : MonoBehaviour
     }
     public void UpdateScore()
     {
-        scoreDisplay.text = scoreObject.Vlaue.ToString();
+        scoreDisplay.text = scoreObject.Value.ToString();
     }
 }

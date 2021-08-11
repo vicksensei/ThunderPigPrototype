@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class projectile : MonoBehaviour
 {
-    // Start is called before the first frame update
     public float speed;
-    
+    public int damage;
+
+    [Header("Prefabs")]
+    [SerializeField]
+    GameObject DestroyParticle;
+
 
     private void Update()
     {

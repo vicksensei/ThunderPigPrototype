@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9201886155878582450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9201886155878582449}
+  m_Layer: 0
+  m_Name: Spawners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9201886155878582449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201886155878582450}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10.791337}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 9201886156361982712}
+  - {fileID: 9201886157823864104}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9201886156361982713
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9201886156361982712}
+  - component: {fileID: 1234494458}
+  m_Layer: 0
+  m_Name: Cloud Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9201886156361982712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201886156361982713}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 12.16, y: 0, z: -13.173099}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9201886155878582449}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1234494458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201886156361982713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3afdce542ad6dc94099776bf833f7b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnables:
+  - prefab: {fileID: 54195042960089795, guid: 7d35b2f30ed53b142a41fececb7115b1, type: 3}
+    distanceFromBottom: 0
+    distanceFromTop: 0
+  - prefab: {fileID: 3361975725882272739, guid: 42452b51ef3e26241a83222446edd6be, type: 3}
+    distanceFromBottom: 0
+    distanceFromTop: 0
+  - prefab: {fileID: 6443965739528317301, guid: f54453ff858a11048b8b9d229f9c085a, type: 3}
+    distanceFromBottom: 0
+    distanceFromTop: 0
+  - prefab: {fileID: 126602309558347312, guid: 8b653095b6a684848a40ce1e6cb7cbfa, type: 3}
+    distanceFromBottom: 0
+    distanceFromTop: 0
+  screenTop: {fileID: 0}
+  screenBottom: {fileID: 0}
+  spawnRate: 2
+  delay: 0
+  gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
+--- !u!1 &9201886157823864106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9201886157823864104}
+  - component: {fileID: 1105112217}
+  m_Layer: 0
+  m_Name: Spawner Enemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9201886157823864104
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201886157823864106}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 13, y: -4, z: -13.173099}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9201886155878582449}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1105112217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201886157823864106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3afdce542ad6dc94099776bf833f7b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnables:
+  - prefab: {fileID: 1645483434999627948, guid: 84adfcaa4d707864a86fb56a8a4e9b6c, type: 3}
+    distanceFromBottom: 3
+    distanceFromTop: 0
+  - prefab: {fileID: 1906520649427046542, guid: b5b4f1be7e7713f44a6e5b075b147b9b, type: 3}
+    distanceFromBottom: 0
+    distanceFromTop: 3
+  - prefab: {fileID: 1741507363953347243, guid: e17a8596f1d5a13479a4f4a97b5b3a01, type: 3}
+    distanceFromBottom: 3
+    distanceFromTop: 3
+  screenTop: {fileID: 0}
+  screenBottom: {fileID: 0}
+  spawnRate: 2
+  delay: 1
+  gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}

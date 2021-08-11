@@ -7,5 +7,5 @@ public class IntValue : ScriptableObject
     [SerializeField]
     int value;
 
-    public int Vlaue { get => value; set => this.value = value; }
+    public int Value { get => value; set => this.value = value; }
 }

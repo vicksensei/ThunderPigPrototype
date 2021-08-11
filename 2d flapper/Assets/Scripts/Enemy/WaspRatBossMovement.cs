@@ -4,21 +4,30 @@ using UnityEngine;
 
 public class WaspRatBossMovement : MonoBehaviour
 {
+
+    [Header("Combat")]
     [SerializeField]
     IntValue HP;
+    [SerializeField]
+    IntValue MaxHP;
 
+
+    [Header("Location")]
     [SerializeField]
     Transform EnterPoint;
     Vector3 StartPos;
 
 
+    [Header("Movement")]
     [SerializeField]
     float speed;
+    [SerializeField]
+    float height;
 
     [SerializeField]
     GameObject minionPrefab;
     [SerializeField]
-    int minions;
+    int minions = 3;
 
     [Header("State")]
     [SerializeField]
@@ -31,7 +40,8 @@ public class WaspRatBossMovement : MonoBehaviour
         Appear,
         Healthy,
         Bloodied,
-        Enraged
+        Enraged,
+        Dead
 
     }
 
@@ -46,10 +56,12 @@ public class WaspRatBossMovement : MonoBehaviour
 
     void Update()
     {
-        if (gameState.state == GameState.State.Playing)
+        if (gameState.state == GameState.State.BossFighting)
         {
             Enter();
             Normal();
+            Angry();
+            Hurt();
         }
     }
 
@@ -76,14 +88,26 @@ public class WaspRatBossMovement : MonoBehaviour
         {
             if (minionCount < minions)
             {
-                Invoke("SpawnMinions", minionCount*2);
+                Invoke("SpawnMinions", minionCount*1.33f);
                 minionCount++;
             }
 
 
-            float y = StartPos.y + (Mathf.PingPong(speed * Time.time, Height) * multiplier);
+            float y = StartPos.y + (Mathf.PingPong(speed * Time.time, height));
             Vector3 pos = new Vector3(transform.position.x, y, transform.position.z);
-
+            transform.position = pos;
+        }
+    }
+    void Angry()
+    {
+        if (currentPhase == CombatPhase.Enraged)
+        {
+        }
+    }
+    void Hurt()
+    {
+        if (currentPhase == CombatPhase.Bloodied)
+        {
         }
     }
 
@@ -98,8 +122,21 @@ public class WaspRatBossMovement : MonoBehaviour
         minionCount--;
     }
 
+    public void GetBloodied()
+    {
+        currentPhase = CombatPhase.Bloodied;
+    }
 
+    public void GetEnraged()
+    {
+        currentPhase = CombatPhase.Enraged;
+    }
 
+    public void Die()
+    {
+        currentPhase = CombatPhase.Dead;
+        GameObject.Destroy(gameObject);
+    }
 }
 
 

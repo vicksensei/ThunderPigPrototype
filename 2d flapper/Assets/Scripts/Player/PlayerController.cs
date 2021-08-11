@@ -13,11 +13,14 @@ public class PlayerController : MonoBehaviour
 
     [Header("Events")]
     [SerializeField]
+    SOEvents.VoidEvent PausePressed;
+    [Header("State")]
+    [SerializeField]
     GameState gameState;
 
     Animator wing;
     Rigidbody2D rb;
-
+    
     // Start is called before the first frame update
     void Awake()
     {
@@ -29,7 +32,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameState.state == GameState.State.Playing)
+        if (gameState.state == GameState.State.Playing || gameState.state == GameState.State.BossFighting )
         {
             if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
             {
@@ -47,6 +50,11 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
             {
                 Right();
+            }
+
+            if (Input.GetKeyUp(KeyCode.Escape))
+            {
+                PausePressed.Raise();
             }
         }
     }

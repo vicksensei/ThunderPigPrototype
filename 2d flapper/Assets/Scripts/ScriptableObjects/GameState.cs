@@ -9,6 +9,7 @@ public class GameState : ScriptableObject
         Waiting,
         Playing,
         Paused,
+        BossFighting,
         End
     };
 

@@ -25,7 +25,8 @@ public class ControlsExplainer : MonoBehaviour
 
             if (Input.GetKeyUp(KeyCode.Space))
             {
-               //TODO Fire Animation
+                animator.Play("UIFire");
+                //TODO Fire Animation
             }
             if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
             {

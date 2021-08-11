@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d8c4bce65ecf24784833c53e9edd0a, type: 3}
   m_Name: RotateSpeedFloat
   m_EditorClassIdentifier: 
-  value: 0
+  value: 3

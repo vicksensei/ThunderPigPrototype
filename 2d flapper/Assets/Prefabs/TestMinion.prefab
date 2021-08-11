@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7931097708890875346}
   - component: {fileID: 5301009759171211002}
   - component: {fileID: 1556372784912312417}
+  - component: {fileID: -4985190079165115026}
   m_Layer: 0
   m_Name: TestMinion
   m_TagString: Untagged
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5fb698fcdc435134e8b9fbfd6c667681, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5e251d7dfaf706044a975f510c41f911, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -104,8 +105,9 @@ MonoBehaviour:
   OrbitCenter: {fileID: 0}
   followOrbiter: 1
   spiralsIn: 1
-  spiralSpeed: 0.05
+  spiralSpeed: 0.01
   currentRadius: 0
+  gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
 --- !u!58 &5301009759171211002
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -138,3 +140,17 @@ MonoBehaviour:
   PlayerCol: {fileID: 11400000, guid: b96d4bc489324dc4ab044c0b53718458, type: 2}
   AnyCol: {fileID: 11400000, guid: d4931be8ee4df434dac83bd452cc9faa, type: 2}
   DestroyParticle: {fileID: 4670529693541619775, guid: 9492c797a43c19b40bb80ac0b66399cc, type: 3}
+--- !u!114 &-4985190079165115026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7931097708890875347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a43d15fd89dd74e8eb48012563d2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShadowOffset: {x: 0.1, y: -0.1}
+  ShadowMaterial: {fileID: 2100000, guid: 2880558f840ca7c4aa0ac6e8c2edc62d, type: 2}

@@ -24,9 +24,9 @@ public class PlayerHealthManager : MonoBehaviour
 
     public void ReduceHealth()
     {
-        Health.Vlaue--;
+        Health.Value--;
         HealthChangedEvent.Raise();
-        if (Health.Vlaue == 0)
+        if (Health.Value == 0)
         {
             StopGameEvent.Raise();
             PlayerDeadEvent.Raise();
@@ -34,13 +34,13 @@ public class PlayerHealthManager : MonoBehaviour
     }
     public void IncreaseHealth()
     {
-        Health.Vlaue++;
+        Health.Value++;
         HealthChangedEvent.Raise();
     }
 
     public void ResetHealth()
     {
-        Health.Vlaue = 3;
+        Health.Value = 3;
         HealthChangedEvent.Raise();
     }
 }

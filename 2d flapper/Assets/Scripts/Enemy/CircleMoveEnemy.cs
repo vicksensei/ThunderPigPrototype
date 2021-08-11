@@ -45,7 +45,7 @@ public class CircleMoveEnemy : MonoBehaviour
 
     void Update()
     {
-        if (gameState.state == GameState.State.Playing)
+        if (gameState.state == GameState.State.Playing || gameState.state == GameState.State.BossFighting)
         {
             if (currentRadius <= RotateRadius.Value && spiralsIn)
             {
