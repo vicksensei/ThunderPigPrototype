@@ -440,6 +440,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5694963974232290467, guid: dcab786ceb3321242915c71d063d716d, type: 3}
   m_PrefabInstance: {fileID: 5694963974441974063}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2084206179
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6991417476072002095, guid: 266c3021df9aff446ad588d1543629be, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6991417476072002095, guid: 266c3021df9aff446ad588d1543629be, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8737684720358426302, guid: 266c3021df9aff446ad588d1543629be, type: 3}
+      propertyPath: m_Name
+      value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758747001372476886, guid: 266c3021df9aff446ad588d1543629be, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758747001372476886, guid: 266c3021df9aff446ad588d1543629be, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.4677753
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758747001372476886, guid: 266c3021df9aff446ad588d1543629be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758747001372476886, guid: 266c3021df9aff446ad588d1543629be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758747001372476886, guid: 266c3021df9aff446ad588d1543629be, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758747001372476886, guid: 266c3021df9aff446ad588d1543629be, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758747001372476886, guid: 266c3021df9aff446ad588d1543629be, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758747001372476886, guid: 266c3021df9aff446ad588d1543629be, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758747001372476886, guid: 266c3021df9aff446ad588d1543629be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758747001372476886, guid: 266c3021df9aff446ad588d1543629be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8758747001372476886, guid: 266c3021df9aff446ad588d1543629be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 266c3021df9aff446ad588d1543629be, type: 3}
 --- !u!1001 &2588708474993962546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -847,6 +912,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1105112217, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
+      propertyPath: screenTop
+      value: 
+      objectReference: {fileID: 269480266}
+    - target: {fileID: 1105112217, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
+      propertyPath: screenBottom
+      value: 
+      objectReference: {fileID: 1971424652}
+    - target: {fileID: 1234494458, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
+      propertyPath: screenTop
+      value: 
+      objectReference: {fileID: 269480266}
+    - target: {fileID: 1234494458, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
+      propertyPath: screenBottom
+      value: 
+      objectReference: {fileID: 1971424652}
     - target: {fileID: 9201886155878582449, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
       propertyPath: m_RootOrder
       value: 7

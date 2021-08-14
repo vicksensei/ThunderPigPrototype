@@ -10,6 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 606715914935438763}
   - component: {fileID: 3204740388832316838}
+  - component: {fileID: -3291394810814942027}
+  - component: {fileID: 7899741975725844889}
+  - component: {fileID: 5149674478412283480}
+  - component: {fileID: 8918660280731907820}
   m_Layer: 0
   m_Name: Enemy Circler
   m_TagString: Enemy
@@ -46,7 +50,119 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ScrollSpeed: {fileID: 11400000, guid: a6183945b9c5775418d189c0b6315492, type: 2}
   gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
-  canScrollNow: 1
+  canScrollNow: {fileID: 11400000, guid: 738731f10e3a30247a39650a30303a2c, type: 2}
+--- !u!114 &-3291394810814942027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741507363953347243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 64ff901a44486004b8ff203c990f0110, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3204740388832316838}
+        m_TargetAssemblyTypeName: LevelScroller, Assembly-CSharp
+        m_MethodName: MoveOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7899741975725844889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741507363953347243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: c4bfa94644b14ed498a1cd03485113fd, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3204740388832316838}
+        m_TargetAssemblyTypeName: LevelScroller, Assembly-CSharp
+        m_MethodName: MoveOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5149674478412283480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741507363953347243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 65361ef6cdd7fbe43b7dae31287d228e, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3204740388832316838}
+        m_TargetAssemblyTypeName: LevelScroller, Assembly-CSharp
+        m_MethodName: MoveOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8918660280731907820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741507363953347243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 6cb03ba8782529c43928b59cda54946a, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3204740388832316838}
+        m_TargetAssemblyTypeName: LevelScroller, Assembly-CSharp
+        m_MethodName: MoveOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3783939891723034491
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,7 +179,7 @@ GameObject:
   - component: {fileID: 3135630897933143740}
   - component: {fileID: 2772936212881571909}
   m_Layer: 0
-  m_Name: Enemy DownUp
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +258,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3783939891723034491}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8aa86d24f2774e41bab4093e6c58327, type: 3}
   m_Name: 
@@ -166,7 +282,6 @@ MonoBehaviour:
   projectileCol: {fileID: 11400000, guid: 8823f0ac1e1e609408b5aecbcbe912fd, type: 2}
   PlayerCol: {fileID: 11400000, guid: b96d4bc489324dc4ab044c0b53718458, type: 2}
   AnyCol: {fileID: 11400000, guid: d4931be8ee4df434dac83bd452cc9faa, type: 2}
-  DestroyParticle: {fileID: 4670529693541619775, guid: 9492c797a43c19b40bb80ac0b66399cc, type: 3}
 --- !u!114 &2865174725915060964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +327,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.13025934, y: -0.08683944}

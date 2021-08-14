@@ -48,8 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: {fileID: 11400000, guid: 57c262c3682d6ee4e9200a069f5b6956, type: 2}
   hiScore: {fileID: 11400000, guid: dad330ae0cb0b134cbb1dfe24abe159b, type: 2}
+  waspBossScore: {fileID: 11400000, guid: bf206f2b31ba4da4bb3fed021ea24736, type: 2}
   ScoreChanged: {fileID: 11400000, guid: 18ed13bde51ec564a899675c8e5c4197, type: 2}
   HiScoreChanged: {fileID: 11400000, guid: 1b90eb27f1781c84b858e5f27e164f38, type: 2}
+  waspBossTime: {fileID: 11400000, guid: e80f14b760de0a44da8f2936ae240d42, type: 2}
 --- !u!114 &6632819881611852144
 MonoBehaviour:
   m_ObjectHideFlags: 0

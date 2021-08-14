@@ -13,7 +13,6 @@ public class GameStateManager : MonoBehaviour
     [SerializeField]
     SOEvents.VoidEvent StopGame;
 
-
     GameState.State lastGameState;
 
     // Start is called before the first frame update

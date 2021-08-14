@@ -17,5 +17,10 @@ public class projectile : MonoBehaviour
         transform.position +=  Vector3.right * speed * Time.deltaTime;
     }
 
+    public void DestroyMe()
+    {
+        Instantiate(DestroyParticle, transform.position, Quaternion.identity);
+    }
+
 
 }

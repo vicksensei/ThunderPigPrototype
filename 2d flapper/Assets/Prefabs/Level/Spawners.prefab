@@ -42,6 +42,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9201886156361982712}
   - component: {fileID: 1234494458}
+  - component: {fileID: 4832144811336925878}
+  - component: {fileID: 6593763495189776206}
+  - component: {fileID: 3764451307725616145}
   m_Layer: 0
   m_Name: Cloud Spawner
   m_TagString: Untagged
@@ -79,20 +82,103 @@ MonoBehaviour:
   - prefab: {fileID: 54195042960089795, guid: 7d35b2f30ed53b142a41fececb7115b1, type: 3}
     distanceFromBottom: 0
     distanceFromTop: 0
-  - prefab: {fileID: 3361975725882272739, guid: 42452b51ef3e26241a83222446edd6be, type: 3}
+  - prefab: {fileID: 8961500667155527131, guid: 0d023b28fcd7f854fa7cf3549acb8093, type: 3}
     distanceFromBottom: 0
     distanceFromTop: 0
-  - prefab: {fileID: 6443965739528317301, guid: f54453ff858a11048b8b9d229f9c085a, type: 3}
-    distanceFromBottom: 0
-    distanceFromTop: 0
-  - prefab: {fileID: 126602309558347312, guid: 8b653095b6a684848a40ce1e6cb7cbfa, type: 3}
+  - prefab: {fileID: 1097746845703253440, guid: 22db119879dbcde4a984711751615be3, type: 3}
     distanceFromBottom: 0
     distanceFromTop: 0
   screenTop: {fileID: 0}
   screenBottom: {fileID: 0}
-  spawnRate: 2
-  delay: 0
+  spawnRate: {fileID: 11400000, guid: 5d7e33bf72274814eb1004f0b6707a3b, type: 2}
+  delay: {fileID: 11400000, guid: 5d7e33bf72274814eb1004f0b6707a3b, type: 2}
+  canSpawn: {fileID: 11400000, guid: 62ca0004137c0b044b1b2210ca68a06c, type: 2}
+  canScroll: {fileID: 11400000, guid: 71323737e81742a4daf22109c12cb10f, type: 2}
   gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
+--- !u!114 &4832144811336925878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201886156361982713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 65361ef6cdd7fbe43b7dae31287d228e, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1234494458}
+        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
+        m_MethodName: SpawningOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6593763495189776206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201886156361982713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: c4bfa94644b14ed498a1cd03485113fd, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1234494458}
+        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
+        m_MethodName: SpawningOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3764451307725616145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201886156361982713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 64ff901a44486004b8ff203c990f0110, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1234494458}
+        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
+        m_MethodName: SpawningOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9201886157823864106
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,6 +189,11 @@ GameObject:
   m_Component:
   - component: {fileID: 9201886157823864104}
   - component: {fileID: 1105112217}
+  - component: {fileID: 5016355946261910653}
+  - component: {fileID: 2618024909163206990}
+  - component: {fileID: 5423587239440802208}
+  - component: {fileID: 1243611092533233145}
+  - component: {fileID: 1824986792912544304}
   m_Layer: 0
   m_Name: Spawner Enemy
   m_TagString: Untagged
@@ -137,10 +228,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnables:
-  - prefab: {fileID: 1645483434999627948, guid: 84adfcaa4d707864a86fb56a8a4e9b6c, type: 3}
+  - prefab: {fileID: 2561275011410693782, guid: c024c24f8430bcb48b123839dae264ef, type: 3}
     distanceFromBottom: 3
     distanceFromTop: 0
-  - prefab: {fileID: 1906520649427046542, guid: b5b4f1be7e7713f44a6e5b075b147b9b, type: 3}
+  - prefab: {fileID: 5342095078689989892, guid: 8ec69bb0fcb6e7b41ae53f3cfb42ba51, type: 3}
     distanceFromBottom: 0
     distanceFromTop: 3
   - prefab: {fileID: 1741507363953347243, guid: e17a8596f1d5a13479a4f4a97b5b3a01, type: 3}
@@ -148,6 +239,148 @@ MonoBehaviour:
     distanceFromTop: 3
   screenTop: {fileID: 0}
   screenBottom: {fileID: 0}
-  spawnRate: 2
-  delay: 1
+  spawnRate: {fileID: 11400000, guid: 5d7e33bf72274814eb1004f0b6707a3b, type: 2}
+  delay: {fileID: 11400000, guid: f4fda9ccfa28bed4fa7ba168368f6253, type: 2}
+  canSpawn: {fileID: 11400000, guid: 3b998265b242f02448ec62d3286944ac, type: 2}
+  canScroll: {fileID: 11400000, guid: 738731f10e3a30247a39650a30303a2c, type: 2}
   gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
+--- !u!114 &5016355946261910653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201886157823864106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 64ff901a44486004b8ff203c990f0110, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1105112217}
+        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
+        m_MethodName: SpawningOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2618024909163206990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201886157823864106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: c4bfa94644b14ed498a1cd03485113fd, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1105112217}
+        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
+        m_MethodName: SpawningOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5423587239440802208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201886157823864106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 65361ef6cdd7fbe43b7dae31287d228e, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1105112217}
+        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
+        m_MethodName: SpawningOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1243611092533233145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201886157823864106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: e80f14b760de0a44da8f2936ae240d42, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1105112217}
+        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
+        m_MethodName: SpawningOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1824986792912544304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201886157823864106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 6cb03ba8782529c43928b59cda54946a, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1105112217}
+        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
+        m_MethodName: SpawningOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

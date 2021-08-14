@@ -6,5 +6,5 @@ public class FloatValue : ScriptableObject
     [SerializeField]
     float value;
 
-    public float Value { get => value; }
+    public float Value { get => value; set => this.value = value; }
 }

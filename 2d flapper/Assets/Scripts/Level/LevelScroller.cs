@@ -14,12 +14,12 @@ public class LevelScroller : MonoBehaviour
     GameState gameState;
     [Header("Switch")]
     [SerializeField]
-    bool canScrollNow;
-    
+    BoolValue canScrollNow;
+
     // Update is called once per frame
     void Update()
     {
-        if (canScrollNow && (gameState.state == GameState.State.Playing || gameState.state == GameState.State.BossFighting))
+        if (canScrollNow.Value)
         {
             Vector3 newPos = new Vector3(1 * ScrollSpeed.Value * Time.deltaTime, 0, 0);
             if (checkCircleMover())
@@ -31,14 +31,6 @@ public class LevelScroller : MonoBehaviour
         }
     }
 
-    public void MoveOn()
-    {
-        canScrollNow = true;
-    }
-    public void MoveOff()
-    {
-        canScrollNow = false;
-    }
     bool checkCircleMover()
     {
         if (GetComponent<CircleMoveEnemy>() == null)

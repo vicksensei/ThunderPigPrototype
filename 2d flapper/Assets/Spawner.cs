@@ -15,34 +15,36 @@ public class Spawner : MonoBehaviour
 
     [Header("Rates")]
     [SerializeField]
-    public float spawnRate;
+    FloatValue spawnRate;
     [SerializeField]
-    public float delay;
+    FloatValue delay;
+    [SerializeField]
+    BoolValue canSpawn;
+    [SerializeField]
+    BoolValue canScroll;
+
     [Header("State")]
     [SerializeField]
     GameState gameState;
     // Start is called before the first frame update
     void Start()
     {
-
-        InvokeRepeating("Spawn", delay, spawnRate);
+        SpawningOff();
+        InvokeRepeating("Spawn", delay.Value, spawnRate.Value);
         
     }
 
 
     void Spawn()
     {
-        if (gameState.state == GameState.State.Playing)
+        if (canSpawn.Value)
         {
             int randomizer = Random.Range(0, spawnables.Length);
             float y = Random.Range(
                 screenBottom.position.y + spawnables[randomizer].distanceFromBottom, 
                 screenTop.position.y - spawnables[randomizer].distanceFromTop);
-            Debug.Log(y);
-
+            
             GameObject spawned;
-
-            //EnemyUpDown move;
 
             spawned = Instantiate(spawnables[randomizer].prefab,
                 new Vector3(transform.position.x, y, 0), 
@@ -50,6 +52,25 @@ public class Spawner : MonoBehaviour
                 transform);
 
         }
+    }
+
+    public void SpawningOn()
+    {
+        canSpawn.Value = true;
+        ScrollOn();
+    }
+    public void SpawningOff()
+    {
+        canSpawn.Value = false;
+        ScrollOff();
+    }
+    public void ScrollOn()
+    {
+        canScroll.Value = true;
+    }
+    public void ScrollOff()
+    {
+        canScroll.Value = false;
     }
 }
 

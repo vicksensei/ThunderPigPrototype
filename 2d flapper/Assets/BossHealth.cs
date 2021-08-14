@@ -24,15 +24,20 @@ public class BossHealth : MonoBehaviour
     SOEvents.VoidEvent bossBloodied;
     [SerializeField]
     SOEvents.VoidEvent bossDead;
-    
+    [SerializeField]
+    SOEvents.VoidEvent bossAngry;
 
+
+    bool hasSuperArmor;
     bool bloodied = false;
+    bool enraged = false;
 
 
     private void Awake()
     {
         bossCurrentHP.Value = bossHP.Value;
         UpdateHP();
+        SuperArmorOn();
     }
 
     public void UpdateHP()
@@ -55,8 +60,32 @@ public class BossHealth : MonoBehaviour
 
     public void TakeDamage(int howMuch)
     {
-        bossCurrentHP.Value -= howMuch;
-        UpdateHP();
+        if (!hasSuperArmor)
+        {
+            bossCurrentHP.Value -= howMuch;
+            if (bossCurrentHP.Value < 0)
+            {
+                bossCurrentHP.Value = 0;
+                bossDead.Raise();
+            }
+
+            if (bossCurrentHP.Value <= (bossHP.Value * 2 / 3) && !bloodied)
+            {
+                bossBloodied.Raise();
+                bloodied = true;
+            }
+            if (bossCurrentHP.Value <= (bossHP.Value / 3) && !enraged)
+            {
+                bossAngry.Raise();
+                enraged = true;
+            }
+            UpdateHP();
+            // play a sound for damage
+        }
+        else
+        {
+            // play a sound for immunity
+        }
     }
 
     public void HealDamage(int howMuch)
@@ -69,16 +98,32 @@ public class BossHealth : MonoBehaviour
     {
         if (collision.tag == "Projectile")
         {
+                projectileCol.Raise();
             if (collision.GetComponent<projectile>() != null)
             {
-                projectileCol.Raise();
                 TakeDamage(collision.GetComponent<projectile>().damage);
             }
             else
             {
-                PlayerCol.Raise();
+                TakeDamage(1);
             }
+
+            Destroy(collision.gameObject);
         }
-        if (collision.tag == "Player") { }
+        if (collision.tag == "Player")
+        {
+                PlayerCol.Raise();
+        }
+    }
+
+    public void SuperArmorOn()
+    {
+        hasSuperArmor = true;
+        slider.gameObject.SetActive(false);
+    }
+    public void SuperArmorOff()
+    {
+        hasSuperArmor = false;
+        slider.gameObject.SetActive(true);
     }
 }

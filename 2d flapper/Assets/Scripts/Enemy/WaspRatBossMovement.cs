@@ -32,8 +32,20 @@ public class WaspRatBossMovement : MonoBehaviour
     [Header("State")]
     [SerializeField]
     GameState gameState;
+    [SerializeField]
+    Animator waspBossAnimator;
+    [SerializeField]
+    Animator auraAnimator;
+
+    [Header("Events")]
+    [SerializeField]
+    SOEvents.VoidEvent superArmorOn;
+    [SerializeField]
+    SOEvents.VoidEvent superArmorOff;
 
     int minionCount;
+    bool isCharging;
+    bool isShaking;
 
     public enum CombatPhase
     {
@@ -56,15 +68,19 @@ public class WaspRatBossMovement : MonoBehaviour
 
     void Update()
     {
+
         if (gameState.state == GameState.State.BossFighting)
         {
             Enter();
             Normal();
             Angry();
             Hurt();
+
         }
     }
-
+    //
+    // Phase Behavior functions
+    //
     void Enter()
     {
         if (currentPhase == CombatPhase.Appear)
@@ -77,11 +93,11 @@ public class WaspRatBossMovement : MonoBehaviour
             if(transform.position == StartPos)
             {
                 currentPhase = CombatPhase.Healthy;
+                superArmorOff.Raise();
             }
 
         }
     }
-
     void Normal()
     {
         if (currentPhase == CombatPhase.Healthy)
@@ -91,32 +107,66 @@ public class WaspRatBossMovement : MonoBehaviour
                 Invoke("SpawnMinions", minionCount*1.33f);
                 minionCount++;
             }
-
-
-            float y = StartPos.y + (Mathf.PingPong(speed * Time.time, height));
-            Vector3 pos = new Vector3(transform.position.x, y, transform.position.z);
-            transform.position = pos;
+            MoveUpDown();
         }
     }
     void Angry()
     {
         if (currentPhase == CombatPhase.Enraged)
         {
+
         }
     }
     void Hurt()
     {
         if (currentPhase == CombatPhase.Bloodied)
         {
+            if (minionCount < minions * 3)
+            {
+                Invoke("SpawnMinions", minionCount * .7f);
+                minionCount++;
+            }
+            MoveUpDown();
         }
     }
 
+    // 
+    // Movements and behaviors
+    //
     void SpawnMinions()
     {
         Instantiate(minionPrefab, transform);
     }
 
+    void MoveUpDown()
+    {
+        float x = StartPos.x;
+        float y = StartPos.y + Mathf.PingPong(speed * Time.time, height);
+        if (isShaking)
+        {
+            x = (StartPos.x - 2f) + Mathf.PingPong(10 * Time.time, .4f);
+            y = StartPos.y;
+        }
+        else if (isCharging)
+        {
+            // Make charging motions
+        }
+        Vector3 pos = new Vector3(x, y);
+        transform.parent.position = pos;
+    }
 
+
+    void Charge()
+    {
+        waspBossAnimator.Play("WaspBossCharge");
+    }
+
+
+
+
+    //
+    // Event Functions
+    //
     public void minionDied()
     {
         minionCount--;
@@ -125,11 +175,16 @@ public class WaspRatBossMovement : MonoBehaviour
     public void GetBloodied()
     {
         currentPhase = CombatPhase.Bloodied;
+        auraAnimator.Play("AuraOn");
+        Debug.Log("GetBloodied!");
+
     }
 
     public void GetEnraged()
     {
         currentPhase = CombatPhase.Enraged;
+        InvokeRepeating("Charge", 1f, 5f);
+        Debug.Log("GetEnraged!");
     }
 
     public void Die()
@@ -137,6 +192,11 @@ public class WaspRatBossMovement : MonoBehaviour
         currentPhase = CombatPhase.Dead;
         GameObject.Destroy(gameObject);
     }
+
+    public void startShaking()
+    { isShaking = true; }
+    public void stopShaking()
+    { isShaking = false; }
 }
 
 
