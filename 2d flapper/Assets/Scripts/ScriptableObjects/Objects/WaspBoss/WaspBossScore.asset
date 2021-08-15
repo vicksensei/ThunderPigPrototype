@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c61571fede63b549a335252d8c118c1, type: 3}
   m_Name: WaspBossScore
   m_EditorClassIdentifier: 
-  value: 50
+  value: 1

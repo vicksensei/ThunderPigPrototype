@@ -24,8 +24,11 @@ public class WaspRatBossMovement : MonoBehaviour
     [SerializeField]
     float height;
 
+
     [SerializeField]
     GameObject minionPrefab;
+    [SerializeField]
+    GameObject ProjectilePrefab;
     [SerializeField]
     int minions = 3;
 
@@ -44,8 +47,6 @@ public class WaspRatBossMovement : MonoBehaviour
     SOEvents.VoidEvent superArmorOff;
 
     int minionCount;
-    bool isCharging;
-    bool isShaking;
 
     public enum CombatPhase
     {
@@ -107,14 +108,14 @@ public class WaspRatBossMovement : MonoBehaviour
                 Invoke("SpawnMinions", minionCount*1.33f);
                 minionCount++;
             }
-            MoveUpDown();
+            Move();
         }
     }
     void Angry()
     {
         if (currentPhase == CombatPhase.Enraged)
         {
-
+            Move();
         }
     }
     void Hurt()
@@ -126,7 +127,7 @@ public class WaspRatBossMovement : MonoBehaviour
                 Invoke("SpawnMinions", minionCount * .7f);
                 minionCount++;
             }
-            MoveUpDown();
+            Move();
         }
     }
 
@@ -138,20 +139,37 @@ public class WaspRatBossMovement : MonoBehaviour
         Instantiate(minionPrefab, transform);
     }
 
-    void MoveUpDown()
+    bool isCharging;
+    bool isShaking;
+    bool isReseting;
+    Vector3 ChargeTarget;
+    Vector3 PreChargePos;
+    void Move()
     {
         float x = StartPos.x;
         float y = StartPos.y + Mathf.PingPong(speed * Time.time, height);
+        Vector3 pos = new Vector3(x, y);
+
         if (isShaking)
         {
-            x = (StartPos.x - 2f) + Mathf.PingPong(10 * Time.time, .4f);
-            y = StartPos.y;
+            x = StartPos.x + Mathf.PingPong(10 * Time.time, .4f);
+            pos = new Vector3(x, y);
         }
         else if (isCharging)
         {
-            // Make charging motions
+
+            float step = speed * 10 * Time.deltaTime;
+            pos = Vector2.MoveTowards(transform.position, ChargeTarget, step);
+
+            //if (transform.position == ChargeTarget) stopCharging();
         }
-        Vector3 pos = new Vector3(x, y);
+        else if (isReseting)
+        {
+            float step = speed * 10 * Time.deltaTime;
+            pos = Vector2.MoveTowards(transform.position, PreChargePos, step);
+            if (transform.position == PreChargePos)
+               stopReset();
+        }
         transform.parent.position = pos;
     }
 
@@ -159,9 +177,15 @@ public class WaspRatBossMovement : MonoBehaviour
     void Charge()
     {
         waspBossAnimator.Play("WaspBossCharge");
+        superArmorOn.Raise();
+        PreChargePos = transform.position;
+        ChargeTarget = new Vector3(transform.position.x - 20, transform.position.y);
     }
 
-
+    void Shoot()
+    {
+        Instantiate(ProjectilePrefab,transform);
+    }
 
 
     //
@@ -174,17 +198,18 @@ public class WaspRatBossMovement : MonoBehaviour
 
     public void GetBloodied()
     {
+        CancelInvoke();
         currentPhase = CombatPhase.Bloodied;
         auraAnimator.Play("AuraOn");
-        Debug.Log("GetBloodied!");
+        InvokeRepeating("Shoot", 1f, 4f);
 
     }
 
     public void GetEnraged()
     {
+        CancelInvoke();
         currentPhase = CombatPhase.Enraged;
-        InvokeRepeating("Charge", 1f, 5f);
-        Debug.Log("GetEnraged!");
+        InvokeRepeating("Charge", 1f, 7f);
     }
 
     public void Die()
@@ -192,11 +217,35 @@ public class WaspRatBossMovement : MonoBehaviour
         currentPhase = CombatPhase.Dead;
         GameObject.Destroy(gameObject);
     }
-
+    //
+    // Charge Section
+    //
     public void startShaking()
-    { isShaking = true; }
+    {
+        isShaking = true;
+    }
     public void stopShaking()
-    { isShaking = false; }
+    {
+        isShaking = false;
+    }
+    public void startCharging()
+    {
+        isCharging = true;
+    }
+    public void stopCharging()
+    {
+        superArmorOff.Raise();
+        transform.parent.position= new Vector3(PreChargePos.x, PreChargePos.y +10);
+        isCharging = false;
+    }
+    public void startReset()
+    {
+        isReseting = true;
+    }
+    public void stopReset()
+    {
+        isReseting = false;
+    }
 }
 
 

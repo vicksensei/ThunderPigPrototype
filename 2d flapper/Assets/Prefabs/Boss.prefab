@@ -758,8 +758,9 @@ MonoBehaviour:
   MaxHP: {fileID: 11400000, guid: 0e8477bce1499dc41a28d74eea5375b5, type: 2}
   EnterPoint: {fileID: 3461784881674827176}
   speed: 2
-  height: 2
+  height: 6
   minionPrefab: {fileID: 7931097708890875347, guid: a722ad0937d6e4d368f96e2d488e70c3, type: 3}
+  ProjectilePrefab: {fileID: 6700792277689198793, guid: 5c9228c9a9facac4dabf65aa15141f28, type: 3}
   minions: 3
   gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
   waspBossAnimator: {fileID: 1265268348520838779}

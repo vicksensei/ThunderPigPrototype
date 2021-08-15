@@ -269,7 +269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1270277931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,12 +447,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6991417476072002095, guid: 266c3021df9aff446ad588d1543629be, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
+    - target: {fileID: 1265268348520838779, guid: 266c3021df9aff446ad588d1543629be, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6991417476072002095, guid: 266c3021df9aff446ad588d1543629be, type: 3}
-      propertyPath: m_AnchorMax.y
+    - target: {fileID: 1265268348520838779, guid: 266c3021df9aff446ad588d1543629be, type: 3}
+      propertyPath: m_CullingMode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8737684720358426302, guid: 266c3021df9aff446ad588d1543629be, type: 3}
@@ -798,6 +798,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 204172446629243289, guid: fdd027cc791351b47a7798b8d60e59c1, type: 3}
+      propertyPath: PausePressed
+      value: 
+      objectReference: {fileID: 11400000, guid: 65361ef6cdd7fbe43b7dae31287d228e, type: 2}
     - target: {fileID: 204172446629243290, guid: fdd027cc791351b47a7798b8d60e59c1, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -976,21 +980,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawners
       objectReference: {fileID: 0}
-    - target: {fileID: 9201886156361982663, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
-      propertyPath: screenTop
-      value: 
-      objectReference: {fileID: 1971424652}
-    - target: {fileID: 9201886156361982663, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
-      propertyPath: screenBottom
-      value: 
-      objectReference: {fileID: 269480266}
-    - target: {fileID: 9201886157823864105, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
-      propertyPath: screenTop
-      value: 
-      objectReference: {fileID: 1971424652}
-    - target: {fileID: 9201886157823864105, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
-      propertyPath: screenBottom
-      value: 
-      objectReference: {fileID: 269480266}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
