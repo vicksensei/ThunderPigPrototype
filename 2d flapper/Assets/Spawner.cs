@@ -57,12 +57,10 @@ public class Spawner : MonoBehaviour
     public void SpawningOn()
     {
         canSpawn.Value = true;
-        ScrollOn();
     }
     public void SpawningOff()
     {
         canSpawn.Value = false;
-        ScrollOff();
     }
     public void ScrollOn()
     {

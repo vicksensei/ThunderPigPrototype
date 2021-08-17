@@ -115,6 +115,11 @@ public class WaspRatBossMovement : MonoBehaviour
     {
         if (currentPhase == CombatPhase.Enraged)
         {
+            if (minionCount < minions )
+            {
+                Invoke("SpawnMinions", minionCount);
+                minionCount++;
+            }
             Move();
         }
     }
@@ -215,7 +220,7 @@ public class WaspRatBossMovement : MonoBehaviour
     public void Die()
     {
         currentPhase = CombatPhase.Dead;
-        GameObject.Destroy(gameObject);
+        GameObject.Destroy(transform.parent.gameObject);
     }
     //
     // Charge Section
@@ -246,7 +251,9 @@ public class WaspRatBossMovement : MonoBehaviour
     {
         isReseting = false;
     }
+
 }
+
 
 
 

@@ -7,11 +7,6 @@ public class GameStateManager : MonoBehaviour
     [Header("State")]
     [SerializeField]
     GameState gameState;
-    [Header("Events")]
-    [SerializeField]
-    SOEvents.VoidEvent StartGame;
-    [SerializeField]
-    SOEvents.VoidEvent StopGame;
 
     GameState.State lastGameState;
 
