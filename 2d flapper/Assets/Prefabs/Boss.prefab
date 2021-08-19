@@ -781,6 +781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossHP: {fileID: 11400000, guid: 0e8477bce1499dc41a28d74eea5375b5, type: 2}
   bossCurrentHP: {fileID: 11400000, guid: 99dad7fad2da50b41b01a59e51128ad3, type: 2}
+  playerIsImmune: {fileID: 11400000, guid: e5ff2e634e9e1334ca25860d4b588faf, type: 2}
   slider: {fileID: 1089469134559780216}
   projectileCol: {fileID: 11400000, guid: 998a28f92beeb684686f1072fbd2b9df, type: 2}
   PlayerCol: {fileID: 11400000, guid: b96d4bc489324dc4ab044c0b53718458, type: 2}

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c61571fede63b549a335252d8c118c1, type: 3}
-  m_Name: INT CurrentCharge
+  m_Script: {fileID: 11500000, guid: bd280c45b7e859248bf66bb930dd100c, type: 3}
+  m_Name: Bool PlayerIsImmune
   m_EditorClassIdentifier: 
-  value: 3
+  value: 0

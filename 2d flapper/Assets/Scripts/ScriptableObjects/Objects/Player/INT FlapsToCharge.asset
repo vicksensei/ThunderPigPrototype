@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c61571fede63b549a335252d8c118c1, type: 3}
-  m_Name: INT CurrentCharge
+  m_Name: INT FlapsToCharge
   m_EditorClassIdentifier: 
   value: 3

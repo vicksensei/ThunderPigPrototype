@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class DropShadow : MonoBehaviour
 {
-    public Vector2 ShadowOffset= new Vector2(0.1f,-.5f);
+    public Vector2 ShadowOffset= new Vector2(0.1f,-.1f);
     public Material ShadowMaterial;
 
     SpriteRenderer spriteRenderer;
@@ -37,7 +37,6 @@ public class DropShadow : MonoBehaviour
         //update the position and rotation of the sprite's shadow with moving sprite
         shadowGameobject.transform.SetParent(spriteRenderer.transform);
         shadowGameobject.transform.localPosition =  (Vector3)ShadowOffset;
-        shadowGameobject.transform.localRotation = transform.localRotation;
 
     }
 
@@ -46,6 +45,7 @@ public class DropShadow : MonoBehaviour
         //set the shadow gameobject's sprite to the original sprite
         shadowSpriteRenderer.sprite = spriteRenderer.sprite;
         shadowGameobject.transform.localPosition = new Vector3(ShadowOffset.x, ShadowOffset.y + (transform.localPosition.y/100));
+
 
     }
 }

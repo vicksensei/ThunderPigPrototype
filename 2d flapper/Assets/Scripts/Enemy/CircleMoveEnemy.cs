@@ -43,7 +43,7 @@ public class CircleMoveEnemy : MonoBehaviour
         currentRadius = 0f;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (gameState.state == GameState.State.Playing || gameState.state == GameState.State.BossFighting)
         {

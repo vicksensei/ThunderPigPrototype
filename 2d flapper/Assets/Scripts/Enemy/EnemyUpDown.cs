@@ -33,7 +33,7 @@ public class EnemyUpDown : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (gameState.state == GameState.State.Playing || gameState.state == GameState.State.BossFighting)
         {

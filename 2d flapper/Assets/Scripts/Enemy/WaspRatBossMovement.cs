@@ -67,7 +67,7 @@ public class WaspRatBossMovement : MonoBehaviour
         currentPhase = CombatPhase.Appear;
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
         if (gameState.state == GameState.State.BossFighting)

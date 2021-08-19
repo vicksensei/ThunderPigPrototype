@@ -19,4 +19,8 @@ public class DebugObj : MonoBehaviour
         Debug.Log("PlayerCollision!");
     }
 
+    public void OnEvent()
+    {
+    }
+
 }

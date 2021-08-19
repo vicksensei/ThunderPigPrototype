@@ -17,7 +17,7 @@ public class LevelScroller : MonoBehaviour
     BoolValue canScrollNow;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (canScrollNow.Value)
         {

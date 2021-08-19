@@ -56,7 +56,7 @@ public class Spawner : MonoBehaviour
 
     public void SpawningOn()
     {
-        canSpawn.Value = true;
+        canSpawn.Value = gameState.state == GameState.State.Playing;
     }
     public void SpawningOff()
     {

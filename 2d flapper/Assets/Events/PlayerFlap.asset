@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c61571fede63b549a335252d8c118c1, type: 3}
-  m_Name: INT CurrentCharge
+  m_Script: {fileID: 11500000, guid: efa1a04f306524f1d80c80d00807b522, type: 3}
+  m_Name: PlayerFlap
   m_EditorClassIdentifier: 
-  value: 3

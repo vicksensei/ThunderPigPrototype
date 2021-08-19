@@ -134,6 +134,7 @@ MonoBehaviour:
   damage: 1
   DestroyParticle: {fileID: 4670529693541619775, guid: 9492c797a43c19b40bb80ac0b66399cc, type: 3}
   isFromPlayer: 1
+  pierceCount: {fileID: 11400000, guid: ebc11944b7faab64085bb4a158e1c0ff, type: 2}
 --- !u!114 &5788456285091880774
 MonoBehaviour:
   m_ObjectHideFlags: 0

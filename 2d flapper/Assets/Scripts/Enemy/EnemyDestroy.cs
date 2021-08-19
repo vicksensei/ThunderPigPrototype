@@ -12,7 +12,9 @@ public class EnemyDestroy : MonoBehaviour
     SOEvents.VoidEvent PlayerCol;
     [SerializeField]
     SOEvents.VoidEvent AnyCol;
-
+    [Header("Values")]
+    [SerializeField]
+    BoolValue playerIsImmune;
 
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -21,13 +23,16 @@ public class EnemyDestroy : MonoBehaviour
         if (other.gameObject.tag == "Projectile")
         {
             projectileCol.Raise();
-            Destroy(other.gameObject);
+            other.gameObject.GetComponent<projectile>().TryToDestroy();
             Destroy(gameObject);
             
         }
         if (other.gameObject.tag == "Player")
         {
-            PlayerCol.Raise();
+            if (!playerIsImmune.Value)
+            {
+                PlayerCol.Raise();
+            }
         }
     }
 

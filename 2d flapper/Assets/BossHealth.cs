@@ -10,6 +10,9 @@ public class BossHealth : MonoBehaviour
     IntValue bossHP;
     [SerializeField]
     IntValue bossCurrentHP;
+    [SerializeField]
+    BoolValue playerIsImmune;
+
 
     [Header("UI")]
     [SerializeField]
@@ -112,6 +115,8 @@ public class BossHealth : MonoBehaviour
         }
         if (collision.tag == "Player")
         {
+            Debug.Log("Collision! Immune? " + playerIsImmune.Value);
+            if (!playerIsImmune.Value)
                 PlayerCol.Raise();
         }
     }

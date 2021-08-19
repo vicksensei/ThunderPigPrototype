@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Values")]
     public float SPEED;
+    [SerializeField]
+    IntValue currentCharge;
 
     [Header("Prefabs")]
     public GameObject projectile;
@@ -14,13 +16,20 @@ public class PlayerController : MonoBehaviour
     [Header("Events")]
     [SerializeField]
     SOEvents.VoidEvent PausePressed;
+    [SerializeField]
+    SOEvents.VoidEvent FlapEvent;
+    [SerializeField]
+    SOEvents.VoidEvent FireEvent;
+
     [Header("State")]
     [SerializeField]
     GameState gameState;
 
     Animator wing;
     Rigidbody2D rb;
-    
+
+    public bool isImmune = false;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -61,12 +70,17 @@ public class PlayerController : MonoBehaviour
 
     void Fire()
     {
-        Instantiate(projectile, transform.position, Quaternion.identity);
+        if (currentCharge.Value > 0)
+        {
+            FireEvent.Raise();
+            Instantiate(projectile, transform.position, Quaternion.identity);
+        }/* else play no charge sound*/
     }
     void Flap()
     {
         rb.velocity = Vector2.up * SPEED;
-        wing.Play("TPFlapping"); GravityOn();
+        wing.Play("TPFlapping");
+        FlapEvent.Raise();
     }
 
     void Left()
@@ -87,4 +101,9 @@ public class PlayerController : MonoBehaviour
     {
         rb.gravityScale = .6f;
     }
+    public void OnPlayerCol()
+    {
+        rb.AddForce(Vector2.up*4);
+    }
+    
 }
