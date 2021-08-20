@@ -178,6 +178,8 @@ GameObject:
   - component: {fileID: 2865174725915060964}
   - component: {fileID: 3135630897933143740}
   - component: {fileID: 2772936212881571909}
+  - component: {fileID: 4766527791499974686}
+  - component: {fileID: 6587864593129602710}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -334,3 +336,47 @@ CapsuleCollider2D:
   m_Offset: {x: -0.13025934, y: -0.08683944}
   m_Size: {x: 0.98476505, y: 1.2726545}
   m_Direction: 0
+--- !u!114 &4766527791499974686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3783939891723034491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 939882d2ee4bb46499c71bee7b05b767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Drops:
+  - prefab: {fileID: 3760195201375984919, guid: 0bda89e80c6dc1942996c631d2d25809, type: 3}
+    chance: 0.05
+    lbound: 0
+    ubound: 0
+  - prefab: {fileID: 7552194847489676723, guid: 3c8897b9edb276b48b076cac5f473017, type: 3}
+    chance: 0.1
+    lbound: 0
+    ubound: 0
+  numDrops: {fileID: 11400000, guid: 997eb7445dc221242b4bc7ab9ff89579, type: 2}
+--- !u!114 &6587864593129602710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3783939891723034491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 939882d2ee4bb46499c71bee7b05b767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Drops:
+  - prefab: {fileID: 3760195201375984919, guid: 0bda89e80c6dc1942996c631d2d25809, type: 3}
+    chance: 0.05
+    lbound: 0
+    ubound: 0
+  - prefab: {fileID: 7552194847489676723, guid: 3c8897b9edb276b48b076cac5f473017, type: 3}
+    chance: 0.08
+    lbound: 0
+    ubound: 0
+  numDrops: {fileID: 11400000, guid: 997eb7445dc221242b4bc7ab9ff89579, type: 2}

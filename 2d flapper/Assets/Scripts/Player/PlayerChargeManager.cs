@@ -25,6 +25,10 @@ public class PlayerChargeManager : MonoBehaviour
     [SerializeField]
     GameState gameState;
 
+    [Header("Prefabs")]
+    [SerializeField]
+    GameObject EnergyPotionEffect;
+
     private void Awake()
     {
         CurrentCharge.Value = MaxCharge.Value;
@@ -37,17 +41,36 @@ public class PlayerChargeManager : MonoBehaviour
         CurrentFlaps.Value++;
         if (CurrentFlaps.Value == FlapsToCharge.Value)
         {
-            if(CurrentCharge.Value<= MaxCharge.Value)
+            if(CurrentCharge.Value< MaxCharge.Value)
             {
-                CurrentCharge.Value++;
-                CurrentFlaps.Value = 0;
-                ChargeChangedEvent.Raise();
+                GainEnergy();
             }
             else
             {
                 CurrentFlaps.Value = FlapsToCharge.Value - 1;
             }
         }
+    }
+
+    public void GainEnergy()
+    {
+        CurrentCharge.Value++;
+        CurrentFlaps.Value = 0;
+        ChargeChangedEvent.Raise();
+        //Instantiate(EnergyPotionEffect, transform);
+    }
+
+    public void UseEnergyPot()
+    {
+        if (CurrentCharge.Value < MaxCharge.Value)
+        {
+            GainEnergy();
+        }
+    }
+    public void FillEnergy()
+    {
+        CurrentCharge.Value = MaxCharge.Value;
+        Instantiate(EnergyPotionEffect, transform);
     }
 
     public void OnShoot()

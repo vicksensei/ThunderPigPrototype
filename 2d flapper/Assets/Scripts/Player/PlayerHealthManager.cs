@@ -7,6 +7,8 @@ public class PlayerHealthManager : MonoBehaviour
     [Header("Value Objects")]
     [SerializeField]
     IntValue Health;
+    [SerializeField]
+    IntValue MaxHealth;
 
 
     [Header("Events")]
@@ -22,6 +24,11 @@ public class PlayerHealthManager : MonoBehaviour
     [SerializeField]
     GameState gameState;
 
+    [Header("Prefabs")]
+    [SerializeField]
+    GameObject PotionEffect;
+
+
     public void ReduceHealth()
     {
         Health.Value--;
@@ -34,8 +41,12 @@ public class PlayerHealthManager : MonoBehaviour
     }
     public void IncreaseHealth()
     {
-        Health.Value++;
-        HealthChangedEvent.Raise();
+        if (Health.Value < MaxHealth.Value)
+        {
+            Health.Value++;
+            HealthChangedEvent.Raise();
+            Instantiate(PotionEffect, transform);
+        }
     }
 
     public void ResetHealth()

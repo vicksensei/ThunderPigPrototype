@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 7699140120514580981}
   - component: {fileID: 704204068083948948}
   - component: {fileID: 2713086386222148508}
+  - component: {fileID: 4238564161310023073}
   m_Layer: 0
-  m_Name: WaspProjectile (1)
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,6 +137,24 @@ MonoBehaviour:
   DestroyParticle: {fileID: 0}
   isFromPlayer: 0
   pierceCount: {fileID: 11400000, guid: ebc11944b7faab64085bb4a158e1c0ff, type: 2}
+--- !u!114 &4238564161310023073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4978528668334351539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 939882d2ee4bb46499c71bee7b05b767, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Drops:
+  - prefab: {fileID: 3760195201375984919, guid: 0bda89e80c6dc1942996c631d2d25809, type: 3}
+    chance: 0.5
+    lbound: 0
+    ubound: 0
+  numDrops: {fileID: 11400000, guid: 997eb7445dc221242b4bc7ab9ff89579, type: 2}
 --- !u!1 &5267544408644546958
 GameObject:
   m_ObjectHideFlags: 0

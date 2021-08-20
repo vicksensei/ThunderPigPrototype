@@ -11,21 +11,23 @@ GameObject:
   - component: {fileID: 204172446629243290}
   - component: {fileID: 204172446629243291}
   - component: {fileID: 204172446629243288}
+  - component: {fileID: 838493859695316810}
+  - component: {fileID: 8935829432531819348}
   - component: {fileID: 204172446629243289}
-  - component: {fileID: 204172446629243284}
   - component: {fileID: 204172446629243285}
   - component: {fileID: 50773083682244215}
+  - component: {fileID: 6498394322062975238}
   - component: {fileID: 8922796347465944712}
   - component: {fileID: 8535309523800002312}
   - component: {fileID: 3953459956776157512}
   - component: {fileID: 1139545925880498118}
   - component: {fileID: 6946220968244866047}
   - component: {fileID: 7433673805719198269}
-  - component: {fileID: 8935829432531819348}
   - component: {fileID: 9011271610403537812}
-  - component: {fileID: 6498394322062975238}
   - component: {fileID: 7135365991713332521}
   - component: {fileID: 5773908390360955117}
+  - component: {fileID: 2895220113981408634}
+  - component: {fileID: 4884861153853893572}
   m_Layer: 0
   m_Name: Player  TP
   m_TagString: Player
@@ -121,6 +123,36 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!70 &838493859695316810
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204172446629243294}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.097200245, y: -0.3555478}
+  m_Size: {x: 1.314492, y: 0.7493425}
+  m_Direction: 1
+--- !u!114 &8935829432531819348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204172446629243294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a43d15fd89dd74e8eb48012563d2b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShadowOffset: {x: 0.1, y: -0.1}
+  ShadowMaterial: {fileID: 2100000, guid: 2880558f840ca7c4aa0ac6e8c2edc62d, type: 2}
 --- !u!114 &204172446629243289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,22 +173,6 @@ MonoBehaviour:
   FireEvent: {fileID: 11400000, guid: a181e065a8f6405438ca73e00f7e8597, type: 2}
   gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
   isImmune: 0
---- !u!58 &204172446629243284
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204172446629243294}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.12, y: -0.28}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!95 &204172446629243285
 Animator:
   serializedVersion: 3
@@ -189,10 +205,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: {fileID: 11400000, guid: 1080d4514f7ca69429efb6f135eb62c4, type: 2}
+  MaxHealth: {fileID: 11400000, guid: 8989c17533840a143afad98fa545a4dd, type: 2}
   HealthChangedEvent: {fileID: 11400000, guid: 755b8b446bd40c542956a56277e6b554, type: 2}
   PlayerDeadEvent: {fileID: 11400000, guid: 6cb03ba8782529c43928b59cda54946a, type: 2}
   StopGameEvent: {fileID: 11400000, guid: 65361ef6cdd7fbe43b7dae31287d228e, type: 2}
   gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
+  PotionEffect: {fileID: 728444671085414844, guid: c019570d95ae50d4bad928fc7829454e, type: 3}
+--- !u!114 &6498394322062975238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204172446629243294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97cf1322adb7ae6409061a609962aea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentCharge: {fileID: 11400000, guid: 6be01a77ce4204f47b7aa05f3cf10e5e, type: 2}
+  MaxCharge: {fileID: 11400000, guid: b2fa509071ed7924094410d1f0687f88, type: 2}
+  CurrentFlaps: {fileID: 11400000, guid: b472e67f116d6e14dbd176714b7fd1ac, type: 2}
+  FlapsToCharge: {fileID: 11400000, guid: 30ab171b05f804b47b4a1d814813ceb0, type: 2}
+  ChargeChangedEvent: {fileID: 11400000, guid: b70629bb1f3e1094bbaff27d7f23c06d, type: 2}
+  gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
+  EnergyPotionEffect: {fileID: 5844680320447856533, guid: 1ae373eb5f985634985b359d8ca0c81f, type: 3}
 --- !u!114 &8922796347465944712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,20 +422,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &8935829432531819348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204172446629243294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7a43d15fd89dd74e8eb48012563d2b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShadowOffset: {x: 0.1, y: -0.1}
-  ShadowMaterial: {fileID: 2100000, guid: 2880558f840ca7c4aa0ac6e8c2edc62d, type: 2}
 --- !u!114 &9011271610403537812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,24 +450,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6498394322062975238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204172446629243294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97cf1322adb7ae6409061a609962aea2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentCharge: {fileID: 11400000, guid: 6be01a77ce4204f47b7aa05f3cf10e5e, type: 2}
-  MaxCharge: {fileID: 11400000, guid: b2fa509071ed7924094410d1f0687f88, type: 2}
-  CurrentFlaps: {fileID: 11400000, guid: b472e67f116d6e14dbd176714b7fd1ac, type: 2}
-  FlapsToCharge: {fileID: 11400000, guid: 30ab171b05f804b47b4a1d814813ceb0, type: 2}
-  ChargeChangedEvent: {fileID: 11400000, guid: b70629bb1f3e1094bbaff27d7f23c06d, type: 2}
-  gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
 --- !u!114 &7135365991713332521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,6 +497,62 @@ MonoBehaviour:
       - m_Target: {fileID: 6498394322062975238}
         m_TargetAssemblyTypeName: PlayerChargeManager, Assembly-CSharp
         m_MethodName: OnShoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2895220113981408634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204172446629243294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 1bab1ccbfd8c22c488febe7de00cf3c5, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 50773083682244215}
+        m_TargetAssemblyTypeName: PlayerHealthManager, Assembly-CSharp
+        m_MethodName: IncreaseHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4884861153853893572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204172446629243294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 45a2d91da9f39094c9ebdfc39820be93, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6498394322062975238}
+        m_TargetAssemblyTypeName: PlayerChargeManager, Assembly-CSharp
+        m_MethodName: FillEnergy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

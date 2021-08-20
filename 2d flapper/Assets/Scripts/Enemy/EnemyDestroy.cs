@@ -24,7 +24,7 @@ public class EnemyDestroy : MonoBehaviour
         {
             projectileCol.Raise();
             other.gameObject.GetComponent<projectile>().TryToDestroy();
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
             
         }
         if (other.gameObject.tag == "Player")
