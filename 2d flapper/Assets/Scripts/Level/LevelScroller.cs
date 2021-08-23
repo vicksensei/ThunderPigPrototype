@@ -16,12 +16,27 @@ public class LevelScroller : MonoBehaviour
     [SerializeField]
     BoolValue canScrollNow;
 
+    [SerializeField]
+    FloatValue Difficulty;
+
+    [SerializeField]
+    bool isEnemy = true;
+
+    float speed;
     // Update is called once per frame
+    private void Awake()
+    {
+        speed = ScrollSpeed.Value;
+        if (isEnemy)
+        {
+            speed += Difficulty.Value * .1f;
+        }   
+    }
     void FixedUpdate()
     {
         if (canScrollNow.Value)
         {
-            Vector3 newPos = new Vector3(1 * ScrollSpeed.Value * Time.deltaTime, 0, 0);
+            Vector3 newPos = new Vector3(1 * speed * Time.deltaTime, 0, 0);
             if (checkCircleMover())
             {
                 GetComponent<CircleMoveEnemy>().Center -= newPos;

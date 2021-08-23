@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6632819881611852146}
   - component: {fileID: 6632819881611852145}
   - component: {fileID: 6632819881611852144}
-  - component: {fileID: 6632819881611852147}
   - component: {fileID: 6632819881611852148}
+  - component: {fileID: 8181268570779137486}
+  - component: {fileID: 4448611934706126619}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -49,6 +50,7 @@ MonoBehaviour:
   score: {fileID: 11400000, guid: 57c262c3682d6ee4e9200a069f5b6956, type: 2}
   hiScore: {fileID: 11400000, guid: dad330ae0cb0b134cbb1dfe24abe159b, type: 2}
   waspBossScore: {fileID: 11400000, guid: bf206f2b31ba4da4bb3fed021ea24736, type: 2}
+  Difficulty: {fileID: 11400000, guid: abdf43cd04b16b24688a81fccbdbae22, type: 2}
   ScoreChanged: {fileID: 11400000, guid: 18ed13bde51ec564a899675c8e5c4197, type: 2}
   HiScoreChanged: {fileID: 11400000, guid: 1b90eb27f1781c84b858e5f27e164f38, type: 2}
   waspBossTime: {fileID: 11400000, guid: e80f14b760de0a44da8f2936ae240d42, type: 2}
@@ -80,7 +82,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6632819881611852147
+--- !u!114 &6632819881611852148
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,7 +94,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 64ff901a44486004b8ff203c990f0110, type: 2}
+  gameEvent: {fileID: 11400000, guid: 6cb03ba8782529c43928b59cda54946a, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6632819881611852145}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: SetHighScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8181268570779137486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6632819881611852143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 0c8682b4924d2004ebb11ea4c23ae07a, type: 2}
   unityEventResponse:
     m_PersistentCalls:
       m_Calls:
@@ -108,7 +138,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6632819881611852148
+--- !u!114 &4448611934706126619
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 6cb03ba8782529c43928b59cda54946a, type: 2}
+  gameEvent: {fileID: 11400000, guid: a3c42b6cf5d085743933366ad9e52b99, type: 2}
   unityEventResponse:
     m_PersistentCalls:
       m_Calls:

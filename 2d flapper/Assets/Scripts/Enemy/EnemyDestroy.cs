@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[RequireComponent(typeof(DropTable))]
 public class EnemyDestroy : MonoBehaviour
 {
 
@@ -16,13 +16,18 @@ public class EnemyDestroy : MonoBehaviour
     [SerializeField]
     BoolValue playerIsImmune;
 
-
+    DropTable dt;
+    private void Awake()
+    {
+        dt = GetComponent<DropTable>();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         AnyCol.Raise();
         if (other.gameObject.tag == "Projectile")
         {
             projectileCol.Raise();
+            dt.BeforeDestroy();
             other.gameObject.GetComponent<projectile>().TryToDestroy();
             Destroy(transform.parent.gameObject);
             

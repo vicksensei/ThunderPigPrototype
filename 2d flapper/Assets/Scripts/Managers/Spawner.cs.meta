@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 3afdce542ad6dc94099776bf833f7b2e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - screenTop: {instanceID: 0}
+  - screenBottom: {instanceID: 0}
+  - spawnRate: {instanceID: 0}
+  - delay: {instanceID: 0}
+  - canSpawn: {instanceID: 0}
+  - canScroll: {instanceID: 0}
+  - gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

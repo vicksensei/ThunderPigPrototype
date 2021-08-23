@@ -10,6 +10,7 @@ public class UIShowHide : MonoBehaviour
         {
             child.gameObject.SetActive(true);
         }
+
     }
     public void Hide()
     {

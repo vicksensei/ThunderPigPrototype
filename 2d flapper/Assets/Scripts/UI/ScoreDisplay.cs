@@ -15,6 +15,12 @@ public class ScoreDisplay : MonoBehaviour
     {
         UpdateScore();
     }
+
+    private void OnEnable()
+    {
+        UpdateScore();
+    }
+
     public void Init()
     {
         scoreDisplay.text = "";

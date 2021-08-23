@@ -69,8 +69,12 @@ public class PlayerChargeManager : MonoBehaviour
     }
     public void FillEnergy()
     {
-        CurrentCharge.Value = MaxCharge.Value;
-        Instantiate(EnergyPotionEffect, transform);
+        if (CurrentCharge.Value != MaxCharge.Value)
+        {
+            CurrentCharge.Value = MaxCharge.Value;
+            Instantiate(EnergyPotionEffect, transform);
+            ChargeChangedEvent.Raise();
+        }
     }
 
     public void OnShoot()

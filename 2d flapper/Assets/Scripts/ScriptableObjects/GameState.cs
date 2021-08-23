@@ -10,7 +10,8 @@ public class GameState : ScriptableObject
         Playing,
         Paused,
         BossFighting,
-        End
+        End,
+        BossKilled
     };
 
     public State state;

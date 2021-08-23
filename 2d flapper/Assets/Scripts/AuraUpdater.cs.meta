@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: eae6e2d70bc41ea4d9a0f312e4b5ecc3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - spriteRenderer: {instanceID: 0}
+  - AuraSpriteRenderer: {instanceID: 0}
+  - aura: {instanceID: 0}
+  - playerIsImmune: {fileID: 11400000, guid: e5ff2e634e9e1334ca25860d4b588faf, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

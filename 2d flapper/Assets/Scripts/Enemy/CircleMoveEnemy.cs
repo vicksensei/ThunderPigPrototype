@@ -11,6 +11,8 @@ public class CircleMoveEnemy : MonoBehaviour
 
     [SerializeField]
     FloatValue RotateRadius;
+    [SerializeField]
+    FloatValue Difficulty;
 
     [Header("Parameters")]
     [SerializeField]
@@ -28,7 +30,7 @@ public class CircleMoveEnemy : MonoBehaviour
     float angle;
     [SerializeField]
     float currentRadius;
-
+    float currentSpeed;
 
     [Header("State")]
     [SerializeField]
@@ -38,9 +40,14 @@ public class CircleMoveEnemy : MonoBehaviour
 
     private void Awake()
     {
+        currentSpeed = RotateSpeed.Value;
         if(OrbitCenter == null) { OrbitCenter = transform.parent.transform; }
         center = OrbitCenter.position;
         currentRadius = 0f;
+        if(Difficulty.Value > 1)
+        {
+            currentSpeed += Difficulty.Value * .1f;
+        }
     }
 
     void FixedUpdate()
@@ -65,7 +72,7 @@ public class CircleMoveEnemy : MonoBehaviour
         if (followOrbiter)
             center = OrbitCenter.position;
         Vector3 offset;
-        angle += RotateSpeed.Value * Time.deltaTime;
+        angle += currentSpeed * Time.deltaTime;
         if (clockwise)
         {
             offset = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)) * radius;

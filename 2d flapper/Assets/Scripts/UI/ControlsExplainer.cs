@@ -13,6 +13,10 @@ public class ControlsExplainer : MonoBehaviour
     [SerializeField]
     GameState gameState;
 
+    [Header("Events")]
+    [SerializeField]
+    SOEvents.VoidEvent backButton;
+
     void Update()
     {
         if (gameState.state == GameState.State.Waiting)
@@ -39,4 +43,8 @@ public class ControlsExplainer : MonoBehaviour
         }
     }
 
+    public void OnBackButton()
+    {
+        backButton.Raise();
+    }
 }

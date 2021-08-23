@@ -3,7 +3,11 @@ guid: ebe0afddcc72e524686dd0d7b695dea3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ScrollSpeed: {instanceID: 0}
+  - gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
+  - canScrollNow: {instanceID: 0}
+  - Difficulty: {fileID: 11400000, guid: abdf43cd04b16b24688a81fccbdbae22, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

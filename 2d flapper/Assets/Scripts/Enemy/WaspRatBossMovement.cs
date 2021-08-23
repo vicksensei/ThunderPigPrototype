@@ -7,9 +7,7 @@ public class WaspRatBossMovement : MonoBehaviour
 
     [Header("Combat")]
     [SerializeField]
-    IntValue HP;
-    [SerializeField]
-    IntValue MaxHP;
+    FloatValue Difficulty;
 
 
     [Header("Location")]
@@ -62,6 +60,8 @@ public class WaspRatBossMovement : MonoBehaviour
 
     void Awake()
     {
+        minions *= (int)Difficulty.Value;
+        speed += Difficulty.Value * .1f;
         StartPos = transform.position;
         transform.position = EnterPoint.position;
         currentPhase = CombatPhase.Appear;

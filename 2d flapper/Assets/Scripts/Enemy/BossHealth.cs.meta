@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 2524834866b6fb7479e13aa6d82b6318
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - bossHP: {instanceID: 0}
+  - playerIsImmune: {fileID: 11400000, guid: e5ff2e634e9e1334ca25860d4b588faf, type: 2}
+  - Difficulty: {fileID: 11400000, guid: abdf43cd04b16b24688a81fccbdbae22, type: 2}
+  - slider: {instanceID: 0}
+  - projectileCol: {instanceID: 0}
+  - PlayerCol: {instanceID: 0}
+  - bossBloodied: {instanceID: 0}
+  - bossDead: {instanceID: 0}
+  - bossAngry: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

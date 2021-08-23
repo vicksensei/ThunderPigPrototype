@@ -11,6 +11,8 @@ public class ScoreManager : MonoBehaviour
     IntValue hiScore;
     [SerializeField]
     IntValue waspBossScore;
+    [SerializeField]
+    FloatValue Difficulty;
 
     [Header("Events")]
     [SerializeField]
@@ -24,12 +26,14 @@ public class ScoreManager : MonoBehaviour
     {
         score.Value = 0;
         ScoreChanged.Raise();
+        Difficulty.Value = 1;
     }
     public void AddToScore(int amount)
     {
         score.Value += amount;
         ScoreChanged.Raise();
-        if(score.Value == waspBossScore.Value)
+        SetHighScore();
+        if(score.Value == (waspBossScore.Value * Difficulty.Value))
         {
             waspBossTime.Raise();
         }

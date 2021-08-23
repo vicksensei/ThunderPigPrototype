@@ -206,6 +206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: {fileID: 11400000, guid: 1080d4514f7ca69429efb6f135eb62c4, type: 2}
   MaxHealth: {fileID: 11400000, guid: 8989c17533840a143afad98fa545a4dd, type: 2}
+  Difficulty: {fileID: 11400000, guid: abdf43cd04b16b24688a81fccbdbae22, type: 2}
   HealthChangedEvent: {fileID: 11400000, guid: 755b8b446bd40c542956a56277e6b554, type: 2}
   PlayerDeadEvent: {fileID: 11400000, guid: 6cb03ba8782529c43928b59cda54946a, type: 2}
   StopGameEvent: {fileID: 11400000, guid: 65361ef6cdd7fbe43b7dae31287d228e, type: 2}

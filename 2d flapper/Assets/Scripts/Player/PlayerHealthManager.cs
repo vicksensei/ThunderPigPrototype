@@ -9,6 +9,8 @@ public class PlayerHealthManager : MonoBehaviour
     IntValue Health;
     [SerializeField]
     IntValue MaxHealth;
+    [SerializeField]
+    FloatValue Difficulty;
 
 
     [Header("Events")]
@@ -35,7 +37,7 @@ public class PlayerHealthManager : MonoBehaviour
         HealthChangedEvent.Raise();
         if (Health.Value == 0)
         {
-            StopGameEvent.Raise();
+            //StopGameEvent.Raise();
             PlayerDeadEvent.Raise();
         }
     }
@@ -51,7 +53,8 @@ public class PlayerHealthManager : MonoBehaviour
 
     public void ResetHealth()
     {
-        Health.Value = 3;
+        if(Difficulty.Value == 1)
+        Health.Value = MaxHealth.Value;
         HealthChangedEvent.Raise();
     }
 }

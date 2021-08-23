@@ -13,6 +13,8 @@ public class EnemyUpDown : MonoBehaviour
     [SerializeField]
     bool upDir;
     int multiplier;
+    [SerializeField]
+    FloatValue Difficulty;
 
     [Header("State")]
     [SerializeField]
@@ -30,6 +32,10 @@ public class EnemyUpDown : MonoBehaviour
         StartPos = transform.position;
         multiplier = -1;
         if (upDir) multiplier = 1;
+        if (Difficulty.Value > 1)
+        {
+            speed += Difficulty.Value * .2f;
+        }
     }
 
     // Update is called once per frame

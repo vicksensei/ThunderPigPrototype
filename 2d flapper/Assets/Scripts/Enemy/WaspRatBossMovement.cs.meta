@@ -3,7 +3,16 @@ guid: 4e7056d5ec768b1498c23c6f797d6c6d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Difficulty: {fileID: 11400000, guid: abdf43cd04b16b24688a81fccbdbae22, type: 2}
+  - EnterPoint: {instanceID: 0}
+  - minionPrefab: {instanceID: 0}
+  - ProjectilePrefab: {instanceID: 0}
+  - gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
+  - waspBossAnimator: {instanceID: 0}
+  - auraAnimator: {instanceID: 0}
+  - superArmorOn: {instanceID: 0}
+  - superArmorOff: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

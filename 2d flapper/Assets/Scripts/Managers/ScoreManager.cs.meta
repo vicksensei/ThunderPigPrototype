@@ -3,7 +3,14 @@ guid: 47f18d970b833c7428506a66ce4af207
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - score: {fileID: 11400000, guid: 57c262c3682d6ee4e9200a069f5b6956, type: 2}
+  - hiScore: {fileID: 11400000, guid: dad330ae0cb0b134cbb1dfe24abe159b, type: 2}
+  - waspBossScore: {instanceID: 0}
+  - Difficulty: {fileID: 11400000, guid: abdf43cd04b16b24688a81fccbdbae22, type: 2}
+  - ScoreChanged: {fileID: 11400000, guid: 18ed13bde51ec564a899675c8e5c4197, type: 2}
+  - HiScoreChanged: {fileID: 11400000, guid: 1b90eb27f1781c84b858e5f27e164f38, type: 2}
+  - waspBossTime: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
