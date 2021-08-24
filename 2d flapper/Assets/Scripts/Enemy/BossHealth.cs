@@ -35,7 +35,7 @@ public class BossHealth : MonoBehaviour
     bool bloodied = false;
     bool enraged = false;
 
-    int currentHP, maximumHP;
+    public int currentHP, maximumHP;
 
     private void Awake()
     {

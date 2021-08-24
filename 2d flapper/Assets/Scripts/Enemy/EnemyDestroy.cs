@@ -28,6 +28,7 @@ public class EnemyDestroy : MonoBehaviour
         {
             projectileCol.Raise();
             dt.BeforeDestroy();
+            other.gameObject.GetComponent<projectile>().DestroyMe();
             other.gameObject.GetComponent<projectile>().TryToDestroy();
             Destroy(transform.parent.gameObject);
             

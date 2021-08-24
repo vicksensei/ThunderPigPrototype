@@ -39,6 +39,7 @@ public class PlayerHealthManager : MonoBehaviour
         {
             //StopGameEvent.Raise();
             PlayerDeadEvent.Raise();
+            Time.timeScale = 0;
         }
     }
     public void IncreaseHealth()
@@ -53,8 +54,10 @@ public class PlayerHealthManager : MonoBehaviour
 
     public void ResetHealth()
     {
-        if(Difficulty.Value == 1)
-        Health.Value = MaxHealth.Value;
+        if (Difficulty.Value == 1)
+        {
+            Health.Value = MaxHealth.Value;
+        }
         HealthChangedEvent.Raise();
     }
 }

@@ -7,11 +7,14 @@ public class GameStateManager : MonoBehaviour
     [Header("State")]
     [SerializeField]
     GameState gameState;
+    [Header("Values")]
+    [SerializeField]
+    FloatValue Difficulty;
 
     GameState.State lastGameState;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         gameState.state = GameState.State.Waiting;
         Debug.Log("Gamestate: Waiting");
@@ -44,12 +47,21 @@ public class GameStateManager : MonoBehaviour
     {
         gameState.state = GameState.State.End;
         Debug.Log("Gamestate: " + gameState.state);
+        Time.timeScale = 0;
     }
 
     public void BossFight()
     {
         gameState.state = GameState.State.BossFighting;
         Debug.Log("Gamestate: " + gameState.state);
+        Time.timeScale = 1;
     }
 
+    public void Victory()
+    {
+        gameState.state = GameState.State.BossKilled;
+        Debug.Log("Gamestate: " + gameState.state);
+        Time.timeScale = 0;
+        Difficulty.Value += 1;
+    }
 }

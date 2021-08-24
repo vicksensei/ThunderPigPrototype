@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7567005280519543527}
   - component: {fileID: 7567005280519543532}
   - component: {fileID: 6589441926884027503}
+  - component: {fileID: 8341340058922576373}
   m_Layer: 0
   m_Name: GameStateManager
   m_TagString: Untagged
@@ -133,8 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
-  StartGame: {fileID: 11400000, guid: 64ff901a44486004b8ff203c990f0110, type: 2}
-  StopGame: {fileID: 11400000, guid: 65361ef6cdd7fbe43b7dae31287d228e, type: 2}
+  Difficulty: {fileID: 11400000, guid: abdf43cd04b16b24688a81fccbdbae22, type: 2}
 --- !u!114 &7567005280519543532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +182,34 @@ MonoBehaviour:
       - m_Target: {fileID: 7567005280519543527}
         m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
         m_MethodName: BossFight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8341340058922576373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7567005280519543526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: a3c42b6cf5d085743933366ad9e52b99, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7567005280519543527}
+        m_TargetAssemblyTypeName: GameStateManager, Assembly-CSharp
+        m_MethodName: Victory
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

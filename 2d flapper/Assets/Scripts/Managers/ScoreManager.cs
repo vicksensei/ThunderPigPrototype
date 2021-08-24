@@ -13,6 +13,8 @@ public class ScoreManager : MonoBehaviour
     IntValue waspBossScore;
     [SerializeField]
     FloatValue Difficulty;
+    [SerializeField]
+    GameState gameState;
 
     [Header("Events")]
     [SerializeField]
@@ -27,14 +29,16 @@ public class ScoreManager : MonoBehaviour
         score.Value = 0;
         ScoreChanged.Raise();
         Difficulty.Value = 1;
+        Debug.Log("Score Reset");
     }
     public void AddToScore(int amount)
     {
         score.Value += amount;
         ScoreChanged.Raise();
         SetHighScore();
-        if(score.Value == (waspBossScore.Value * Difficulty.Value))
+        if(score.Value >= (waspBossScore.Value * Difficulty.Value) && gameState.state != GameState.State.BossFighting)
         {
+            Debug.Log("Goal reached: "+ (waspBossScore.Value * Difficulty.Value));
             waspBossTime.Raise();
         }
     }
