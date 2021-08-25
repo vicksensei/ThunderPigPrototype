@@ -36,9 +36,9 @@ public class ScoreManager : MonoBehaviour
         score.Value += amount;
         ScoreChanged.Raise();
         SetHighScore();
-        if(score.Value >= (waspBossScore.Value * Difficulty.Value) && gameState.state != GameState.State.BossFighting)
+        if(score.Value >= (waspBossScore.Value * (int)Difficulty.Value) && gameState.state != GameState.State.BossFighting)
         {
-            Debug.Log("Goal reached: "+ (waspBossScore.Value * Difficulty.Value));
+            Debug.Log("Goal reached: "+ (waspBossScore.Value * (int)Difficulty.Value));
             waspBossTime.Raise();
         }
     }

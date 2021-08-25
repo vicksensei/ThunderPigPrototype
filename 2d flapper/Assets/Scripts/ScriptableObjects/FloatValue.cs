@@ -7,4 +7,9 @@ public class FloatValue : ScriptableObject
     float value;
 
     public float Value { get => value; set => this.value = value; }
+
+    private void OnEnable()
+    {
+        hideFlags = HideFlags.DontUnloadUnusedAsset;
+    }
 }

@@ -15,4 +15,9 @@ public class GameState : ScriptableObject
     };
 
     public State state;
+
+    private void OnEnable()
+    {
+        hideFlags = HideFlags.DontUnloadUnusedAsset;
+    }
 }

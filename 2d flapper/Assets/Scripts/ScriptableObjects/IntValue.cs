@@ -8,4 +8,9 @@ public class IntValue : ScriptableObject
     int value;
 
     public int Value { get => value; set => this.value = value; }
+
+    private void OnEnable()
+    {
+        hideFlags = HideFlags.DontUnloadUnusedAsset;
+    }
 }

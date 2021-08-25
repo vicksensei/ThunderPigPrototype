@@ -7,4 +7,9 @@ public class BoolValue : ScriptableObject
     bool value;
 
     public bool Value { get => value; set => this.value = value; }
+
+    private void OnEnable()
+    {
+        hideFlags = HideFlags.DontUnloadUnusedAsset;
+    }
 }
