@@ -19,29 +19,28 @@ public class ControlsExplainer : MonoBehaviour
 
     void Update()
     {
-        if (gameState.state == GameState.State.Waiting)
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
         {
-            if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
-            {
 
-                animator.Play("UIFlap");
-            }
+            animator.Play("UIFlap");
+        }
 
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                animator.Play("UIFire");
-                //TODO Fire Animation
-            }
-            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
-            {
-                animator.Play("UILeft");
-            }
-            if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
-            {
-                animator.Play("UIRight");
-            }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            animator.Play("UIFire");
+            //TODO Fire Animation
+        }
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
+        {
+            animator.Play("UILeft");
+        }
+        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
+        {
+            animator.Play("UIRight");
         }
     }
+
+    
 
     public void OnBackButton()
     {
