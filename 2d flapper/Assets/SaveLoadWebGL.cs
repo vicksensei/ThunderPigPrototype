@@ -1,10 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.IO;
-using System.Collections;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
-using UnityEngine.Networking;
 
 public class SaveLoadWebGL : MonoBehaviour
 {
@@ -15,9 +14,23 @@ public class SaveLoadWebGL : MonoBehaviour
     private static extern void WindowAlert(string message);
     [SerializeField]
     ProgressionObject saveFile;
+    [SerializeField]
+    ProgressionObject newSave;
+    [SerializeField]
+    Button LoadButton;
+    [SerializeField]
+    SOEvents.VoidEvent gameReset;
+    [SerializeField]
+    SOEvents.VoidEvent gameLoaded;
+    
+    private void Awake()
+    {
+        //checkLoadButton();
+        Load();
+    }
 
     private void OnGUI()
-    {
+    {/*
         GUIStyle buttonStyle = new GUIStyle(GUI.skin.button);
         buttonStyle.fontSize = 25;
         /*  if(GUI.Button(new Rect(10,10,450,80), "Send to file", buttonStyle))
@@ -27,16 +40,15 @@ public class SaveLoadWebGL : MonoBehaviour
           if (GUI.Button(new Rect(10, 100, 450, 80), "Get from file", buttonStyle))
           {
               StartCoroutine(GetTextFromFile());
-          }*/
+          }
 
         if (GUI.Button(new Rect(10, 10, 450, 80), "Save", buttonStyle))
         {
-            Save(new SaveFile(saveFile));
         }
         if (GUI.Button(new Rect(10, 100, 450, 80), "Load", buttonStyle))
         {
             Load();
-        }
+        }*/
     }
     /*
     IEnumerator SendTextToFile()
@@ -96,11 +108,32 @@ public class SaveLoadWebGL : MonoBehaviour
             {
                 SyncFiles();
             }
+            PlatformSafeMessage("Saved Successfully!");
         }
         catch (Exception e)
         {
             PlatformSafeMessage("Failed to Save: " + e.Message);
         }
+    }
+
+    public bool saveExists()
+    {
+        string dataPath = string.Format("{0}/SaveFile.dat", Application.persistentDataPath);
+
+        try
+        {
+            if (File.Exists(dataPath))
+            {
+                return true;
+            }
+        }
+        catch (Exception e)
+        {
+            PlatformSafeMessage("Problem looking for save file: " + e.Message);
+            return false;
+        }
+        return false;
+
     }
 
     void Load()
@@ -117,6 +150,7 @@ public class SaveLoadWebGL : MonoBehaviour
 
                 gameDetails = (SaveFile)binaryFormatter.Deserialize(fileStream);
                 fileStream.Close();
+                PlatformSafeMessage("Save successfully loaded!");
             }
         }
         catch (Exception e)
@@ -139,8 +173,33 @@ public class SaveLoadWebGL : MonoBehaviour
         }
     }
 
+    public void OnLoadButton()
+    {
+        Load();
+        gameLoaded.Raise();
+    }
+    public void OnNewGame()
+    {
+        saveFile.Clone(newSave);
+        gameReset.Raise();
+    }
+    public void OnSaveButton()
+    {
+        Save(new SaveFile(saveFile));
+        //checkLoadButton();
+    }
 
-
+    void checkLoadButton()
+    {
+        if (saveExists())
+        {
+            LoadButton.enabled = true;
+        }
+        else
+        {
+            LoadButton.enabled = false;
+        }
+    }
 }
 [Serializable]
 public class SaveFile

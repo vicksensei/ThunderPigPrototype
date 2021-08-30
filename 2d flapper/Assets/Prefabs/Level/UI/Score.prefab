@@ -556,6 +556,7 @@ MonoBehaviour:
   - {fileID: 8711215199562661801}
   - {fileID: 4818919653847298042}
   saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
+  RT: 1
 --- !u!1 &809074698913808794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,6 +1197,7 @@ MonoBehaviour:
   - {fileID: 6675836567183376027}
   - {fileID: 6556202345159108665}
   saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
+  RT: 0
 --- !u!114 &4652712994746830914
 MonoBehaviour:
   m_ObjectHideFlags: 0

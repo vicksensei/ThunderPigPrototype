@@ -136,7 +136,7 @@ MonoBehaviour:
   damage: 0
   DestroyParticle: {fileID: 0}
   isFromPlayer: 0
-  pierceCount: {fileID: 0}
+  saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
 --- !u!114 &4238564161310023073
 MonoBehaviour:
   m_ObjectHideFlags: 0
