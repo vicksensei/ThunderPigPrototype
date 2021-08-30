@@ -14,7 +14,7 @@ public class EnemyUpDown : MonoBehaviour
     bool upDir;
     int multiplier;
     [SerializeField]
-    FloatValue Difficulty;
+    ProgressionObject SaveFile;
 
     [Header("State")]
     [SerializeField]
@@ -32,9 +32,9 @@ public class EnemyUpDown : MonoBehaviour
         StartPos = transform.position;
         multiplier = -1;
         if (upDir) multiplier = 1;
-        if (Difficulty.Value > 1)
+        if (SaveFile.CurrentDifficulty > 1)
         {
-            speed += Difficulty.Value * .2f;
+            speed += SaveFile.CurrentDifficulty * .2f;
         }
     }
 

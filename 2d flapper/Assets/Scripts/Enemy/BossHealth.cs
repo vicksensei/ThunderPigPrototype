@@ -11,7 +11,7 @@ public class BossHealth : MonoBehaviour
     [SerializeField]
     BoolValue playerIsImmune;
     [SerializeField]
-    FloatValue Difficulty;
+    ProgressionObject saveFile;
 
 
     [Header("UI")]
@@ -39,7 +39,7 @@ public class BossHealth : MonoBehaviour
 
     private void Awake()
     {
-        maximumHP = bossHP.Value * (int)Difficulty.Value;
+        maximumHP = bossHP.Value * (int)saveFile.CurrentDifficulty;
         currentHP = maximumHP;
         UpdateHP();
         SuperArmorOn();

@@ -134,7 +134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
-  Difficulty: {fileID: 11400000, guid: abdf43cd04b16b24688a81fccbdbae22, type: 2}
+  SaveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
+  NewFile: {fileID: 11400000, guid: a55a6e1d29a0d4b4ab16a1c07a6196aa, type: 2}
 --- !u!114 &7567005280519543532
 MonoBehaviour:
   m_ObjectHideFlags: 0

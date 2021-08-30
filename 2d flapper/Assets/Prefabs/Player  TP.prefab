@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SPEED: 3
-  currentCharge: {fileID: 11400000, guid: 6be01a77ce4204f47b7aa05f3cf10e5e, type: 2}
+  saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
   projectile: {fileID: 1238999089593782026, guid: 39522e54ea9b59f48ba68aa676a4a03d, type: 3}
   PausePressed: {fileID: 11400000, guid: 65361ef6cdd7fbe43b7dae31287d228e, type: 2}
   FlapEvent: {fileID: 11400000, guid: 641e65e1755d12f46930ffb2cbd581be, type: 2}
@@ -204,9 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17446ab55a6501d4897f730c405f91f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: {fileID: 11400000, guid: 1080d4514f7ca69429efb6f135eb62c4, type: 2}
-  MaxHealth: {fileID: 11400000, guid: 8989c17533840a143afad98fa545a4dd, type: 2}
-  Difficulty: {fileID: 11400000, guid: abdf43cd04b16b24688a81fccbdbae22, type: 2}
+  SaveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
   HealthChangedEvent: {fileID: 11400000, guid: 755b8b446bd40c542956a56277e6b554, type: 2}
   PlayerDeadEvent: {fileID: 11400000, guid: 6cb03ba8782529c43928b59cda54946a, type: 2}
   StopGameEvent: {fileID: 11400000, guid: 65361ef6cdd7fbe43b7dae31287d228e, type: 2}
@@ -224,10 +222,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97cf1322adb7ae6409061a609962aea2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentCharge: {fileID: 11400000, guid: 6be01a77ce4204f47b7aa05f3cf10e5e, type: 2}
-  MaxCharge: {fileID: 11400000, guid: b2fa509071ed7924094410d1f0687f88, type: 2}
   CurrentFlaps: {fileID: 11400000, guid: b472e67f116d6e14dbd176714b7fd1ac, type: 2}
-  FlapsToCharge: {fileID: 11400000, guid: 30ab171b05f804b47b4a1d814813ceb0, type: 2}
+  SaveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
   ChargeChangedEvent: {fileID: 11400000, guid: b70629bb1f3e1094bbaff27d7f23c06d, type: 2}
   gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
   EnergyPotionEffect: {fileID: 5844680320447856533, guid: 1ae373eb5f985634985b359d8ca0c81f, type: 3}

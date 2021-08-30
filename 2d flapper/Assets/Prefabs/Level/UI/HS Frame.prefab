@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2268695709036015147}
   - component: {fileID: 9218837583837615509}
   - component: {fileID: 3908714054423359188}
-  - component: {fileID: 948840727764493031}
   - component: {fileID: 4024824793235584965}
   m_Layer: 5
   m_Name: HighScoreText
@@ -81,20 +80,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 0
---- !u!114 &948840727764493031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4743608417202750220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f636f80d57d3e8446b23de17e48ac2c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreDisplay: {fileID: 3908714054423359188}
-  scoreObject: {fileID: 11400000, guid: dad330ae0cb0b134cbb1dfe24abe159b, type: 2}
 --- !u!114 &4024824793235584965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,4 +266,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 3908714054423359188}
-  scoreObject: {fileID: 11400000, guid: dad330ae0cb0b134cbb1dfe24abe159b, type: 2}
+  saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
+  isHighScore: 1

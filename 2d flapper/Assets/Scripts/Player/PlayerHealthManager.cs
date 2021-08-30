@@ -6,11 +6,7 @@ public class PlayerHealthManager : MonoBehaviour
 
     [Header("Value Objects")]
     [SerializeField]
-    IntValue Health;
-    [SerializeField]
-    IntValue MaxHealth;
-    [SerializeField]
-    FloatValue Difficulty;
+    ProgressionObject SaveFile;
 
 
     [Header("Events")]
@@ -33,9 +29,9 @@ public class PlayerHealthManager : MonoBehaviour
 
     public void ReduceHealth()
     {
-        Health.Value--;
+        SaveFile.CurHP--;
         HealthChangedEvent.Raise();
-        if (Health.Value == 0)
+        if (SaveFile.CurHP == 0)
         {
             //StopGameEvent.Raise();
             PlayerDeadEvent.Raise();
@@ -44,9 +40,9 @@ public class PlayerHealthManager : MonoBehaviour
     }
     public void IncreaseHealth()
     {
-        if (Health.Value < MaxHealth.Value)
+        if (SaveFile.CurHP < SaveFile.MaxHP)
         {
-            Health.Value++;
+            SaveFile.CurHP++;
             HealthChangedEvent.Raise();
             Instantiate(PotionEffect, transform);
         }
@@ -54,9 +50,9 @@ public class PlayerHealthManager : MonoBehaviour
 
     public void ResetHealth()
     {
-        if (Difficulty.Value == 1)
+        if (SaveFile.CurrentDifficulty == 1)
         {
-            Health.Value = MaxHealth.Value;
+            SaveFile.CurHP = SaveFile.MaxHP;
         }
         HealthChangedEvent.Raise();
     }

@@ -11,9 +11,7 @@ public class ResourceUI : MonoBehaviour
 
     [Header("Values")]
     [SerializeField]
-    IntValue maxCharges;
-    [SerializeField]
-    IntValue curCharges;
+    ProgressionObject saveFile;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +23,7 @@ public class ResourceUI : MonoBehaviour
     {
         for (int i = 0; i < images.Length; i++)
         {
-            if (i < curCharges.Value)
+            if (i < saveFile.CurCharge)
             {
                 images[i].gameObject.SetActive(true);
             }

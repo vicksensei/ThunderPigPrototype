@@ -8,7 +8,7 @@ public class DropTable : MonoBehaviour
     DropItem[] Drops;
 
     [SerializeField]
-    IntValue numDrops;
+    ProgressionObject saveFile;
     private void Awake()
     {
         Setup();
@@ -46,7 +46,7 @@ public class DropTable : MonoBehaviour
 
     public void BeforeDestroy()
     {
-        for (int i = 0; i < numDrops.Value; i++)
+        for (int i = 0; i < saveFile.NumDrops; i++)
         {
             DropAnItem();
         }

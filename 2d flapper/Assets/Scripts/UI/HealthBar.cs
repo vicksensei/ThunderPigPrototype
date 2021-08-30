@@ -9,7 +9,7 @@ public class HealthBar : MonoBehaviour
 
     [Header("Value Objects")]
     [SerializeField]
-    IntValue Health;
+    ProgressionObject SaveFile;
 
     private void Awake()
     {
@@ -25,7 +25,7 @@ public class HealthBar : MonoBehaviour
     {
         ClearHealth();
      
-        for (int i = 0; i < Health.Value; i++)
+        for (int i = 0; i < SaveFile.CurHP; i++)
         {
             Instantiate(Image, transform);
         }

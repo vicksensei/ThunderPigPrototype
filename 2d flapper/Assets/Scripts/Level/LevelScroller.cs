@@ -17,7 +17,7 @@ public class LevelScroller : MonoBehaviour
     BoolValue canScrollNow;
 
     [SerializeField]
-    FloatValue Difficulty;
+    ProgressionObject SaveFile;
 
     [SerializeField]
     bool isEnemy = true;
@@ -29,7 +29,7 @@ public class LevelScroller : MonoBehaviour
         speed = ScrollSpeed.Value;
         if (isEnemy)
         {
-            speed += Difficulty.Value * .1f;
+            speed += (SaveFile.CurrentDifficulty * .1f) -.1f;
         }   
     }
     void FixedUpdate()

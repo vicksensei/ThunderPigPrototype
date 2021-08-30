@@ -170,7 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 682136614846036682}
-  scoreObject: {fileID: 11400000, guid: 57c262c3682d6ee4e9200a069f5b6956, type: 2}
+  saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
+  isHighScore: 0
 --- !u!114 &682136614846036685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,8 +555,7 @@ MonoBehaviour:
   - {fileID: 261088758260304786}
   - {fileID: 8711215199562661801}
   - {fileID: 4818919653847298042}
-  maxCharges: {fileID: 11400000, guid: 8989c17533840a143afad98fa545a4dd, type: 2}
-  curCharges: {fileID: 11400000, guid: 1080d4514f7ca69429efb6f135eb62c4, type: 2}
+  saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
 --- !u!1 &809074698913808794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,8 +1195,7 @@ MonoBehaviour:
   - {fileID: 337807329472385189}
   - {fileID: 6675836567183376027}
   - {fileID: 6556202345159108665}
-  maxCharges: {fileID: 11400000, guid: b2fa509071ed7924094410d1f0687f88, type: 2}
-  curCharges: {fileID: 11400000, guid: 6be01a77ce4204f47b7aa05f3cf10e5e, type: 2}
+  saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
 --- !u!114 &4652712994746830914
 MonoBehaviour:
   m_ObjectHideFlags: 0

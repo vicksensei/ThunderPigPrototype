@@ -47,11 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47f18d970b833c7428506a66ce4af207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 11400000, guid: 57c262c3682d6ee4e9200a069f5b6956, type: 2}
-  hiScore: {fileID: 11400000, guid: dad330ae0cb0b134cbb1dfe24abe159b, type: 2}
   waspBossScore: {fileID: 11400000, guid: bf206f2b31ba4da4bb3fed021ea24736, type: 2}
-  Difficulty: {fileID: 11400000, guid: abdf43cd04b16b24688a81fccbdbae22, type: 2}
   gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
+  newSaveFile: {fileID: 11400000, guid: a55a6e1d29a0d4b4ab16a1c07a6196aa, type: 2}
+  curSavefile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
   ScoreChanged: {fileID: 11400000, guid: 18ed13bde51ec564a899675c8e5c4197, type: 2}
   HiScoreChanged: {fileID: 11400000, guid: 1b90eb27f1781c84b858e5f27e164f38, type: 2}
   waspBossTime: {fileID: 11400000, guid: e80f14b760de0a44da8f2936ae240d42, type: 2}

@@ -9,7 +9,9 @@ public class ScoreDisplay : MonoBehaviour
 
     [Header("Value Objects")]
     [SerializeField]
-    IntValue scoreObject;
+    ProgressionObject saveFile;
+    [SerializeField]
+    bool isHighScore = false;
 
     private void Start()
     {
@@ -27,6 +29,9 @@ public class ScoreDisplay : MonoBehaviour
     }
     public void UpdateScore()
     {
-        scoreDisplay.text = scoreObject.Value.ToString();
+        string toShow;
+        if (isHighScore) { toShow = saveFile.HighScore.ToString(); }
+        else{ toShow = saveFile.CurScore.ToString(); }
+        scoreDisplay.text = toShow;
     }
 }

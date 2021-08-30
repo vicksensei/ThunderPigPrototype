@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotateSpeed: {fileID: 11400000, guid: 12d9114f939dafb4292496f6c85ea080, type: 2}
   RotateRadius: {fileID: 11400000, guid: d9db98d5739b6884c8f99f7ad691b98c, type: 2}
-  Difficulty: {fileID: 11400000, guid: abdf43cd04b16b24688a81fccbdbae22, type: 2}
+  saveFile: {fileID: 0}
   clockwise: 1
   OrbitCenter: {fileID: 0}
   followOrbiter: 1
@@ -208,4 +208,4 @@ MonoBehaviour:
     chance: 0.08
     lbound: 0
     ubound: 0
-  numDrops: {fileID: 11400000, guid: 997eb7445dc221242b4bc7ab9ff89579, type: 2}
+  saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}

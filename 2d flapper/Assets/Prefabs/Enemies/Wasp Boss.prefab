@@ -754,9 +754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e7056d5ec768b1498c23c6f797d6c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: {fileID: 11400000, guid: 99dad7fad2da50b41b01a59e51128ad3, type: 2}
-  MaxHP: {fileID: 11400000, guid: 0e8477bce1499dc41a28d74eea5375b5, type: 2}
-  Difficulty: {fileID: 11400000, guid: abdf43cd04b16b24688a81fccbdbae22, type: 2}
+  SaveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
   EnterPoint: {fileID: 3461784881674827176}
   speed: 2
   height: 6
@@ -782,13 +780,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossHP: {fileID: 11400000, guid: 0e8477bce1499dc41a28d74eea5375b5, type: 2}
   playerIsImmune: {fileID: 11400000, guid: e5ff2e634e9e1334ca25860d4b588faf, type: 2}
-  Difficulty: {fileID: 11400000, guid: abdf43cd04b16b24688a81fccbdbae22, type: 2}
+  saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
   slider: {fileID: 1089469134559780216}
   projectileCol: {fileID: 11400000, guid: 998a28f92beeb684686f1072fbd2b9df, type: 2}
   PlayerCol: {fileID: 11400000, guid: b96d4bc489324dc4ab044c0b53718458, type: 2}
   bossBloodied: {fileID: 11400000, guid: 4167588da407c6345b3e040408496a8e, type: 2}
   bossDead: {fileID: 11400000, guid: a3c42b6cf5d085743933366ad9e52b99, type: 2}
   bossAngry: {fileID: 11400000, guid: 49819369eccca2a4bb182c9c29ee539e, type: 2}
+  currentHP: 0
+  maximumHP: 0
 --- !u!95 &1265268348520838779
 Animator:
   serializedVersion: 3

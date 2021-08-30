@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     [Header("Values")]
     public float SPEED;
     [SerializeField]
-    IntValue currentCharge;
+    ProgressionObject saveFile;
 
     [Header("Prefabs")]
     public GameObject projectile;
@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
     void Fire()
     {
-        if (currentCharge.Value > 0)
+        if (saveFile.CurCharge > 0)
         {
             FireEvent.Raise();
             Instantiate(projectile, transform.position, Quaternion.identity);

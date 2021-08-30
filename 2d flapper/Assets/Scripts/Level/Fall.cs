@@ -7,8 +7,6 @@ public class Fall : MonoBehaviour
     [Header("Events")]
     [SerializeField]
     SOEvents.VoidEvent PlayerDead;
-    [SerializeField]
-    SOEvents.VoidEvent StopGame;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -2,14 +2,13 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 32
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c61571fede63b549a335252d8c118c1, type: 3}
-  m_Name: INT CurrentScore
+  m_Script: {fileID: 11500000, guid: bade319adc6cf5941bd61c744c97d2f0, type: 3}
+  m_Name: NewGameSaveProgression
   m_EditorClassIdentifier: 
-  value: 0

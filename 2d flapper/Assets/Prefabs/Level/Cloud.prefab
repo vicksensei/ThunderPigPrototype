@@ -48,7 +48,7 @@ MonoBehaviour:
   ScrollSpeed: {fileID: 11400000, guid: 203579a5f72405248a6063717e3d4de9, type: 2}
   gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
   canScrollNow: {fileID: 11400000, guid: 71323737e81742a4daf22109c12cb10f, type: 2}
-  Difficulty: {fileID: 11400000, guid: abdf43cd04b16b24688a81fccbdbae22, type: 2}
+  SaveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
   isEnemy: 0
 --- !u!114 &8585926066511522514
 MonoBehaviour:

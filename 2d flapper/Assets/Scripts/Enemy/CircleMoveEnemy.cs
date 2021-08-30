@@ -12,7 +12,7 @@ public class CircleMoveEnemy : MonoBehaviour
     [SerializeField]
     FloatValue RotateRadius;
     [SerializeField]
-    FloatValue Difficulty;
+    ProgressionObject saveFile;
 
     [Header("Parameters")]
     [SerializeField]
@@ -44,9 +44,9 @@ public class CircleMoveEnemy : MonoBehaviour
         if(OrbitCenter == null) { OrbitCenter = transform.parent.transform; }
         center = OrbitCenter.position;
         currentRadius = 0f;
-        if(Difficulty.Value > 1)
+        if(saveFile.CurrentDifficulty > 1)
         {
-            currentSpeed += Difficulty.Value * .1f;
+            currentSpeed += saveFile.CurrentDifficulty * .1f;
         }
     }
 

@@ -9,8 +9,9 @@ public class GameStateManager : MonoBehaviour
     GameState gameState;
     [Header("Values")]
     [SerializeField]
-    FloatValue Difficulty;
-
+    ProgressionObject SaveFile;
+    [SerializeField]
+    ProgressionObject NewFile;
     GameState.State lastGameState;
 
     // Start is called before the first frame update
@@ -62,6 +63,12 @@ public class GameStateManager : MonoBehaviour
         gameState.state = GameState.State.BossKilled;
         Debug.Log("Gamestate: " + gameState.state);
         Time.timeScale = 0;
-        Difficulty.Value += 1;
+        SaveFile.CurrentDifficulty += 1;
     }
+
+    public void StartNewGame()
+    {
+        SaveFile = Instantiate(NewFile);
+    }
+
 }

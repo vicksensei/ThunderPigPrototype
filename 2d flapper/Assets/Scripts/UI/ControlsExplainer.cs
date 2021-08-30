@@ -17,6 +17,11 @@ public class ControlsExplainer : MonoBehaviour
     [SerializeField]
     SOEvents.VoidEvent backButton;
 
+    private void OnEnable()
+    {
+        Time.timeScale = 1;
+    }
+
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))

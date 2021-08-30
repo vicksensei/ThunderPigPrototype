@@ -15,12 +15,12 @@ public class projectile : MonoBehaviour
     [SerializeField]
     bool isFromPlayer;
     [SerializeField]
-    IntValue pierceCount;
+    ProgressionObject saveFile;
     int piercedSoFar;
 
     public void Awake()
     {
-        piercedSoFar = pierceCount.Value;
+        piercedSoFar = saveFile.PierceCount;
     }
     private void FixedUpdate()
     {

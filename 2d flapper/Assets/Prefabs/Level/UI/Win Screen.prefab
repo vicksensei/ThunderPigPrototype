@@ -936,7 +936,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 6991290111624221956}
-  scoreObject: {fileID: 11400000, guid: 57c262c3682d6ee4e9200a069f5b6956, type: 2}
+  saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
+  isHighScore: 0
 --- !u!1 &6991290112213180827
 GameObject:
   m_ObjectHideFlags: 0

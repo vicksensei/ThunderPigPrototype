@@ -6,15 +6,13 @@ public class ScoreManager : MonoBehaviour
 {
     [Header("Value Objects")]
     [SerializeField]
-    IntValue score;
-    [SerializeField]
-    IntValue hiScore;
-    [SerializeField]
     IntValue waspBossScore;
     [SerializeField]
-    FloatValue Difficulty;
-    [SerializeField]
     GameState gameState;
+    [SerializeField]
+    ProgressionObject newSaveFile;
+    [SerializeField]
+    ProgressionObject curSavefile;
 
     [Header("Events")]
     [SerializeField]
@@ -26,27 +24,27 @@ public class ScoreManager : MonoBehaviour
 
     public void ResetScore()
     {
-        score.Value = 0;
+        curSavefile.Clone(newSaveFile);
         ScoreChanged.Raise();
-        Difficulty.Value = 1;
+
         Debug.Log("Score Reset");
     }
     public void AddToScore(int amount)
     {
-        score.Value += amount;
+        curSavefile.CurScore += amount;
         ScoreChanged.Raise();
         SetHighScore();
-        if(score.Value >= (waspBossScore.Value * (int)Difficulty.Value) && gameState.state != GameState.State.BossFighting)
+        if(curSavefile.CurScore >= (waspBossScore.Value * (int)curSavefile.CurrentDifficulty) && gameState.state != GameState.State.BossFighting)
         {
-            Debug.Log("Goal reached: "+ (waspBossScore.Value * (int)Difficulty.Value));
+            Debug.Log("Goal reached: "+ (waspBossScore.Value * (int)curSavefile.CurrentDifficulty));
             waspBossTime.Raise();
         }
     }
     public void SetHighScore()
     {
-        if(score.Value > hiScore.Value)
+        if(curSavefile.CurScore > curSavefile.HighScore)
         {
-            hiScore.Value = score.Value;
+            curSavefile.HighScore = curSavefile.CurScore;
             HiScoreChanged.Raise();
         }
     }

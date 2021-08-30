@@ -7,14 +7,9 @@ public class PlayerChargeManager : MonoBehaviour
 
     [Header("Value Objects")]
     [SerializeField]
-    IntValue CurrentCharge;
-    [SerializeField]
-    IntValue MaxCharge;
-    [SerializeField]
     IntValue CurrentFlaps;
     [SerializeField]
-    IntValue FlapsToCharge;
-
+    ProgressionObject SaveFile;
 
     [Header("Events")]
     [SerializeField]
@@ -31,7 +26,7 @@ public class PlayerChargeManager : MonoBehaviour
 
     private void Awake()
     {
-        CurrentCharge.Value = MaxCharge.Value;
+        SaveFile.CurCharge = SaveFile.MaxCharge;
         CurrentFlaps.Value = 0;
         ChargeChangedEvent.Raise();
     }
@@ -39,39 +34,39 @@ public class PlayerChargeManager : MonoBehaviour
     public void OnFlap()
     {
         CurrentFlaps.Value++;
-        if (CurrentFlaps.Value == FlapsToCharge.Value)
+        if (CurrentFlaps.Value == SaveFile.FlapsToCharge)
         {
-            if(CurrentCharge.Value< MaxCharge.Value)
+            if(SaveFile.CurCharge < SaveFile.MaxCharge)
             {
                 GainEnergy();
             }
             else
             {
-                CurrentFlaps.Value = FlapsToCharge.Value - 1;
+                CurrentFlaps.Value = SaveFile.FlapsToCharge - 1;
             }
         }
     }
 
     public void GainEnergy()
     {
-        CurrentCharge.Value++;
+        SaveFile.CurCharge++;
         CurrentFlaps.Value = 0;
         ChargeChangedEvent.Raise();
-        //Instantiate(EnergyPotionEffect, transform);
     }
 
     public void UseEnergyPot()
     {
-        if (CurrentCharge.Value < MaxCharge.Value)
+        if (SaveFile.CurCharge < SaveFile.MaxCharge)
         {
             GainEnergy();
         }
     }
+
     public void FillEnergy()
     {
-        if (CurrentCharge.Value != MaxCharge.Value)
+        if (SaveFile.CurCharge != SaveFile.MaxCharge)
         {
-            CurrentCharge.Value = MaxCharge.Value;
+            SaveFile.CurCharge = SaveFile.MaxCharge;
             Instantiate(EnergyPotionEffect, transform);
             ChargeChangedEvent.Raise();
         }
@@ -79,9 +74,9 @@ public class PlayerChargeManager : MonoBehaviour
 
     public void OnShoot()
     {
-        if (CurrentCharge.Value > 0)
+        if (SaveFile.CurCharge > 0)
         {
-            CurrentCharge.Value--;
+            SaveFile.CurCharge--;
             ChargeChangedEvent.Raise();
         }
     }
