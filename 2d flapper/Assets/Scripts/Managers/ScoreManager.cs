@@ -10,8 +10,6 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]
     GameState gameState;
     [SerializeField]
-    ProgressionObject newSaveFile;
-    [SerializeField]
     ProgressionObject curSavefile;
 
     [Header("Events")]

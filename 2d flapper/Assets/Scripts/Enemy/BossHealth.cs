@@ -31,6 +31,12 @@ public class BossHealth : MonoBehaviour
     SOEvents.VoidEvent bossAngry;
 
 
+    [Header("Prefabs")]
+    [SerializeField]
+    GameObject DestroyParticle;
+    [SerializeField]
+    GameObject ImmuneParticle;
+
     bool hasSuperArmor;
     bool bloodied = false;
     bool enraged = false;
@@ -94,7 +100,10 @@ public class BossHealth : MonoBehaviour
         }
         UpdateHP();
     }
-
+    void ShowImmuneParticle()
+    {
+        Instantiate(ImmuneParticle, transform.position, Quaternion.identity);
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Projectile")
@@ -107,6 +116,15 @@ public class BossHealth : MonoBehaviour
             else
             {
                 TakeDamage(1);
+            }
+
+            if (hasSuperArmor)
+            {
+                ShowImmuneParticle();
+            }
+            else
+            {
+                collision.gameObject.GetComponent<projectile>().ShowHitParticle();
             }
 
             Destroy(collision.gameObject);

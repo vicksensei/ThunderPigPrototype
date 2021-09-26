@@ -286,7 +286,11 @@ MonoBehaviour:
   projectileCol: {fileID: 11400000, guid: 8823f0ac1e1e609408b5aecbcbe912fd, type: 2}
   PlayerCol: {fileID: 11400000, guid: b96d4bc489324dc4ab044c0b53718458, type: 2}
   AnyCol: {fileID: 11400000, guid: d4931be8ee4df434dac83bd452cc9faa, type: 2}
+  GiveXP: {fileID: 11400000, guid: 3aecc6ecd0791e844bc6a2cb2464db76, type: 2}
   playerIsImmune: {fileID: 11400000, guid: e5ff2e634e9e1334ca25860d4b588faf, type: 2}
+  ExpValue: 1
+  DestroyParticle: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
+  ImmuneParticle: {fileID: 0}
 --- !u!114 &2865174725915060964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,6 +362,10 @@ MonoBehaviour:
     ubound: 0
   - prefab: {fileID: 7552194847489676723, guid: 3c8897b9edb276b48b076cac5f473017, type: 3}
     chance: 0.08
+    lbound: 0
+    ubound: 0
+  - prefab: {fileID: 8823283016118893942, guid: 3a3cedd5ba52f6449817416e95e26a89, type: 3}
+    chance: 0.16
     lbound: 0
     ubound: 0
   saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}

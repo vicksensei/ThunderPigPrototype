@@ -119,7 +119,11 @@ MonoBehaviour:
   projectileCol: {fileID: 11400000, guid: 8823f0ac1e1e609408b5aecbcbe912fd, type: 2}
   PlayerCol: {fileID: 11400000, guid: b96d4bc489324dc4ab044c0b53718458, type: 2}
   AnyCol: {fileID: 11400000, guid: d4931be8ee4df434dac83bd452cc9faa, type: 2}
+  GiveXP: {fileID: 11400000, guid: 3aecc6ecd0791e844bc6a2cb2464db76, type: 2}
   playerIsImmune: {fileID: 11400000, guid: e5ff2e634e9e1334ca25860d4b588faf, type: 2}
+  ExpValue: 1
+  DestroyParticle: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
+  ImmuneParticle: {fileID: 0}
 --- !u!114 &1991143893718532512
 MonoBehaviour:
   m_ObjectHideFlags: 0
