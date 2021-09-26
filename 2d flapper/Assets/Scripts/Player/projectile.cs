@@ -17,6 +17,10 @@ public class projectile : MonoBehaviour
     [SerializeField]
     ProgressionObject saveFile;
     int piercedSoFar;
+    [SerializeField]
+    Vector3 direction = Vector3.right;
+    [SerializeField]
+    bool isMoving = true;
 
     public void Awake()
     {
@@ -24,17 +28,13 @@ public class projectile : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (isFromPlayer)
+        if (isMoving)
         {
-            transform.position += Vector3.right * speed * Time.deltaTime;
-        }
-        else
-        {
-            transform.position -= Vector3.right * speed * Time.deltaTime;
+            transform.position += direction * speed * Time.deltaTime;
         }
     }
 
-    public void DestroyMe()
+    public void ShowHitParticle()
     {
         Instantiate(DestroyParticle, transform.position, Quaternion.identity);
     }
@@ -42,6 +42,7 @@ public class projectile : MonoBehaviour
     {
         if (isFromPlayer)
         {
+            ShowHitParticle();
             if (piercedSoFar <= 0)
             {
                 Destroy(gameObject);
