@@ -23,7 +23,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8158045317615551460}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.1034483, y: 1.1034483, z: 1.1034483}
   m_Children:
@@ -51,6 +51,7 @@ GameObject:
   - component: {fileID: 8158045317634784547}
   - component: {fileID: 8158045317634784546}
   - component: {fileID: 8158045317634784541}
+  - component: {fileID: 1215784419}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -161,9 +162,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8158045317634784543}
         m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
-        m_MethodName: ResetScore
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -199,6 +200,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SceneToLoad: 1
   LoadOnStart: 0
+--- !u!114 &1215784419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158045317634784543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 912189d8bc937824ead9891ed648d395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventToRaise: {fileID: 11400000, guid: 1bc53bbcc0bf3d747ac0f300437467f4, type: 2}
 --- !u!1 &8158045317657788554
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,6 +327,7 @@ GameObject:
   - component: {fileID: 8158045317918795476}
   - component: {fileID: 8158045317918795479}
   - component: {fileID: 8158045317918795478}
+  - component: {fileID: 5159585299311403201}
   m_Layer: 5
   m_Name: ControlsButton
   m_TagString: Untagged
@@ -423,9 +438,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIShowHide, Assembly-CSharp
-        m_MethodName: Show
+      - m_Target: {fileID: 5159585299311403201}
+        m_TargetAssemblyTypeName: RaiseEvent, Assembly-CSharp
+        m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -435,6 +450,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5159585299311403201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8158045317918795475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 912189d8bc937824ead9891ed648d395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventToRaise: {fileID: 11400000, guid: 197cabde0ab98a145acf7275c98aef50, type: 2}
 --- !u!1 &8158045318167366167
 GameObject:
   m_ObjectHideFlags: 0

@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 6623608219335119765}
   - component: {fileID: 62814206431177336}
   - component: {fileID: 8706044364247731564}
-  - component: {fileID: 603252188518452281}
+  - component: {fileID: 6573110916661158062}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -202,9 +202,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 603252188518452281}
-        m_TargetAssemblyTypeName: BacktoMenu, Assembly-CSharp
-        m_MethodName: BackToMenu
+      - m_Target: {fileID: 6573110916661158062}
+        m_TargetAssemblyTypeName: RaiseEvent, Assembly-CSharp
+        m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -214,7 +214,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &603252188518452281
+--- !u!114 &6573110916661158062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,10 +223,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4803203321017745211}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c8ef542b67c921458c3ad4061868ca9, type: 3}
+  m_Script: {fileID: 11500000, guid: 912189d8bc937824ead9891ed648d395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuEvent: {fileID: 11400000, guid: 03c347d9f5d0b0641976f1fe1e107a02, type: 2}
+  EventToRaise: {fileID: 11400000, guid: 03c347d9f5d0b0641976f1fe1e107a02, type: 2}
 --- !u!1 &5182767059448839052
 GameObject:
   m_ObjectHideFlags: 0

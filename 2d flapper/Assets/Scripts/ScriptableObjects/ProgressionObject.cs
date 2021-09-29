@@ -41,6 +41,12 @@ public class ProgressionObject : ScriptableObject
     [SerializeField]
     int curScore;
 
+    public SkillDb skillsDB;
+
+    [SerializeField]
+    int skillpoints;
+
+    List<Skill> skillsList;
 
     public int ExperiencePoints { get => experiencePoints; set => experiencePoints = value; }
     public int Currency { get => currency; set => currency = value; }
@@ -56,6 +62,8 @@ public class ProgressionObject : ScriptableObject
     public int FlapsToCharge { get => flapsToCharge; set => flapsToCharge = value; }
     public int PierceCount { get => pierceCount; set => pierceCount = value; }
     public int NumDrops { get => numDrops; set => numDrops = value; }
+    public int Skillpoints { get => skillpoints; set => skillpoints = value; }
+    public List<Skill> SkillsList { get => skillsList; set => skillsList = value; }
 
     private void OnEnable()
     {
@@ -64,37 +72,36 @@ public class ProgressionObject : ScriptableObject
 
     public void Clone(ProgressionObject original)
     {
+        experiencePoints= original.experiencePoints;
+        level= original.level;
+
+        currency= original.currency;
     
-     experiencePoints= original.experiencePoints;
-     level= original.level;
+        maxHP= original.maxHP;
+        curHP= original.curHP;
 
-     currency= original.currency;
-    
-    
-     maxHP= original.maxHP;
-     curHP= original.curHP;
+        maxCharge= original.maxCharge;
+        curCharge= original.curCharge;
+        flapsToCharge= original.flapsToCharge;
 
-     maxCharge= original.maxCharge;
-     curCharge= original.curCharge;
-     flapsToCharge= original.flapsToCharge;
+        pierceCount= original.pierceCount;
+        numDrops= original.numDrops;
 
-    
-     pierceCount= original.pierceCount;
-     numDrops= original.numDrops;
+        furthestDifficulty= original.furthestDifficulty;
+        currentDifficulty= original.currentDifficulty;
 
-     furthestDifficulty= original.furthestDifficulty;
-     currentDifficulty= original.currentDifficulty;
+        highScore= original.highScore;
+        curScore= original.curScore;
 
-     highScore= original.highScore;
-     curScore= original.curScore;
-}
+        SkillsList = skillsDB.skillsList;
+        skillpoints = original.skillpoints;
+    }
     public void Load(SaveFile saveFile)
     {
         experiencePoints = saveFile.experiencePoints;
         level = saveFile.level;
 
         currency = saveFile.currency;
-
 
         maxHP = saveFile.maxHP;
         curHP = saveFile.curHP;
@@ -113,6 +120,23 @@ public class ProgressionObject : ScriptableObject
         highScore = saveFile.highScore;
         curScore = saveFile.curScore;
 
+        SkillsList.Clear();
+        SkillsList.AddRange(saveFile.skillsList);
+        skillpoints = saveFile.skillPoints;
+
     }
+
+    public Dictionary<string, Skill> GetSkillDict()
+    {
+        Dictionary<string, Skill> Temp = new Dictionary<string, Skill> { };
+
+        foreach (Skill skill in SkillsList)
+        {
+            Temp.Add(skill.skillName, skill);
+        }
+
+        return Temp;
+    }
+
 
 }

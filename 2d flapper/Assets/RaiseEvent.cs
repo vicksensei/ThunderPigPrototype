@@ -6,7 +6,7 @@ public class RaiseEvent : MonoBehaviour
 {
     public VoidEvent EventToRaise;
 
-    public void OnButton()
+    public void Raise()
     {
         EventToRaise.Raise();
     }

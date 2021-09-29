@@ -425,8 +425,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8307426856424567920}
-        m_TargetAssemblyTypeName: ResetButton, Assembly-CSharp
-        m_MethodName: OnButton
+        m_TargetAssemblyTypeName: RaiseEvent, Assembly-CSharp
+        m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -539,8 +539,10 @@ GameObject:
   - component: {fileID: 2277454068765650237}
   - component: {fileID: 9105283906534784157}
   - component: {fileID: 9105283906534784158}
+  - component: {fileID: 134187665089254863}
+  - component: {fileID: 4622295124266792934}
   m_Layer: 0
-  m_Name: Restart
+  m_Name: Reset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -593,6 +595,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameEvent: {fileID: 11400000, guid: 4c6cd919a769dae4daf4b7f8164fba82, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9105283906534784157}
+        m_TargetAssemblyTypeName: UIShowHide, Assembly-CSharp
+        m_MethodName: Show
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &134187665089254863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9105283906534784159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 197cabde0ab98a145acf7275c98aef50, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9105283906534784157}
+        m_TargetAssemblyTypeName: UIShowHide, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4622295124266792934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9105283906534784159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 49e2fb3245ed9a84fa21ad8bc240ba9b, type: 2}
   unityEventResponse:
     m_PersistentCalls:
       m_Calls:

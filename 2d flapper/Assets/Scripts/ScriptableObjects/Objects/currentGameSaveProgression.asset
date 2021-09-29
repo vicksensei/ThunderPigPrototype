@@ -12,3 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bade319adc6cf5941bd61c744c97d2f0, type: 3}
   m_Name: currentGameSaveProgression
   m_EditorClassIdentifier: 
+  experiencePoints: 0
+  currency: 0
+  level: 1
+  maxHP: 10
+  maxCharge: 10
+  curHP: 10
+  curCharge: 10
+  flapsToCharge: 1
+  pierceCount: 0
+  numDrops: 1
+  furthestDifficulty: 0
+  currentDifficulty: 1
+  highScore: 0
+  curScore: 0
+  skillsDB: {fileID: 11400000, guid: 2f18e08705ee6434f8f53c63ff7d77a8, type: 2}
+  skillpoints: 0

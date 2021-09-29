@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41685f24783cb94a95bbea2aa3fd6de, type: 3}
+  m_Name: New Skill Database
+  m_EditorClassIdentifier: 
+  skillsList:
+  - skillName: Health
+    isLocked: 0
+    points: 0
+    maxPoints: 9
+    description: Increases health by number of poins spent.
+    skillPreReqs: []
+  - skillName: Charge
+    isLocked: 0
+    points: 0
+    maxPoints: 9
+    description: Increases max charges by number of poins spent.
+    skillPreReqs: []
+  - skillName: Damage
+    isLocked: 0
+    points: 0
+    maxPoints: 9
+    description: Increases Damage done by number of poins spent.
+    skillPreReqs: []
+  - skillName: ' Charge Speed'
+    isLocked: 1
+    points: 0
+    maxPoints: 2
+    description: Reduces flaps to charge by points spent
+    skillPreReqs:
+    - SkillName: Charge
+      requiredPoints: 3
+  - skillName: Heart Power
+    isLocked: 1
+    points: 0
+    maxPoints: 3
+    description: Health power ups give back more health.
+    skillPreReqs:
+    - SkillName: Health
+      requiredPoints: 3
+  skillsIconsList:
+  - skillName: Health
+    skillIcon: {fileID: 21300000, guid: 646b0215cb6d51349b58d35249df531d, type: 3}
+  - skillName: Charge
+    skillIcon: {fileID: 21300000, guid: 4cccb2ac59ea7044e99c4c581fd534b3, type: 3}
+  - skillName: Damage
+    skillIcon: {fileID: 21300000, guid: 9e73721c523c23b4b8ea6f141406bc6d, type: 3}
+  - skillName: Charge Speed
+    skillIcon: {fileID: 21300000, guid: 4cccb2ac59ea7044e99c4c581fd534b3, type: 3}
+  - skillName: Heart Power
+    skillIcon: {fileID: 21300000, guid: 646b0215cb6d51349b58d35249df531d, type: 3}

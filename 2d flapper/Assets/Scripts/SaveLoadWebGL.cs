@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -83,7 +83,7 @@ public class SaveLoadWebGL : MonoBehaviour
     {
         SaveFile gameDetails = null;
         string dataPath = string.Format("{0}/SaveFile.dat", Application.persistentDataPath);
-
+        Debug.Log("Data path: " + dataPath);
         try
         {
             if (File.Exists(dataPath))
@@ -95,10 +95,22 @@ public class SaveLoadWebGL : MonoBehaviour
                 fileStream.Close();
                 PlatformSafeMessage("Save successfully loaded!");
             }
+            else
+            {
+                PlatformSafeMessage("Failed to Load: No save file found.");
+                saveFile.Clone(newSave);
+                Save(new SaveFile(saveFile));
+                PlatformSafeMessage("Creating new save file instead.");
+                gameLoaded.Raise();
+            }
         }
         catch (Exception e)
         {
             PlatformSafeMessage("Failed to Load: " + e.Message);
+            saveFile.Clone(newSave);
+            Save(new SaveFile(saveFile));
+            PlatformSafeMessage("Creating new save file instead");
+            gameLoaded.Raise();
         }
 
         saveFile.Load(gameDetails);
@@ -152,6 +164,9 @@ public class SaveFile
     public int flapsToCharge;
     public int pierceCount;
     public int numDrops;
+    public int skillPoints;
+    [SerializeField]
+    public Skill[] skillsList;
 
     public SaveFile(ProgressionObject saveFile)
     {
@@ -171,9 +186,10 @@ public class SaveFile
         highScore = saveFile.HighScore;
         curScore = saveFile.CurScore;
 
-
         flapsToCharge = saveFile.FlapsToCharge;
         pierceCount = saveFile.PierceCount;
         numDrops = saveFile.NumDrops;
+        skillPoints = saveFile.Skillpoints;
+        skillsList = saveFile.SkillsList.ToArray();
     }
 }

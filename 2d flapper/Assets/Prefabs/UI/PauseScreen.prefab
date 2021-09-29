@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 6344737332791602308}
   - component: {fileID: 6344737332791602309}
   - component: {fileID: 6344737332791602306}
-  - component: {fileID: 6344737332791602307}
+  - component: {fileID: 3432040633363885025}
   m_Layer: 5
   m_Name: ContinueButton
   m_TagString: Untagged
@@ -273,9 +273,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6344737332791602307}
-        m_TargetAssemblyTypeName: ContinueButton, Assembly-CSharp
-        m_MethodName: Continue
+      - m_Target: {fileID: 3432040633363885025}
+        m_TargetAssemblyTypeName: RaiseEvent, Assembly-CSharp
+        m_MethodName: Raise
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -285,7 +285,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6344737332791602307
+--- !u!114 &3432040633363885025
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,10 +294,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6344737332791602305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d528f0876dbb814eb63c9130ca35f75, type: 3}
+  m_Script: {fileID: 11500000, guid: 912189d8bc937824ead9891ed648d395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ContinueEvent: {fileID: 11400000, guid: c4bfa94644b14ed498a1cd03485113fd, type: 2}
+  EventToRaise: {fileID: 11400000, guid: c4bfa94644b14ed498a1cd03485113fd, type: 2}
 --- !u!1 &6344737333454205564
 GameObject:
   m_ObjectHideFlags: 0

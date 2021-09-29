@@ -33,7 +33,6 @@ public class PlayerHealthManager : MonoBehaviour
         HealthChangedEvent.Raise();
         if (SaveFile.CurHP == 0)
         {
-            //StopGameEvent.Raise();
             PlayerDeadEvent.Raise();
             Time.timeScale = 0;
         }
