@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6632819881611852148}
   - component: {fileID: 8181268570779137486}
   - component: {fileID: 4448611934706126619}
+  - component: {fileID: 5771399811199852684}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -49,7 +50,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waspBossScore: {fileID: 11400000, guid: bf206f2b31ba4da4bb3fed021ea24736, type: 2}
   gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
-  newSaveFile: {fileID: 11400000, guid: a55a6e1d29a0d4b4ab16a1c07a6196aa, type: 2}
   curSavefile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
   ScoreChanged: {fileID: 11400000, guid: 18ed13bde51ec564a899675c8e5c4197, type: 2}
   HiScoreChanged: {fileID: 11400000, guid: 1b90eb27f1781c84b858e5f27e164f38, type: 2}
@@ -157,6 +157,34 @@ MonoBehaviour:
       - m_Target: {fileID: 6632819881611852145}
         m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
         m_MethodName: SetHighScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5771399811199852684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6632819881611852143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 1bc53bbcc0bf3d747ac0f300437467f4, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6632819881611852145}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: ResetScore
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

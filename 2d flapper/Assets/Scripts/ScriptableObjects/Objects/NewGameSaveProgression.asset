@@ -19,7 +19,7 @@ MonoBehaviour:
   maxCharge: 3
   curHP: 3
   curCharge: 3
-  flapsToCharge: 1
+  flapsToCharge: 3
   pierceCount: 0
   numDrops: 1
   furthestDifficulty: 0
@@ -28,3 +28,4 @@ MonoBehaviour:
   curScore: 0
   skillsDB: {fileID: 11400000, guid: 2f18e08705ee6434f8f53c63ff7d77a8, type: 2}
   skillpoints: 0
+  skillsList: []

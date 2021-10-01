@@ -20,4 +20,8 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene(SceneToLoad);
     }
+
+    void Load()
+    {
+    }
 }

@@ -12,19 +12,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bade319adc6cf5941bd61c744c97d2f0, type: 3}
   m_Name: currentGameSaveProgression
   m_EditorClassIdentifier: 
-  experiencePoints: 0
+  experiencePoints: 5
   currency: 0
   level: 1
-  maxHP: 10
-  maxCharge: 10
-  curHP: 10
-  curCharge: 10
-  flapsToCharge: 1
+  maxHP: 3
+  maxCharge: 3
+  curHP: 1
+  curCharge: 1
+  flapsToCharge: 3
   pierceCount: 0
   numDrops: 1
   furthestDifficulty: 0
   currentDifficulty: 1
-  highScore: 0
+  highScore: 5
   curScore: 0
   skillsDB: {fileID: 11400000, guid: 2f18e08705ee6434f8f53c63ff7d77a8, type: 2}
   skillpoints: 0
+  skillsList:
+  - skillName: Health
+    isLocked: 0
+    points: 0
+    maxPoints: 9
+    description: Increases health by number of poins spent.
+    skillPreReqs: []
+  - skillName: Charge
+    isLocked: 0
+    points: 0
+    maxPoints: 9
+    description: Increases max charges by number of poins spent.
+    skillPreReqs: []
+  - skillName: Damage
+    isLocked: 0
+    points: 0
+    maxPoints: 9
+    description: Increases Damage done by number of poins spent.
+    skillPreReqs: []
+  - skillName: Charge Speed
+    isLocked: 1
+    points: 0
+    maxPoints: 2
+    description: Reduces flaps to charge by points spent
+    skillPreReqs:
+    - SkillName: Charge
+      requiredPoints: 3
+  - skillName: Heart Power
+    isLocked: 1
+    points: 0
+    maxPoints: 3
+    description: Health power ups give back more health.
+    skillPreReqs:
+    - SkillName: Health
+      requiredPoints: 3
+  - skillName: Charge Power
+    isLocked: 1
+    points: 0
+    maxPoints: 3
+    description: Charge power ups give more charge
+    skillPreReqs:
+    - SkillName: Charge
+      requiredPoints: 3
+  - skillName: Lightning Power
+    isLocked: 1
+    points: 0
+    maxPoints: 3
+    description: Lightning ball lasts longer
+    skillPreReqs:
+    - SkillName: Damage
+      requiredPoints: 3
+  - skillName: Pierce
+    isLocked: 1
+    points: 0
+    maxPoints: 3
+    description: Projectiles pierce through enemies.
+    skillPreReqs:
+    - SkillName: Damage
+      requiredPoints: 3

@@ -20,6 +20,7 @@ public class ExperienceManager : MonoBehaviour
             LevelUp.Raise();
             PO.CurHP = PO.MaxHP;
             PO.CurCharge = PO.MaxCharge;
+            PO.Skillpoints++;
         }
     }
 }

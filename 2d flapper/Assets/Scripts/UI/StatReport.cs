@@ -14,6 +14,10 @@ public class StatReport : MonoBehaviour
     Text Charge;
     [SerializeField]
     Text MHP;
+    [SerializeField]
+    Text SP;
+    [SerializeField]
+    Button button;
 
     [SerializeField]
     ProgressionObject saveFile;
@@ -29,5 +33,8 @@ public class StatReport : MonoBehaviour
         Level.text = saveFile.Level.ToString();
         Charge.text = saveFile.MaxCharge.ToString();
         MHP.text = saveFile.MaxHP.ToString();
+        SP.text = saveFile.Skillpoints.ToString();
+
+        button.gameObject.SetActive(saveFile.Skillpoints > 0);
     }
 }

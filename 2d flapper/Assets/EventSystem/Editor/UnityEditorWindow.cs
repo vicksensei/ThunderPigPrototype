@@ -92,7 +92,7 @@ namespace SOEvents
 
             string filePath, fileContent;
 
-            filePath = Application.dataPath + "/Scripts/EventSystem/BaseScripts/" + template + ".txt";
+            filePath = Application.dataPath + "/EventSystem/Templates/" + template + ".txt";
 
             try
             {
@@ -120,7 +120,7 @@ namespace SOEvents
             {
                 file = file.Replace("[Name]", sName);
                 file = file.Replace("[type]", sType);
-                path = Application.dataPath + "/Scripts/EventSystem/" + folder + "/" + outputName + ".cs";
+                path = Application.dataPath + "/EventSystem/" + folder + "/" + outputName + ".cs";
                 if (!File.Exists(path))
                     using (StreamWriter outputFile = new StreamWriter(path))
                     {

@@ -39,9 +39,9 @@ public class PlayerHealthManager : MonoBehaviour
     }
     public void IncreaseHealth()
     {
-        if (SaveFile.CurHP < SaveFile.MaxHP)
+        if (SaveFile.CurHP < SaveFile.MaxHP + SaveFile.GetSkillDict()["Health"].points)
         {
-            SaveFile.CurHP++;
+            SaveFile.CurHP+=1 +(1*SaveFile.GetSkillDict()["Heart Power"].points);
             HealthChangedEvent.Raise();
             Instantiate(PotionEffect, transform);
         }
@@ -49,10 +49,8 @@ public class PlayerHealthManager : MonoBehaviour
 
     public void ResetHealth()
     {
-        if (SaveFile.CurrentDifficulty == 1)
-        {
-            SaveFile.CurHP = SaveFile.MaxHP;
-        }
+
+        SaveFile.CurHP = SaveFile.MaxHP +SaveFile.GetSkillDict()["Health"].points;
         HealthChangedEvent.Raise();
     }
 }

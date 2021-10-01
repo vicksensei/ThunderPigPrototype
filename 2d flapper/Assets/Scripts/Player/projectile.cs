@@ -21,10 +21,13 @@ public class projectile : MonoBehaviour
     Vector3 direction = Vector3.right;
     [SerializeField]
     bool isMoving = true;
+    [SerializeField]
+    bool Destroyable = true;
+
 
     public void Awake()
     {
-        piercedSoFar = saveFile.PierceCount;
+        piercedSoFar = saveFile.PierceCount + saveFile.GetSkillDict()["Pierce"].points;
     }
     private void FixedUpdate()
     {
@@ -40,17 +43,20 @@ public class projectile : MonoBehaviour
     }
     public void TryToDestroy()
     {
-        if (isFromPlayer)
+        if (Destroyable)
         {
-            ShowHitParticle();
-            if (piercedSoFar <= 0)
+            if (isFromPlayer)
             {
-                Destroy(gameObject);
-            }
-            else
-            {
-                piercedSoFar--;
+                ShowHitParticle();
+                if (piercedSoFar <= 0)
+                {
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    piercedSoFar--;
 
+                }
             }
         }
     }

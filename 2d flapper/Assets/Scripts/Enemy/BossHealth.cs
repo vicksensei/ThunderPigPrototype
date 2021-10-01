@@ -111,11 +111,11 @@ public class BossHealth : MonoBehaviour
                 projectileCol.Raise();
             if (collision.GetComponent<projectile>() != null)
             {
-                TakeDamage(collision.GetComponent<projectile>().damage);
+                TakeDamage(collision.GetComponent<projectile>().damage + saveFile.GetSkillDict()["Damage"].points);
             }
             else
             {
-                TakeDamage(1);
+                TakeDamage(1 + saveFile.GetSkillDict()["Damage"].points);
             }
 
             if (hasSuperArmor)

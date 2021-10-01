@@ -46,6 +46,7 @@ public class ProgressionObject : ScriptableObject
     [SerializeField]
     int skillpoints;
 
+    [SerializeField]
     List<Skill> skillsList;
 
     public int ExperiencePoints { get => experiencePoints; set => experiencePoints = value; }
@@ -93,7 +94,12 @@ public class ProgressionObject : ScriptableObject
         highScore= original.highScore;
         curScore= original.curScore;
 
-        SkillsList = skillsDB.skillsList;
+        skillsList = new List<Skill>();
+        for (int i = 0; i < original.skillsDB.skillsList.Count; i++)
+        {
+            skillsList.Add(new Skill(original.skillsDB.skillsList[i]));
+        }
+
         skillpoints = original.skillpoints;
     }
     public void Load(SaveFile saveFile)
@@ -110,7 +116,6 @@ public class ProgressionObject : ScriptableObject
         curCharge = saveFile.curCharge;
         flapsToCharge = saveFile.flapsToCharge;
 
-
         pierceCount = saveFile.pierceCount;
         numDrops = saveFile.numDrops;
 
@@ -120,8 +125,7 @@ public class ProgressionObject : ScriptableObject
         highScore = saveFile.highScore;
         curScore = saveFile.curScore;
 
-        SkillsList.Clear();
-        SkillsList.AddRange(saveFile.skillsList);
+        skillsList = new List<Skill>(saveFile.skillsList);
         skillpoints = saveFile.skillPoints;
 
     }
@@ -137,6 +141,4 @@ public class ProgressionObject : ScriptableObject
 
         return Temp;
     }
-
-
 }

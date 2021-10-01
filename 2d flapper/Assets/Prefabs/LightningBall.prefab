@@ -4818,7 +4818,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1392591414626708601}
   - component: {fileID: 7667646120111426722}
-  - component: {fileID: 8764576153207364898}
+  - component: {fileID: 5722641682429794731}
   m_Layer: 0
   m_Name: LightningBall
   m_TagString: Projectile
@@ -4860,7 +4860,7 @@ MonoBehaviour:
   OrbitCenter: {fileID: 0}
   followOrbiter: 1
   gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
---- !u!114 &8764576153207364898
+--- !u!114 &5722641682429794731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4869,9 +4869,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5848869156716931815}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a08c7b030a55c874092e7ddafde93798, type: 3}
+  m_Script: {fileID: 11500000, guid: e73ee762aeda4da4e8aae812b757a528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PO: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
   timer: 3
 --- !u!1 &5964373592927645554
 GameObject:
@@ -14667,6 +14668,7 @@ MonoBehaviour:
   saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
   direction: {x: 0, y: 0, z: 0}
   isMoving: 0
+  Destroyable: 0
 --- !u!50 &3854062290882291914
 Rigidbody2D:
   serializedVersion: 4

@@ -34,15 +34,15 @@ public class PlayerChargeManager : MonoBehaviour
     public void OnFlap()
     {
         CurrentFlaps.Value++;
-        if (CurrentFlaps.Value == SaveFile.FlapsToCharge)
+        if (CurrentFlaps.Value == SaveFile.FlapsToCharge - SaveFile.GetSkillDict()["Charge Speed"].points)
         {
-            if(SaveFile.CurCharge < SaveFile.MaxCharge)
+            if(SaveFile.CurCharge < SaveFile.MaxCharge + SaveFile.GetSkillDict()["Charge"].points)
             {
                 GainEnergy();
             }
             else
             {
-                CurrentFlaps.Value = SaveFile.FlapsToCharge - 1;
+                CurrentFlaps.Value = (SaveFile.FlapsToCharge - SaveFile.GetSkillDict()["Charge Speed"].points - 1);
             }
         }
     }
@@ -56,7 +56,7 @@ public class PlayerChargeManager : MonoBehaviour
 
     public void UseEnergyPot()
     {
-        if (SaveFile.CurCharge < SaveFile.MaxCharge)
+        if (SaveFile.CurCharge < SaveFile.MaxCharge + SaveFile.GetSkillDict()["Charge"].points)
         {
             GainEnergy();
         }
@@ -64,9 +64,14 @@ public class PlayerChargeManager : MonoBehaviour
 
     public void FillEnergy()
     {
-        if (SaveFile.CurCharge != SaveFile.MaxCharge)
+        int max = SaveFile.MaxCharge + SaveFile.GetSkillDict()["Charge"].points;
+        if (SaveFile.CurCharge != max)
         {
-            SaveFile.CurCharge = SaveFile.MaxCharge;
+            SaveFile.CurCharge += 3  + SaveFile.GetSkillDict()["Charge Power"].points;
+            if (SaveFile.CurCharge > max)
+            {
+                SaveFile.CurCharge = max;
+            }
             Instantiate(EnergyPotionEffect, transform);
             ChargeChangedEvent.Raise();
         }

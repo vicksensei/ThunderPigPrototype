@@ -620,6 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LightningBall: {fileID: 5848869156716931815, guid: f66fb09cb55aa79429f5e85c1017ae6d, type: 3}
+  PO: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
 --- !u!114 &978410578832430468
 MonoBehaviour:
   m_ObjectHideFlags: 0
