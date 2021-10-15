@@ -20,12 +20,7 @@ public class SaveLoadWebGL : MonoBehaviour
     SOEvents.VoidEvent gameReset;
     [SerializeField]
     SOEvents.VoidEvent gameLoaded;
-    
-    private void Start()
-    {
-        Load();
-    }
-       
+           
     void Save(SaveFile gameDetails)
     {
         string dataPath = string.Format("{0}/SaveFile.dat", Application.persistentDataPath);
@@ -51,11 +46,11 @@ public class SaveLoadWebGL : MonoBehaviour
             {
                 SyncFiles();
             }
-            PlatformSafeMessage("Saved Successfully!");
+           //PlatformSafeMessage("Saved Successfully!");
         }
         catch (Exception e)
         {
-            PlatformSafeMessage("Failed to Save: " + e.Message);
+            //PlatformSafeMessage("Failed to Save: " + e.Message);
         }
     }
 
@@ -93,23 +88,23 @@ public class SaveLoadWebGL : MonoBehaviour
 
                 gameDetails = (SaveFile)binaryFormatter.Deserialize(fileStream);
                 fileStream.Close();
-                PlatformSafeMessage("Save successfully loaded!");
+                //PlatformSafeMessage("Save successfully loaded!");
             }
             else
             {
-                PlatformSafeMessage("Failed to Load: No save file found.");
+                //PlatformSafeMessage("Failed to Load: No save file found.");
                 saveFile.Clone(newSave);
                 Save(new SaveFile(saveFile));
-                PlatformSafeMessage("Creating new save file instead.");
+                //PlatformSafeMessage("Creating new save file instead.");
                 gameLoaded.Raise();
             }
         }
         catch (Exception e)
         {
-            PlatformSafeMessage("Failed to Load: " + e.Message);
+            //PlatformSafeMessage("Failed to Load: " + e.Message);
             saveFile.Clone(newSave);
             Save(new SaveFile(saveFile));
-            PlatformSafeMessage("Creating new save file instead");
+            //PlatformSafeMessage("Creating new save file instead");
             gameLoaded.Raise();
         }
 
@@ -139,6 +134,10 @@ public class SaveLoadWebGL : MonoBehaviour
     {
         Save(new SaveFile(saveFile));
         //checkLoadButton();
+    }
+    public void OnLoadButton()
+    {
+        Load();
     }
 
 }

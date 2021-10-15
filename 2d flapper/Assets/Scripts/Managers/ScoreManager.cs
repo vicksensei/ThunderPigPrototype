@@ -28,7 +28,7 @@ public class ScoreManager : MonoBehaviour
         curSavefile.CurrentDifficulty = 1;
         ScoreChanged.Raise();
 
-        Debug.Log("Score Reset");
+        Debug.Log("Score Reset ");
     }
     public void AddToScore(int amount)
     {
@@ -36,7 +36,7 @@ public class ScoreManager : MonoBehaviour
         curSavefile.CurScore += amount;
         ScoreChanged.Raise();
         SetHighScore();
-        if(waspBossCounter >= waspBossScore.Value && gameState.state != GameState.State.BossFighting)
+        if (waspBossCounter >= waspBossScore.Value && gameState.state != GameState.State.BossFighting)
         {
             waspBossTime.Raise();
             curSavefile.CurrentDifficulty++;
@@ -44,13 +44,18 @@ public class ScoreManager : MonoBehaviour
     }
     public void SetHighScore()
     {
-        if(curSavefile.CurScore > curSavefile.HighScore)
+        if (curSavefile.CurScore > curSavefile.HighScore)
         {
             curSavefile.HighScore = curSavefile.CurScore;
             HiScoreChanged.Raise();
         }
     }
+    public void ReportScore()
+    {
+        ScoreChanged.Raise();
 
+        Debug.Log("Score updated: " + curSavefile.CurScore);
+    }
     public void AddOne()
     {
         AddToScore(1);

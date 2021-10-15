@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 5773908390360955117}
   - component: {fileID: 2895220113981408634}
   - component: {fileID: 4884861153853893572}
+  - component: {fileID: 8065332402593684888}
   m_Layer: 0
   m_Name: Player  TP
   m_TagString: Player
@@ -323,18 +324,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 50773083682244215}
-        m_TargetAssemblyTypeName: PlayerHealthManager, Assembly-CSharp
-        m_MethodName: ResetHealth
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1139545925880498118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -531,6 +520,46 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8065332402593684888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204172446629243294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 0c8682b4924d2004ebb11ea4c23ae07a, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 50773083682244215}
+        m_TargetAssemblyTypeName: PlayerHealthManager, Assembly-CSharp
+        m_MethodName: ResetHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6498394322062975238}
+        m_TargetAssemblyTypeName: PlayerChargeManager, Assembly-CSharp
+        m_MethodName: FillEnergy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1277927124881069078
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,8 +570,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5057693964002692398}
   - component: {fileID: 8305149670446869294}
-  - component: {fileID: 5129186902805668104}
   - component: {fileID: 1011640695237551539}
+  - component: {fileID: 5129186902805668104}
   - component: {fileID: 978410578832430468}
   m_Layer: 0
   m_Name: Progression
@@ -579,6 +608,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PO: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
   LevelUp: {fileID: 11400000, guid: 2c6966b8079af8244ba75fa6f6e646e0, type: 2}
+--- !u!114 &1011640695237551539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277927124881069078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37142873f78467d42b47d4cb4aae682c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LightningBall: {fileID: 5848869156716931815, guid: f66fb09cb55aa79429f5e85c1017ae6d, type: 3}
+  PO: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
 --- !u!114 &5129186902805668104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,20 +650,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1011640695237551539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277927124881069078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37142873f78467d42b47d4cb4aae682c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LightningBall: {fileID: 5848869156716931815, guid: f66fb09cb55aa79429f5e85c1017ae6d, type: 3}
-  PO: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
 --- !u!114 &978410578832430468
 MonoBehaviour:
   m_ObjectHideFlags: 0

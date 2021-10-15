@@ -824,6 +824,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player  TP
       objectReference: {fileID: 0}
+    - target: {fileID: 3953459956776157512, guid: fdd027cc791351b47a7798b8d60e59c1, type: 3}
+      propertyPath: unityEventResponse.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdd027cc791351b47a7798b8d60e59c1, type: 3}
 --- !u!1001 &8634309295926923906

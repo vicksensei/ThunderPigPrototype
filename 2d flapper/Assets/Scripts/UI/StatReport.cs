@@ -17,9 +17,6 @@ public class StatReport : MonoBehaviour
     [SerializeField]
     Text SP;
     [SerializeField]
-    Button button;
-
-    [SerializeField]
     ProgressionObject saveFile;
 
     private void Awake()
@@ -35,6 +32,5 @@ public class StatReport : MonoBehaviour
         MHP.text = saveFile.MaxHP.ToString();
         SP.text = saveFile.Skillpoints.ToString();
 
-        button.gameObject.SetActive(saveFile.Skillpoints > 0);
     }
 }
