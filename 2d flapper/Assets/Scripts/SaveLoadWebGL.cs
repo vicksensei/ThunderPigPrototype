@@ -50,6 +50,7 @@ public class SaveLoadWebGL : MonoBehaviour
         }
         catch (Exception e)
         {
+            Debug.Log(e.Message);
             //PlatformSafeMessage("Failed to Save: " + e.Message);
         }
     }
@@ -89,6 +90,8 @@ public class SaveLoadWebGL : MonoBehaviour
                 gameDetails = (SaveFile)binaryFormatter.Deserialize(fileStream);
                 fileStream.Close();
                 //PlatformSafeMessage("Save successfully loaded!");
+                saveFile.Load(gameDetails);
+                gameLoaded.Raise();
             }
             else
             {
@@ -108,8 +111,6 @@ public class SaveLoadWebGL : MonoBehaviour
             gameLoaded.Raise();
         }
 
-        saveFile.Load(gameDetails);
-        gameLoaded.Raise();
     }
 
     private static void PlatformSafeMessage(string message)

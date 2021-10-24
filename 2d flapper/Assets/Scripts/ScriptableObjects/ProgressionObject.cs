@@ -48,6 +48,8 @@ public class ProgressionObject : ScriptableObject
 
     [SerializeField]
     List<Skill> skillsList;
+    [SerializeField]
+    int progrssionMult = 10;
 
     public int ExperiencePoints { get => experiencePoints; set => experiencePoints = value; }
     public int Currency { get => currency; set => currency = value; }
@@ -65,6 +67,7 @@ public class ProgressionObject : ScriptableObject
     public int NumDrops { get => numDrops; set => numDrops = value; }
     public int Skillpoints { get => skillpoints; set => skillpoints = value; }
     public List<Skill> SkillsList { get => skillsList; set => skillsList = value; }
+    public int ProgrssionMult { get => progrssionMult; set => progrssionMult = value; }
 
     private void OnEnable()
     {

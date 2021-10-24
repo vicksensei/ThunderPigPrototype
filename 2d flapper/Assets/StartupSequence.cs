@@ -8,6 +8,7 @@ public class StartupSequence : MonoBehaviour
     void Start()
     {
         AppStart.Raise();
+        Debug.Log("Event: App Start");
     }
 
     // Update is called once per frame

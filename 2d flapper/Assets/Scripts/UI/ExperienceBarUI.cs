@@ -19,7 +19,7 @@ public class ExperienceBarUI : MonoBehaviour
 
     public void updateXP()
     {
-        xpBar.maxValue = p.Level * 10;
+        xpBar.maxValue = p.Level * p.ProgrssionMult;
         xpBar.value = p.ExperiencePoints;
         xpLabel.text = xpBar.value + " / " + xpBar.maxValue;
     }

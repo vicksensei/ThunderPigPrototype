@@ -7,16 +7,18 @@ public class ExperienceManager : MonoBehaviour
     ProgressionObject PO;
     [SerializeField]
     VoidEvent LevelUp;
-    int progrssionMult = 10;
+    [SerializeField]
+    GameObject expEffect;
 
     public void earnEXP(int howMuch)
     {
         int curLevel = PO.Level;
         PO.ExperiencePoints += howMuch;
-        if (PO.ExperiencePoints >= curLevel * progrssionMult)
+        if (PO.ExperiencePoints >= curLevel * PO.ProgrssionMult)
         {
             PO.Level++;
-            PO.ExperiencePoints -= curLevel * progrssionMult;
+            Instantiate(expEffect, transform.parent);
+            PO.ExperiencePoints -= curLevel * PO.ProgrssionMult;
             LevelUp.Raise();
             PO.CurHP = PO.MaxHP;
             PO.CurCharge = PO.MaxCharge;

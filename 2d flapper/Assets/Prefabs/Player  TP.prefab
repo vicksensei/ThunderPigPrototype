@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 2895220113981408634}
   - component: {fileID: 4884861153853893572}
   - component: {fileID: 8065332402593684888}
+  - component: {fileID: 2575280955622242644}
   m_Layer: 0
   m_Name: Player  TP
   m_TagString: Player
@@ -560,6 +561,46 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2575280955622242644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204172446629243294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 2c6966b8079af8244ba75fa6f6e646e0, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 50773083682244215}
+        m_TargetAssemblyTypeName: PlayerHealthManager, Assembly-CSharp
+        m_MethodName: ResetHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6498394322062975238}
+        m_TargetAssemblyTypeName: PlayerChargeManager, Assembly-CSharp
+        m_MethodName: FillEnergy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1277927124881069078
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,6 +649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PO: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
   LevelUp: {fileID: 11400000, guid: 2c6966b8079af8244ba75fa6f6e646e0, type: 2}
+  expEffect: {fileID: 8128892987800404632, guid: dc1a573ae4fd9cb4e8e1ca1f9efec397, type: 3}
 --- !u!114 &1011640695237551539
 MonoBehaviour:
   m_ObjectHideFlags: 0
