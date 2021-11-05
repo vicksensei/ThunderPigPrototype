@@ -1,7 +1,0 @@
-using UnityEngine.Events;
-namespace SOEvents
-{
-[System.Serializable] public class Unity[Name]Event : UnityEvent<[type]> 
-{ 
-}
-}

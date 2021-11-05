@@ -1,6 +1,0 @@
-using UnityEngine;
-namespace SOEvents
-{
-[CreateAssetMenu(fileName = "New [Name] Event", menuName = "GameEvents/[Name]")]
-public class [Name]Event : BaseGameEvent<[type]> { }
-}
