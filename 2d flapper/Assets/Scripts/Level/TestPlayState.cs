@@ -6,6 +6,8 @@ public class TestPlayState : MonoBehaviour
 {
     [SerializeField]
     GameState gameState;
+    [SerializeField]
+    GameStateManager gs;
 
     public bool play = true;
     public bool pause = false;
@@ -18,6 +20,14 @@ public class TestPlayState : MonoBehaviour
         if (wait) gameState.state = GameState.State.Waiting;
         if (pause) gameState.state = GameState.State.Paused;
         if (play) gameState.state = GameState.State.Playing;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.P))
+        {
+            gs.BeginGame();
+        }
     }
 
 }

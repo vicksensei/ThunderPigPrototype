@@ -7,6 +7,7 @@ TagManager:
   - Projectile
   - Enemy
   - Item
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -55,4 +56,7 @@ TagManager:
     locked: 0
   - name: Proj
     uniqueID: 3261872885
+    locked: 0
+  - name: Transition
+    uniqueID: 38720859
     locked: 0

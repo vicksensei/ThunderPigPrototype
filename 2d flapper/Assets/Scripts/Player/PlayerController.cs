@@ -1,10 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // 
+    // Touch control Vars
+    // 
+    Vector2 fingerDown;
+    DateTime fingerDownTime;
 
+    Vector2 fingerUp;
+    DateTime fingerUpTime;
+
+    float swipeThreshold = 40f;
+    float timeThreshold = 0.3f;
+    Vector3 direction;
+    // 
+    // Exposed Vars
+    // 
     [Header("Values")]
     public float SPEED;
     [SerializeField]
@@ -41,10 +54,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameState.state == GameState.State.Playing || gameState.state == GameState.State.BossFighting )
+
+
+        if (gameState.state == GameState.State.Playing || gameState.state == GameState.State.BossFighting)
         {
-            if (Input.GetMouseButtonUp(0) || Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
+            //
+            // Keyboard controls
+            // 
+            if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
             {
+                GravityOn();
                 Flap();
             }
 
@@ -65,8 +84,109 @@ public class PlayerController : MonoBehaviour
             {
                 PausePressed.Raise();
             }
+
+            //
+            // Touch controls
+            // 
+
+
+            if (Input.touchCount == 1)
+                {
+                    if (Input.touches[0].phase == TouchPhase.Began)
+                    {
+                        fingerDown = Input.touches[0].position;
+                        fingerUp = Input.touches[0].position;
+                        fingerDownTime = DateTime.Now;
+                    }
+                    if (Input.touches[0].phase == TouchPhase.Ended)
+                    {
+                        fingerUp = Input.touches[0].position;
+                        fingerUpTime = DateTime.Now;
+                        if (IsSwipe())
+                        {
+                            CheckSwipeDirection();
+                        }
+                        else
+                        {
+                            Flap();
+                        }
+
+                    }
+
+                    if (Input.touchCount == 2)
+                    {
+                        if (Input.touches[1].phase == TouchPhase.Ended)
+                        {
+                            Fire();
+                        }
+
+                    }
+            }
+
+
+            //
+            // Mouse controls
+            // 
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Debug.Log("click");
+                    fingerDown = Input.mousePosition;
+                    fingerUp = Input.mousePosition;
+                fingerDownTime = DateTime.Now;
+            }
+
+            if (Input.GetMouseButtonUp(0))
+                {
+                    fingerUp = Input.mousePosition;
+                    fingerUpTime = DateTime.Now;
+                    if (IsSwipe())
+                    {
+                        CheckSwipeDirection();
+                    }
+                    else
+                    {
+                        Flap();
+                    }
+
+                }
+
+            }
+            if (Input.GetMouseButtonUp(1))
+            {
+                Fire();
+            }
+        }
+
+    bool IsSwipe()
+    {
+        float duration = (float)fingerUpTime.Subtract(fingerDownTime).TotalSeconds;
+        Vector2 directionVector = fingerUp - fingerDown;
+        if (duration > timeThreshold)
+        {
+            return false;
+        }
+        if (directionVector.magnitude < swipeThreshold)
+        {
+            return false;
+        }
+        return true;
+    }
+
+    void CheckSwipeDirection()
+    {
+        Vector2 directionVector = fingerUp - fingerDown;
+        if (fingerUp.x > fingerDown.x)
+        {
+            Right();
+        }
+        else
+        {
+            Left();
         }
     }
+
+
 
     void Fire()
     {
