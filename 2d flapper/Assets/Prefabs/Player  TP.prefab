@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 4884861153853893572}
   - component: {fileID: 8065332402593684888}
   - component: {fileID: 2575280955622242644}
+  - component: {fileID: 2111543635}
   m_Layer: 0
   m_Name: Player  TP
   m_TagString: Player
@@ -561,6 +562,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 204172446629243289}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnScreenTransition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2575280955622242644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -592,6 +605,34 @@ MonoBehaviour:
       - m_Target: {fileID: 6498394322062975238}
         m_TargetAssemblyTypeName: PlayerChargeManager, Assembly-CSharp
         m_MethodName: FillEnergy
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2111543635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204172446629243294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 66a3838fbf8a5084faeea293fadd0ab7, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 204172446629243289}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnScreenTransition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

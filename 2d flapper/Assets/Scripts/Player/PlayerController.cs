@@ -42,7 +42,6 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
 
     public bool isImmune = false;
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -130,7 +129,6 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("click");
                     fingerDown = Input.mousePosition;
                     fingerUp = Input.mousePosition;
                 fingerDownTime = DateTime.Now;
@@ -156,7 +154,9 @@ public class PlayerController : MonoBehaviour
             {
                 Fire();
             }
-        }
+
+
+    }
 
     bool IsSwipe()
     {
@@ -226,4 +226,9 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(Vector2.up*4);
     }
     
+    public void OnScreenTransition()
+    {
+        GravityOff();
+        rb.velocity = Vector2.zero;
+    }
 }

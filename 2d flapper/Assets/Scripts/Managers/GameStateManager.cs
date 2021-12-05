@@ -19,7 +19,7 @@ public class GameStateManager : MonoBehaviour
     {
         gameState.state = GameState.State.Waiting;
         Debug.Log("Gamestate: Waiting");
-        Time.timeScale = 1;
+        RestartTime();
     }
 
     public void BeginGame()
@@ -41,7 +41,7 @@ public class GameStateManager : MonoBehaviour
     {
         gameState.state = lastGameState;
         Debug.Log("Gamestate: "+ gameState.state);
-        Time.timeScale = 1;
+        RestartTime();
     }
 
     public void End()
@@ -55,7 +55,7 @@ public class GameStateManager : MonoBehaviour
     {
         gameState.state = GameState.State.BossFighting;
         Debug.Log("Gamestate: " + gameState.state);
-        Time.timeScale = 1;
+        RestartTime();
     }
 
     public void Victory()
@@ -64,6 +64,11 @@ public class GameStateManager : MonoBehaviour
         Debug.Log("Gamestate: " + gameState.state);
         Time.timeScale = 0;
         SaveFile.CurrentDifficulty += 1;
+    }
+
+    public void RestartTime()
+    {
+        Time.timeScale = 1;
     }
 
     public void StartNewGame()

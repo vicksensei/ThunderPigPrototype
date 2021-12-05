@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 [RequireComponent(typeof(DropTable))]
 public class EnemyDestroy : MonoBehaviour
 {
@@ -14,7 +15,13 @@ public class EnemyDestroy : MonoBehaviour
     SOEvents.VoidEvent AnyCol;
     [SerializeField]
     SOEvents.IntEvent GiveXP;
+    [Header("UI")]
+    [SerializeField]
+    Slider HPBar;
     [Header("Values")]
+    [SerializeField]
+    int maxHP;
+    int curHP;
     [SerializeField]
     BoolValue playerIsImmune;
     [SerializeField]
@@ -29,6 +36,11 @@ public class EnemyDestroy : MonoBehaviour
     private void Awake()
     {
         dt = GetComponent<DropTable>();
+        curHP = maxHP;
+        if (HPBar != null)
+        {
+            HPBar.gameObject.SetActive(true);
+        }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -36,14 +48,26 @@ public class EnemyDestroy : MonoBehaviour
         if (other.gameObject.tag == "Projectile")
         {
             projectileCol.Raise();
-            dt.BeforeDestroy();
             other.gameObject.GetComponent<projectile>().ShowHitParticle();
+            curHP-= other.gameObject.GetComponent<projectile>().damage;
             other.gameObject.GetComponent<projectile>().TryToDestroy();
-            GiveXP.Raise(ExpValue); ShowHitParticle();
-            Destroy(transform.parent.gameObject);
-            Debug.Log("collision with " + other.gameObject.name);
-            
+            if (curHP < 0)
+            {
+                dt.BeforeDestroy();
+                GiveXP.Raise(ExpValue); ShowHitParticle();
+                Destroy(transform.parent.gameObject);
+                //Debug.Log("collision with " + other.gameObject.name);
+            }
+            else
+            {
+                if (HPBar != null)
+                {
+                    HPBar.value = (float)curHP / (float)maxHP;
+                    HPBar.gameObject.SetActive(true);
+                }
+            }
         }
+
         if (other.gameObject.tag == "Player")
         {
             if (!playerIsImmune.Value)
@@ -54,6 +78,11 @@ public class EnemyDestroy : MonoBehaviour
     }
 
     public void ShowHitParticle()
+    {
+        Instantiate(DestroyParticle, transform.position, Quaternion.identity);
+    }
+
+    public void ShowDestroyParticle()
     {
         Instantiate(DestroyParticle, transform.position, Quaternion.identity);
     }

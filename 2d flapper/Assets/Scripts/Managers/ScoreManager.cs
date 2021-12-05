@@ -24,6 +24,7 @@ public class ScoreManager : MonoBehaviour
 
     public void ResetScore()
     {
+        Debug.Log("ResetScore");
         curSavefile.CurScore = 0;
         curSavefile.CurrentDifficulty = 1;
         ScoreChanged.Raise();

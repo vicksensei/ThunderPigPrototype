@@ -590,7 +590,6 @@ GameObject:
   - component: {fileID: 2683931369987372708}
   - component: {fileID: 2683931369987372711}
   - component: {fileID: 2683931369987372710}
-  - component: {fileID: 4689224991417858307}
   - component: {fileID: 796469911550741227}
   m_Layer: 5
   m_Name: RestartButton
@@ -714,32 +713,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 4689224991417858307}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4689224991417858307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2683931369987372707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7adee3b0feeeeb7479be8b99fc7f6f5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SceneToLoad: 1
-  LoadOnStart: 0
 --- !u!114 &796469911550741227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1012,7 +985,7 @@ GameObject:
   - component: {fileID: 5307150594000674959}
   - component: {fileID: 5029477087239744080}
   - component: {fileID: 718255820563916276}
-  - component: {fileID: 6645110359524984153}
+  - component: {fileID: 7536322817898263583}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -1123,9 +1096,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6645110359524984153}
+      - m_Target: {fileID: 4591707053467564689}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1135,7 +1108,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6645110359524984153
+--- !u!114 &7536322817898263583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1144,11 +1117,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4591707053467564689}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7adee3b0feeeeb7479be8b99fc7f6f5f, type: 3}
+  m_Script: {fileID: 11500000, guid: 912189d8bc937824ead9891ed648d395, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: 0
-  LoadOnStart: 0
+  EventToRaise: {fileID: 11400000, guid: 03c347d9f5d0b0641976f1fe1e107a02, type: 2}
 --- !u!1 &4973007279536347284
 GameObject:
   m_ObjectHideFlags: 0

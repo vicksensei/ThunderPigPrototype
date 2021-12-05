@@ -31,7 +31,6 @@ public class Spawner : MonoBehaviour
     {
         SpawningOff();
         InvokeRepeating("Spawn", delay.Value, spawnRate.Value);
-        
     }
 
 
@@ -50,13 +49,12 @@ public class Spawner : MonoBehaviour
                 new Vector3(transform.position.x, y, 0), 
                 Quaternion.identity, 
                 transform);
-
         }
     }
 
     public void SpawningOn()
     {
-        canSpawn.Value = gameState.state == GameState.State.Playing;
+        canSpawn.Value = true;
     }
     public void SpawningOff()
     {

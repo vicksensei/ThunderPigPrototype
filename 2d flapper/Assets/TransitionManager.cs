@@ -23,7 +23,6 @@ public class TransitionManager : MonoBehaviour
     public void FadeOut()
     {
         animator.Play("transitionOut");
-        //Invoke("SL.LoadScene", duration);
     }
     public void TurnBlack()
     {
