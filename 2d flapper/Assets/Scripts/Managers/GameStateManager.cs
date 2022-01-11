@@ -63,7 +63,9 @@ public class GameStateManager : MonoBehaviour
         gameState.state = GameState.State.BossKilled;
         Debug.Log("Gamestate: " + gameState.state);
         Time.timeScale = 0;
+        Debug.Log("Difficulty: " + SaveFile.CurrentDifficulty);
         SaveFile.CurrentDifficulty += 1;
+        Debug.Log("Difficulty: " + SaveFile.CurrentDifficulty);
     }
 
     public void RestartTime()

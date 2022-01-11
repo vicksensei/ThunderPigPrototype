@@ -41,7 +41,6 @@ public class ScoreManager : MonoBehaviour
         if (waspBossCounter >= waspBossScore.Value && gameState.state != GameState.State.BossFighting)
         {
             waspBossTime.Raise();
-            curSavefile.CurrentDifficulty++;
         }
     }
     public void SetHighScore()
