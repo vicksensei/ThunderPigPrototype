@@ -13,7 +13,7 @@ public class KeyClick : MonoBehaviour
 
     public void OnClick()
     {
-        Debug.Log("Event Raised: Key Event - "+Letter.text);
+        //Debug.Log("Event Raised: Key Event - "+Letter.text);
         KeyEvent.Raise(Letter.text);
     }
 

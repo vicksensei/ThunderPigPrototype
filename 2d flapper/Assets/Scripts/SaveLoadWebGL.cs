@@ -79,7 +79,7 @@ public class SaveLoadWebGL : MonoBehaviour
     {
         SaveFile gameDetails = null;
         string dataPath = string.Format("{0}/SaveFile.dat", Application.persistentDataPath);
-        Debug.Log("Data path: " + dataPath);
+        //Debug.Log("Data path: " + dataPath);
         try
         {
             if (File.Exists(dataPath))
