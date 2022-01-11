@@ -20,8 +20,10 @@ public class EnemyDestroy : MonoBehaviour
     Slider HPBar;
     [Header("Values")]
     [SerializeField]
-    int maxHP;
+    int maxHP = 1;
     int curHP;
+    [SerializeField]
+    bool HPScales = true;
     [SerializeField]
     BoolValue playerIsImmune;
     [SerializeField]
@@ -31,16 +33,32 @@ public class EnemyDestroy : MonoBehaviour
     GameObject DestroyParticle;
     [SerializeField]
     GameObject ImmuneParticle;
+    [SerializeField]
+    ProgressionObject saveFile;
 
     DropTable dt;
     private void Awake()
     {
         dt = GetComponent<DropTable>();
+        /*if (HPBar != null)
+        {
+            HPBar.gameObject.SetActive(true);
+        }*/
+    }
+    private void Start()
+    {
+        if (HPScales)
+        {
+            maxHP += (int)(saveFile.CurrentDifficulty - 1);
+        }
         curHP = maxHP;
         if (HPBar != null)
         {
-            HPBar.gameObject.SetActive(true);
+            HPBar.maxValue = maxHP;
+            HPBar.value = (float)curHP;
+            HPBar.gameObject.SetActive(false);
         }
+
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -51,7 +69,7 @@ public class EnemyDestroy : MonoBehaviour
             other.gameObject.GetComponent<projectile>().ShowHitParticle();
             curHP-= other.gameObject.GetComponent<projectile>().damage;
             other.gameObject.GetComponent<projectile>().TryToDestroy();
-            if (curHP < 0)
+            if (curHP <= 0)
             {
                 dt.BeforeDestroy();
                 GiveXP.Raise(ExpValue); ShowHitParticle();
@@ -62,7 +80,7 @@ public class EnemyDestroy : MonoBehaviour
             {
                 if (HPBar != null)
                 {
-                    HPBar.value = (float)curHP / (float)maxHP;
+                    HPBar.value = (float)curHP;
                     HPBar.gameObject.SetActive(true);
                 }
             }

@@ -10,7 +10,7 @@ public class PowerUpManager : MonoBehaviour
     ProgressionObject PO;
 
     public void PickUpLightningBall() {
-        Debug.Log("Lightning Ball picked up!");
+        //Debug.Log("Lightning Ball picked up!");
         GameObject GO = Instantiate(LightningBall, transform.parent.position, Quaternion.identity, transform.parent);
     }
 }

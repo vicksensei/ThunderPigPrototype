@@ -4,7 +4,7 @@ using UnityEditor;
 using System;
 namespace SOEvents
 {
-    /**/
+    /*
     public class UnityEditorWindow : EditorWindow
     {
 
@@ -136,5 +136,5 @@ namespace SOEvents
                 Debug.Log("File" + outputName + "could not be written");
             }
         }
-    }
+    }*/
 }

@@ -7,7 +7,12 @@ MonoImporter:
   - projectileCol: {instanceID: 0}
   - PlayerCol: {instanceID: 0}
   - AnyCol: {instanceID: 0}
+  - GiveXP: {instanceID: 0}
+  - HPBar: {instanceID: 0}
   - playerIsImmune: {fileID: 11400000, guid: e5ff2e634e9e1334ca25860d4b588faf, type: 2}
+  - DestroyParticle: {instanceID: 0}
+  - ImmuneParticle: {instanceID: 0}
+  - saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

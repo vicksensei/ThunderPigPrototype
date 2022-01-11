@@ -29,6 +29,8 @@ public class WaspRatBossMovement : MonoBehaviour
     GameObject ProjectilePrefab;
     [SerializeField]
     int minions = 3;
+    [SerializeField]
+    Transform minionParent;
 
     [Header("State")]
     [SerializeField]
@@ -141,7 +143,7 @@ public class WaspRatBossMovement : MonoBehaviour
     //
     void SpawnMinions()
     {
-        Instantiate(minionPrefab, transform);
+        Instantiate(minionPrefab, minionParent);
     }
 
     bool isCharging;

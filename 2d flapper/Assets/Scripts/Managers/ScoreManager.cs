@@ -20,14 +20,16 @@ public class ScoreManager : MonoBehaviour
     [SerializeField]
     SOEvents.VoidEvent waspBossTime;
 
+    public bool newHigh = false;
     int waspBossCounter = 0;
 
     public void ResetScore()
     {
-        Debug.Log("ResetScore");
+        //Debug.Log("ResetScore");
         curSavefile.CurScore = 0;
         curSavefile.CurrentDifficulty = 1;
         ScoreChanged.Raise();
+        newHigh = false;
 
     }
     public void AddToScore(int amount)
@@ -47,6 +49,7 @@ public class ScoreManager : MonoBehaviour
         if (curSavefile.CurScore > curSavefile.HighScore)
         {
             curSavefile.HighScore = curSavefile.CurScore;
+            newHigh = true;
             HiScoreChanged.Raise();
         }
     }
