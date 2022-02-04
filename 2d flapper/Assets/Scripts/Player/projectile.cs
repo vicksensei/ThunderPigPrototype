@@ -28,12 +28,13 @@ public class projectile : MonoBehaviour
     public void Awake()
     {
         piercedSoFar = saveFile.PierceCount + saveFile.GetSkillDict()["Pierce"].points;
+        damage += saveFile.SkillsList[2].points;
     }
     private void FixedUpdate()
     {
         if (isMoving)
         {
-            transform.position += direction * speed * Time.deltaTime;
+            transform.position += direction * speed * Time.fixedDeltaTime;
         }
     }
 

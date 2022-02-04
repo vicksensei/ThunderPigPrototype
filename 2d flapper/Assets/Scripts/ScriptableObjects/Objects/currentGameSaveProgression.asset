@@ -12,22 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bade319adc6cf5941bd61c744c97d2f0, type: 3}
   m_Name: currentGameSaveProgression
   m_EditorClassIdentifier: 
-  experiencePoints: 0
+  experiencePoints: 6
   currency: 0
-  level: 1
+  level: 3
   maxHP: 3
   maxCharge: 3
-  curHP: 3
-  curCharge: 3
+  curHP: 0
+  curCharge: 1
   flapsToCharge: 3
   pierceCount: 0
   numDrops: 1
   furthestDifficulty: 0
-  currentDifficulty: 1
-  highScore: 0
-  curScore: 0
+  currentDifficulty: 2
+  highScore: 49
+  curScore: 49
   skillsDB: {fileID: 11400000, guid: 2f18e08705ee6434f8f53c63ff7d77a8, type: 2}
-  skillpoints: 0
+  skillpoints: 2
   skillsList:
   - skillName: Health
     isLocked: 0
@@ -87,3 +87,4 @@ MonoBehaviour:
     skillPreReqs:
     - SkillName: Damage
       requiredPoints: 3
+  progrssionMult: 10

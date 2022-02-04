@@ -20,7 +20,7 @@ public class InputReader : MonoBehaviour
         "https://victorsensei.com/Games/ThunderPig/HSAdd.php";
 
     string displayScoreURL = 
-        "http://vickrpgcom.ipage.com/Games/ThunderPig/HSDisplay.php";
+        "https://vickrpgcom.ipage.com/Games/ThunderPig/HSDisplay.php";
 
     void Start()
     {
