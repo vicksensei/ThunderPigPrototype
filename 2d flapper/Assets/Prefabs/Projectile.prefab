@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: b68740225d777064295dfc4fa30480b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0485047a3ff40fd4aa6d73db41429690, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,8 +117,12 @@ MonoBehaviour:
   speed: 50
   damage: 1
   DestroyParticle: {fileID: 4670529693541619775, guid: 9492c797a43c19b40bb80ac0b66399cc, type: 3}
+  PlayerCol: {fileID: 0}
   isFromPlayer: 1
   saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
+  direction: {x: 1, y: 0, z: 0}
+  isMoving: 1
+  Destroyable: 1
 --- !u!114 &5788456285091880774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +217,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9142857, y: 0.9142857}
+    oldSize: {x: 1.024, y: 1.024}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -221,10 +225,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.1535815, y: 0.04044357}
-      - {x: -0.44909993, y: 0.28977385}
-      - {x: -0.44749144, y: -0.04189957}
-      - {x: 0.05147481, y: -0.31512818}
-      - {x: 0.038911134, y: -0.10440382}
-      - {x: 0.46036008, y: -0.25423265}
-      - {x: -0.14776084, y: 0.28640413}
+    - - {x: -0.1514616, y: 0.057403117}
+      - {x: -0.4936184, y: 0.2643347}
+      - {x: -0.4983698, y: -0.016460426}
+      - {x: 0.028155565, y: -0.29392883}
+      - {x: 0.019831687, y: -0.07472488}
+      - {x: 0.50275874, y: -0.2817918}
+      - {x: -0.16260025, y: 0.29064405}

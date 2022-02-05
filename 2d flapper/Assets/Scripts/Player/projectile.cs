@@ -10,6 +10,8 @@ public class projectile : MonoBehaviour
     [Header("Prefabs")]
     [SerializeField]
     GameObject DestroyParticle;
+    [SerializeField]
+    SOEvents.VoidEvent PlayerCol;
 
     [Header("Values")]
     [SerializeField]
@@ -24,11 +26,21 @@ public class projectile : MonoBehaviour
     [SerializeField]
     bool Destroyable = true;
 
+    public bool IsFromPlayer { get => isFromPlayer; set => isFromPlayer = value; }
 
     public void Awake()
     {
         piercedSoFar = saveFile.PierceCount + saveFile.GetSkillDict()["Pierce"].points;
-        damage += saveFile.SkillsList[2].points;
+        if (IsFromPlayer)
+        {
+            damage += saveFile.SkillsList[2].points;
+        }
+        else
+        {
+            damage += (int)saveFile.CurrentDifficulty - 1;
+            speed += (saveFile.CurrentDifficulty - 1) * 5;
+            direction = Vector3.left;
+        }
     }
     private void FixedUpdate()
     {
@@ -42,11 +54,12 @@ public class projectile : MonoBehaviour
     {
         Instantiate(DestroyParticle, transform.position, Quaternion.identity);
     }
+
     public void TryToDestroy()
     {
         if (Destroyable)
         {
-            if (isFromPlayer)
+            if (IsFromPlayer)
             {
                 ShowHitParticle();
                 if (piercedSoFar <= 0)
@@ -58,6 +71,25 @@ public class projectile : MonoBehaviour
                     piercedSoFar--;
 
                 }
+            }
+            else
+            {
+                ShowHitParticle();
+                Destroy(gameObject);
+            }
+        }
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+
+        if (other.gameObject.tag == "Player")
+        {
+            if (!IsFromPlayer)
+            {
+                PlayerCol.Raise();
+                TryToDestroy();
             }
         }
     }

@@ -39,14 +39,34 @@ public class Spawner : MonoBehaviour
         if (canSpawn.Value)
         {
             int randomizer = Random.Range(0, spawnables.Length);
-            float y = Random.Range(
-                screenBottom.position.y + spawnables[randomizer].distanceFromBottom, 
-                screenTop.position.y - spawnables[randomizer].distanceFromTop);
-            
+            Spawnable current;
+            float y, x;
+
+            current = spawnables[randomizer];
+            if (current.randomizeHeight)
+            {
+                y = Random.Range(
+                    screenBottom.position.y + current.distanceFromBottom,
+                    screenTop.position.y - current.distanceFromTop);
+            }
+            else
+            {
+                y = screenTop.position.y - current.distanceFromTop;
+            }
+
+            if (current.randomizeLR)
+            {
+                x = Random.Range(transform.position.x -3, current.Distancex);
+            }
+            else
+            {
+                x = transform.position.x +transform.position.x;
+            }
+
             GameObject spawned;
 
             spawned = Instantiate(spawnables[randomizer].prefab,
-                new Vector3(transform.position.x, y, 0), 
+                new Vector3(x, y, 0), 
                 Quaternion.identity, 
                 transform);
         }
@@ -78,4 +98,7 @@ public class Spawnable
     public GameObject prefab;
     public float distanceFromBottom =0;
     public float distanceFromTop =0;
+    public bool randomizeHeight = true;
+    public float Distancex = 0;
+    public bool randomizeLR = false;
 }

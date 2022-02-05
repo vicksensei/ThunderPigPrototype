@@ -45,6 +45,7 @@ public class EnemyDestroy : MonoBehaviour
             HPBar.gameObject.SetActive(true);
         }*/
     }
+
     private void Start()
     {
         if (HPScales)
@@ -60,28 +61,32 @@ public class EnemyDestroy : MonoBehaviour
         }
 
     }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         AnyCol.Raise();
         if (other.gameObject.tag == "Projectile")
         {
-            projectileCol.Raise();
-            other.gameObject.GetComponent<projectile>().ShowHitParticle();
-            curHP-= other.gameObject.GetComponent<projectile>().damage;
-            other.gameObject.GetComponent<projectile>().TryToDestroy();
-            if (curHP <= 0)
+            if (other.GetComponent<projectile>().IsFromPlayer)
             {
-                dt.BeforeDestroy();
-                GiveXP.Raise(ExpValue); ShowHitParticle();
-                Destroy(transform.parent.gameObject);
-                //Debug.Log("collision with " + other.gameObject.name);
-            }
-            else
-            {
-                if (HPBar != null)
+                projectileCol.Raise();
+                other.gameObject.GetComponent<projectile>().ShowHitParticle();
+                curHP -= other.gameObject.GetComponent<projectile>().damage;
+                other.gameObject.GetComponent<projectile>().TryToDestroy();
+                if (curHP <= 0)
                 {
-                    HPBar.value = (float)curHP;
-                    HPBar.gameObject.SetActive(true);
+                    dt.BeforeDestroy();
+                    GiveXP.Raise(ExpValue); ShowHitParticle();
+                    Destroy(transform.parent.gameObject);
+                    //Debug.Log("collision with " + other.gameObject.name);
+                }
+                else
+                {
+                    if (HPBar != null)
+                    {
+                        HPBar.value = (float)curHP;
+                        HPBar.gameObject.SetActive(true);
+                    }
                 }
             }
         }

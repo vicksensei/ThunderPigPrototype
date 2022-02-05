@@ -23,22 +23,25 @@ public class EnemyAmbush : MonoBehaviour
     [SerializeField]
     float endDelay;
 
-    public Vector3 StartPos { get => startPos; set => startPos = value; }
-    public Vector3 EndPos { get => endPos; set => endPos = value; }
 
     enum moveState {
         offscreen,
-        shooting,
+        onscreen,
         hiding,
-        onscreen
+        showing
     };
-
     moveState currentState;
     float timer;
+    Transform playerPos;
+
+    public bool CanShoot() { return currentState == moveState.onscreen; }
+
     // Start is called before the first frame update
     void Start()
     {
         startPos = transform.position;
+        playerPos = GameObject.Find("Player  TP").transform;
+        endPos = new Vector3(startPos.x, playerPos.position.y);
         currentState = moveState.offscreen;
         if (SaveFile.CurrentDifficulty > 1)
         {
@@ -57,18 +60,18 @@ public class EnemyAmbush : MonoBehaviour
                 if(timer >= startDelay)
                 {
                     timer = 0;
-                    currentState = moveState.onscreen;
+                    currentState = moveState.showing;
                 }
             }
-            else if (currentState == moveState.onscreen)
+            else if (currentState == moveState.showing)
             {
                 transform.position = Vector3.MoveTowards(transform.position, endPos, speed *Time.fixedDeltaTime);
                 if (Vector3.Distance(transform.position, endPos) < 0.001f)
                 {
-                    currentState = moveState.shooting;
+                    currentState = moveState.onscreen;
                 }
             }
-            else if (currentState == moveState.shooting)
+            else if (currentState == moveState.onscreen)
             {
                 timer += Time.fixedDeltaTime;
                 if (timer >= endDelay)
@@ -85,7 +88,6 @@ public class EnemyAmbush : MonoBehaviour
                     currentState = moveState.offscreen;
                 }
             }
-            Debug.Log(timer);
         }
 
     }

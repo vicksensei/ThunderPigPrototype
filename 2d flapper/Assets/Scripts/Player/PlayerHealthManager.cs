@@ -53,4 +53,6 @@ public class PlayerHealthManager : MonoBehaviour
         SaveFile.CurHP = SaveFile.MaxHP +SaveFile.GetSkillDict()["Health"].points;
         HealthChangedEvent.Raise();
     }
+
+
 }
