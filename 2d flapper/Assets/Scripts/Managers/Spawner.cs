@@ -36,31 +36,36 @@ public class Spawner : MonoBehaviour
 
     void Spawn()
     {
-        if (canSpawn.Value)
+        if (canSpawn.Value) //when spawning is on
         {
-            int randomizer = Random.Range(0, spawnables.Length);
+            // create a random number to select which spawnable to spawn
+            int randomizer = Random.Range(0, spawnables.Length); 
             Spawnable current;
+            current = spawnables[randomizer]; 
+            
+            //create values for the spawnable's position
             float y, x;
 
-            current = spawnables[randomizer];
+            //if we will randomize the height, create a random number between the top and bottom
             if (current.randomizeHeight)
             {
                 y = Random.Range(
                     screenBottom.position.y + current.distanceFromBottom,
                     screenTop.position.y - current.distanceFromTop);
-            }
+            }// otherwise,  place it a specific distance from the top.
             else
             {
                 y = screenTop.position.y - current.distanceFromTop;
             }
 
+            //if we will randomize the left right positon (rare)
             if (current.randomizeLR)
-            {
+            {//create a random number between the  X position and Distance X
                 x = Random.Range(transform.position.x -3, current.Distancex);
             }
             else
-            {
-                x = transform.position.x +transform.position.x;
+            {//otherwise, place it a specific distance from positionX
+                x = transform.position.x + current.Distancex;
             }
 
             GameObject spawned;

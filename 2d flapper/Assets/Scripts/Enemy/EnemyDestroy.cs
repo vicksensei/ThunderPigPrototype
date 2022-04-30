@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 [RequireComponent(typeof(DropTable))]
 public class EnemyDestroy : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class EnemyDestroy : MonoBehaviour
     [Header("UI")]
     [SerializeField]
     Slider HPBar;
+    [SerializeField]
+    TMP_Text HPText;
     [Header("Values")]
     [SerializeField]
     int maxHP = 1;
@@ -55,11 +58,17 @@ public class EnemyDestroy : MonoBehaviour
         curHP = maxHP;
         if (HPBar != null)
         {
-            HPBar.maxValue = maxHP;
-            HPBar.value = (float)curHP;
+            RefreshHPUI();
             HPBar.gameObject.SetActive(false);
         }
 
+    }
+
+    void RefreshHPUI()
+    {
+        HPBar.maxValue = maxHP;
+        HPBar.value = (float)curHP;
+        HPText.text = curHP + "/" + maxHP;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -84,7 +93,7 @@ public class EnemyDestroy : MonoBehaviour
                 {
                     if (HPBar != null)
                     {
-                        HPBar.value = (float)curHP;
+                        RefreshHPUI();
                         HPBar.gameObject.SetActive(true);
                     }
                 }
