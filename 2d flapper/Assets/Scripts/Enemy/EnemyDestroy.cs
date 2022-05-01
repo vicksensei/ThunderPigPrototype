@@ -93,7 +93,7 @@ public class EnemyDestroy : MonoBehaviour
                 {
                     if (HPBar != null)
                     {
-                        RefreshHPUI();
+                        RefreshHPUI();  
                         HPBar.gameObject.SetActive(true);
                     }
                 }

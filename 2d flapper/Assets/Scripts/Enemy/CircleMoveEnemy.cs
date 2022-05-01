@@ -27,6 +27,7 @@ public class CircleMoveEnemy : MonoBehaviour
     float spiralSpeed;
 
     Vector3 center;
+    [SerializeField]
     float angle;
     [SerializeField]
     float currentRadius;

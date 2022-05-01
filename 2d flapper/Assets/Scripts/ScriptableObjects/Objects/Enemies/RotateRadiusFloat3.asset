@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93d8c4bce65ecf24784833c53e9edd0a, type: 3}
-  m_Name: RotateRadiusFloat
+  m_Name: RotateRadiusFloat3
   m_EditorClassIdentifier: 
   value: 3

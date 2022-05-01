@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6302040631072821069}
   - component: {fileID: 4274488355037898036}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: TP Lightning Projectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

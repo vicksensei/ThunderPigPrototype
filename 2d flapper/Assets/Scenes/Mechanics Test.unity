@@ -1330,19 +1330,51 @@ PrefabInstance:
       objectReference: {fileID: 1971424652}
     - target: {fileID: 1105112217, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
       propertyPath: spawnables.Array.size
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1105112217, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
       propertyPath: spawnables.Array.data[3].prefab
       value: 
       objectReference: {fileID: 9047290080297071816, guid: c7b06317bfbdb364a8b21cc00c989469, type: 3}
     - target: {fileID: 1105112217, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
+      propertyPath: spawnables.Array.data[4].prefab
+      value: 
+      objectReference: {fileID: 6336856060790768751, guid: 4c6514e95ad722c428d8e9aa32b04a04, type: 3}
+    - target: {fileID: 1105112217, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
+      propertyPath: spawnables.Array.data[5].prefab
+      value: 
+      objectReference: {fileID: 3787218025303618403, guid: cd8bbdab257ea1443a62ec061e720c07, type: 3}
+    - target: {fileID: 1105112217, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
       propertyPath: spawnables.Array.data[3].distanceFromTop
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1105112217, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
+      propertyPath: spawnables.Array.data[4].distanceFromTop
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105112217, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
+      propertyPath: spawnables.Array.data[4].randomizeHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105112217, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
+      propertyPath: spawnables.Array.data[5].distanceFromTop
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105112217, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
+      propertyPath: spawnables.Array.data[5].randomizeHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105112217, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
       propertyPath: spawnables.Array.data[3].distanceFromBottom
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105112217, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
+      propertyPath: spawnables.Array.data[4].distanceFromBottom
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1105112217, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
+      propertyPath: spawnables.Array.data[5].distanceFromBottom
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1234494458, guid: 44616da3f438d4344b045a79a0e71749, type: 3}
       propertyPath: screenTop

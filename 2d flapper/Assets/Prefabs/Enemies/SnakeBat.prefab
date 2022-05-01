@@ -245,9 +245,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c0bf3913ae658eb43a40a4fa959f7df6, type: 3}
-  m_Color: {r: 0.023584902, g: 1, b: 0.038421657, a: 1}
-  m_FlipX: 0
+  m_Sprite: {fileID: 21300000, guid: 16dfc6af6413fa545a93b94daa495f09, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -273,6 +273,7 @@ MonoBehaviour:
   AnyCol: {fileID: 11400000, guid: d4931be8ee4df434dac83bd452cc9faa, type: 2}
   GiveXP: {fileID: 11400000, guid: 3aecc6ecd0791e844bc6a2cb2464db76, type: 2}
   HPBar: {fileID: 6408356964011275443}
+  HPText: {fileID: 0}
   maxHP: 2
   HPScales: 1
   playerIsImmune: {fileID: 11400000, guid: e5ff2e634e9e1334ca25860d4b588faf, type: 2}
@@ -375,7 +376,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6408356963851415851
 Transform:
   m_ObjectHideFlags: 0
@@ -449,7 +450,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6408356963851415848}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7a43d15fd89dd74e8eb48012563d2b6, type: 3}
   m_Name: 
