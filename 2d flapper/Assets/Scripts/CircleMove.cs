@@ -44,8 +44,10 @@ public class CircleMove : MonoBehaviour
     void Spin(float radius)
     {
 
-        if (followOrbiter)
+        if (followOrbiter == true)
+        {
             center = OrbitCenter.position;
+        }
         Vector3 offset;
         angle += RotateSpeed * Time.deltaTime;
         if (clockwise)

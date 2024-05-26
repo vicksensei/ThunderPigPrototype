@@ -30,7 +30,7 @@ public class EnemyDestroy : MonoBehaviour
     [SerializeField]
     BoolValue playerIsImmune;
     [SerializeField]
-    int ExpValue =1;
+    int ExpValue = 1;
     [Header("Prefabs")]
     [SerializeField]
     GameObject DestroyParticle;
@@ -54,6 +54,8 @@ public class EnemyDestroy : MonoBehaviour
         if (HPScales)
         {
             maxHP += (int)(saveFile.CurrentDifficulty - 1);
+            Debug.Log("Max HP: " + maxHP.ToString());
+            Debug.Log(saveFile.CurrentDifficulty.ToString());
         }
         curHP = maxHP;
         if (HPBar != null)
@@ -93,7 +95,7 @@ public class EnemyDestroy : MonoBehaviour
                 {
                     if (HPBar != null)
                     {
-                        RefreshHPUI();  
+                        RefreshHPUI();
                         HPBar.gameObject.SetActive(true);
                     }
                 }

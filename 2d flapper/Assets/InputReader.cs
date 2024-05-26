@@ -16,10 +16,13 @@ public class InputReader : MonoBehaviour
     [SerializeField]
     ProgressionObject current;
 
+    [SerializeField]
+    bool showInputs = true;
+
     string addScoreURL =
         "https://victorsensei.com/Games/ThunderPig/HSAdd.php";
 
-    string displayScoreURL = 
+    string displayScoreURL =
         "https://vickrpgcom.ipage.com/Games/ThunderPig/HSDisplay.php";
 
     void Start()
@@ -27,7 +30,10 @@ public class InputReader : MonoBehaviour
         Output.text = "";
         scoreText.text = "";
         StartCoroutine(GetScores(displayScoreURL));
-        keyboard.SetActive(true);
+        if (showInputs)
+        {
+            keyboard.SetActive(true);
+        }
         closeButton.SetActive(false);
     }
 
@@ -128,9 +134,9 @@ public class InputReader : MonoBehaviour
                     string curline;
                     for (int i = 0; i < lines.Length; i++)
                     {
-                        if ( i % 2 == 0 && i+2 <= lines.Length)
+                        if (i % 2 == 0 && i + 2 <= lines.Length)
                         {
-                            curline = lines[i] +"<pos=75%>" +lines[i+1];
+                            curline = lines[i] + "<pos=75%>" + lines[i + 1];
                             if (lines[i].Trim() == Output.text)
                             {
                                 curline = "<b>" + curline + "</b>";

@@ -40,6 +40,7 @@ public class BossHealth : MonoBehaviour
     bool hasSuperArmor;
     bool bloodied = false;
     bool enraged = false;
+    bool dead = false;
 
     public int currentHP, maximumHP;
 
@@ -66,10 +67,11 @@ public class BossHealth : MonoBehaviour
         if (!hasSuperArmor)
         {
             currentHP -= howMuch;
-            if (currentHP < 0)
+            if (currentHP <= 0 && !dead)
             {
                 currentHP = 0;
                 bossDead.Raise();
+                dead = true;
             }
 
             if (currentHP <= (maximumHP * 2 / 3) && !bloodied)
@@ -108,7 +110,7 @@ public class BossHealth : MonoBehaviour
     {
         if (collision.tag == "Projectile")
         {
-                projectileCol.Raise();
+            projectileCol.Raise();
             if (collision.GetComponent<projectile>() != null)
             {
                 TakeDamage(collision.GetComponent<projectile>().damage + saveFile.GetSkillDict()["Damage"].points);

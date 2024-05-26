@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.112805, y: -1.52, z: 0.35697356}
   m_LocalScale: {x: 2, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8462101111023358649}
   - {fileID: 6431336608559218271}
@@ -130,6 +131,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.401, y: -3.146, z: 0}
   m_LocalScale: {x: 0.1139, y: 0.1921, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7202473300124670302}
   m_RootOrder: 1
@@ -160,6 +162,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.401, y: -3.33, z: 0}
   m_LocalScale: {x: 0.0584, y: 0.1144, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7202473300124670302}
   m_RootOrder: 0
@@ -176,6 +179,7 @@ GameObject:
   - component: {fileID: 6349905692814494959}
   - component: {fileID: 6392329223771226000}
   - component: {fileID: 4503241927008056318}
+  - component: {fileID: 608609779252274960}
   m_Layer: 0
   m_Name: Event Listeners
   m_TagString: Untagged
@@ -193,6 +197,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7202473300124670302}
   m_RootOrder: 2
@@ -272,6 +277,34 @@ MonoBehaviour:
       - m_Target: {fileID: 117316936260728548}
         m_TargetAssemblyTypeName: SlowScroll, Assembly-CSharp
         m_MethodName: StopMoving
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &608609779252274960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8088793692396175041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 08ad37806540ed746a4c9774896c4b26, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 117316936260728548}
+        m_TargetAssemblyTypeName: SlowScroll, Assembly-CSharp
+        m_MethodName: StartMoving
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
