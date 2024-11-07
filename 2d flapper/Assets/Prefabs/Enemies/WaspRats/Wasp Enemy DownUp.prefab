@@ -53,20 +53,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1741507363953347243, guid: e17a8596f1d5a13479a4f4a97b5b3a01, type: 3}
       propertyPath: m_Name
-      value: Enemy DownUp V
+      value: Wasp Enemy DownUp
       objectReference: {fileID: 0}
     - target: {fileID: 3135630897933143740, guid: e17a8596f1d5a13479a4f4a97b5b3a01, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3224044125442151955, guid: e17a8596f1d5a13479a4f4a97b5b3a01, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a73b58c1a91c1594ca9ab0a50de5ac8f, type: 3}
     - target: {fileID: 3783939891723034491, guid: e17a8596f1d5a13479a4f4a97b5b3a01, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758092942793547229, guid: e17a8596f1d5a13479a4f4a97b5b3a01, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4758092942793547229, guid: e17a8596f1d5a13479a4f4a97b5b3a01, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5114121859436150851, guid: e17a8596f1d5a13479a4f4a97b5b3a01, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7166587002751783517, guid: e17a8596f1d5a13479a4f4a97b5b3a01, type: 3}
+      propertyPath: HurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ce64381205dea84ea23e12499d786ce, type: 3}
+    - target: {fileID: 7166587002751783517, guid: e17a8596f1d5a13479a4f4a97b5b3a01, type: 3}
+      propertyPath: DeathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5fbe2a25264836d4fa60f7f28e4537b8, type: 3}
     - target: {fileID: 8736286387893825909, guid: e17a8596f1d5a13479a4f4a97b5b3a01, type: 3}
       propertyPath: m_Sprite
       value: 

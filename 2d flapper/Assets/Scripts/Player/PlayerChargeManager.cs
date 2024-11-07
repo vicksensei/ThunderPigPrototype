@@ -24,6 +24,11 @@ public class PlayerChargeManager : MonoBehaviour
     [SerializeField]
     GameObject EnergyPotionEffect;
 
+    [Header("Sounds")]
+    [SerializeField]
+    AudioClip FlapSound;
+    [SerializeField]
+    AudioClip ChargeSound;
     private void Awake()
     {
         SaveFile.CurCharge = SaveFile.MaxCharge;
@@ -36,7 +41,7 @@ public class PlayerChargeManager : MonoBehaviour
         CurrentFlaps.Value++;
         if (CurrentFlaps.Value == SaveFile.FlapsToCharge - SaveFile.GetSkillDict()["Charge Speed"].points)
         {
-            if(SaveFile.CurCharge < SaveFile.MaxCharge + SaveFile.GetSkillDict()["Charge"].points)
+            if (SaveFile.CurCharge < SaveFile.MaxCharge + SaveFile.GetSkillDict()["Charge"].points)
             {
                 GainEnergy();
             }
@@ -45,6 +50,7 @@ public class PlayerChargeManager : MonoBehaviour
                 CurrentFlaps.Value = (SaveFile.FlapsToCharge - SaveFile.GetSkillDict()["Charge Speed"].points - 1);
             }
         }
+        SoundManager.instance.PlayClipRandomPitch(FlapSound, transform, 1f, 0.5f, 1f);
     }
 
     public void GainEnergy()
@@ -67,7 +73,7 @@ public class PlayerChargeManager : MonoBehaviour
         int max = SaveFile.MaxCharge + SaveFile.GetSkillDict()["Charge"].points;
         if (SaveFile.CurCharge != max)
         {
-            SaveFile.CurCharge += 3  + SaveFile.GetSkillDict()["Charge Power"].points;
+            SaveFile.CurCharge += 3 + SaveFile.GetSkillDict()["Charge Power"].points;
             if (SaveFile.CurCharge > max)
             {
                 SaveFile.CurCharge = max;

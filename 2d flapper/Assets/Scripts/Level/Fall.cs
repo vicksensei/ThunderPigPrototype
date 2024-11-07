@@ -8,10 +8,15 @@ public class Fall : MonoBehaviour
     [SerializeField]
     SOEvents.VoidEvent PlayerDead;
 
+    [Header("Sounds")]
+    [SerializeField]
+    AudioClip DeathSound;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
+            SoundManager.instance.PlayClip(DeathSound, transform, 1f);
             PlayerDead.Raise();
         }
     }

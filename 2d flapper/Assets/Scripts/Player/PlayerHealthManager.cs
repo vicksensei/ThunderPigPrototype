@@ -27,6 +27,12 @@ public class PlayerHealthManager : MonoBehaviour
     GameObject PotionEffect;
 
 
+    [Header("Sounds")]
+    [SerializeField]
+    AudioClip HealSound;
+    [SerializeField]
+    AudioClip HurtSound;
+
     public void ReduceHealth()
     {
         SaveFile.CurHP--;
@@ -41,16 +47,17 @@ public class PlayerHealthManager : MonoBehaviour
     {
         if (SaveFile.CurHP < SaveFile.MaxHP + SaveFile.GetSkillDict()["Health"].points)
         {
-            SaveFile.CurHP+=1 +(1*SaveFile.GetSkillDict()["Heart Power"].points);
+            SaveFile.CurHP += 1 + (1 * SaveFile.GetSkillDict()["Heart Power"].points);
             HealthChangedEvent.Raise();
             Instantiate(PotionEffect, transform);
+            SoundManager.instance.PlayClipRandomPitch(HealSound, transform, 1f, .6f, 1f);
         }
     }
 
     public void ResetHealth()
     {
 
-        SaveFile.CurHP = SaveFile.MaxHP +SaveFile.GetSkillDict()["Health"].points;
+        SaveFile.CurHP = SaveFile.MaxHP + SaveFile.GetSkillDict()["Health"].points;
         HealthChangedEvent.Raise();
     }
 

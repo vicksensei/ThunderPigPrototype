@@ -37,6 +37,16 @@ public class BossHealth : MonoBehaviour
     [SerializeField]
     GameObject ImmuneParticle;
 
+
+    [Header("Sounds")]
+    [SerializeField]
+    AudioClip DeathSound;
+    [SerializeField]
+    AudioClip HurtSound;
+    [SerializeField]
+    AudioClip ImmuneSound;
+
+
     bool hasSuperArmor;
     bool bloodied = false;
     bool enraged = false;
@@ -70,6 +80,7 @@ public class BossHealth : MonoBehaviour
             if (currentHP <= 0 && !dead)
             {
                 currentHP = 0;
+                SoundManager.instance.PlayClip(DeathSound, transform, 1f);
                 bossDead.Raise();
                 dead = true;
             }
@@ -86,9 +97,11 @@ public class BossHealth : MonoBehaviour
             }
             UpdateHP();
             // play a sound for damage
+            SoundManager.instance.PlayClip(HurtSound, transform, 1f);
         }
         else
         {
+            SoundManager.instance.PlayClip(ImmuneSound, transform, 1f);
             // play a sound for immunity
         }
     }

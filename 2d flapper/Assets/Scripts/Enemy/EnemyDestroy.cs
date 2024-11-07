@@ -39,6 +39,12 @@ public class EnemyDestroy : MonoBehaviour
     [SerializeField]
     ProgressionObject saveFile;
 
+    [Header("Sounds")]
+    [SerializeField]
+    AudioClip DeathSound;
+    [SerializeField]
+    AudioClip HurtSound;
+
     DropTable dt;
     private void Awake()
     {
@@ -87,12 +93,14 @@ public class EnemyDestroy : MonoBehaviour
                 if (curHP <= 0)
                 {
                     dt.BeforeDestroy();
+                    SoundManager.instance.PlayClipRandomPitch(DeathSound, transform, 1f, 0.8f, 1f);
                     GiveXP.Raise(ExpValue); ShowHitParticle();
                     Destroy(transform.parent.gameObject);
                     //Debug.Log("collision with " + other.gameObject.name);
                 }
                 else
                 {
+                    SoundManager.instance.PlayClipRandomPitch(HurtSound, transform, 1f, 0.8f, 1f);
                     if (HPBar != null)
                     {
                         RefreshHPUI();
