@@ -128,21 +128,42 @@ public class InputReader : MonoBehaviour
                     temp = temp.Replace("</table>", "");
                     temp = temp.Replace("</tr>", "");
                     temp = temp.Replace("</td>", "");
-                    string[] lines = temp.Split('\n');
+                    temp = temp.Replace("</>", "");
+                    temp = temp.Replace("</b>", "");
+                    Debug.Log(temp);
+                    string[] lines = temp.Split("<split/>");
 
-                    temp = "";
-                    string curline;
+                    temp = "<b>Name" +
+                        "<pos=25%> High Score" +
+                        "<pos=50%> Max Combo" +
+                        "<pos=75%> Perfection </b>\n";
+                    string curline = "";
                     for (int i = 0; i < lines.Length; i++)
                     {
-                        if (i % 2 == 0 && i + 2 <= lines.Length)
+                        if (i % 4 == 0)
                         {
-                            curline = lines[i] + "<pos=75%>" + lines[i + 1];
-                            if (lines[i].Trim() == Output.text)
-                            {
-                                curline = "<b>" + curline + "</b>";
-                            }
-                            temp += curline + "\n";
+                            curline = "";
                         }
+                        curline += "<pos=" + (28 * (i % 4)) + "%>";
+                        if (i % 4 != 3)
+                        {
+                            curline += lines[i].Trim();
+                        }
+                        else
+                        {
+                            curline += lines[i].Trim() == "0" ? "No" : "PERFECT";
+                            curline += "\n";
+                        }
+                        temp += curline;
+                        //if (i % 2 == 0 && i + 2 <= lines.Length)
+                        //{
+                        //    curline = lines[i] + "<pos=25%>" + lines[i + 1];
+                        //    if (lines[i].Trim() == Output.text)
+                        //    {
+                        //        curline = "<b>" + curline + "</b>";
+                        //    }
+                        //    temp += curline + "\n";
+                        //}
                     }
                     scoreText.text = temp;
                     break;

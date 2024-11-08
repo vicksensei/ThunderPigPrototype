@@ -20,7 +20,7 @@ public class SaveLoadWebGL : MonoBehaviour
     SOEvents.VoidEvent gameReset;
     [SerializeField]
     SOEvents.VoidEvent gameLoaded;
-           
+
     void Save(SaveFile gameDetails)
     {
         string dataPath = string.Format("{0}/SaveFile.dat", Application.persistentDataPath);
@@ -46,7 +46,7 @@ public class SaveLoadWebGL : MonoBehaviour
             {
                 SyncFiles();
             }
-           //PlatformSafeMessage("Saved Successfully!");
+            //PlatformSafeMessage("Saved Successfully!");
         }
         catch (Exception e)
         {
@@ -168,9 +168,16 @@ public class SaveFile
     [SerializeField]
     public Skill[] skillsList;
 
+    public int curCombo;
+    public int maxCombo;
+    public int curRunMaxCombo;
+
+    public int curRunKills = 0;
+    public int curRunScoreWithBonus = 0;
+
     public SaveFile(ProgressionObject saveFile)
     {
-        experiencePoints= saveFile.ExperiencePoints;
+        experiencePoints = saveFile.ExperiencePoints;
 
         currency = saveFile.Currency;
         level = saveFile.Level;
@@ -191,5 +198,12 @@ public class SaveFile
         numDrops = saveFile.NumDrops;
         skillPoints = saveFile.Skillpoints;
         skillsList = saveFile.SkillsList.ToArray();
+
+        maxCombo = saveFile.MaxCombo;
+        curCombo = saveFile.CurCombo;
+        curRunMaxCombo = saveFile.CurRunMaxCombo;
+
+        curRunKills = saveFile.CurRunKills;
+        curRunScoreWithBonus = saveFile.CurRunScoreWithBonus;
     }
 }

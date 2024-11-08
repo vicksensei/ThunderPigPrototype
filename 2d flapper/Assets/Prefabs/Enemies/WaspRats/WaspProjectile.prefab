@@ -342,12 +342,14 @@ MonoBehaviour:
   PlayerCol: {fileID: 11400000, guid: b96d4bc489324dc4ab044c0b53718458, type: 2}
   AnyCol: {fileID: 11400000, guid: d4931be8ee4df434dac83bd452cc9faa, type: 2}
   GiveXP: {fileID: 11400000, guid: 3aecc6ecd0791e844bc6a2cb2464db76, type: 2}
+  EnemyEscaped: {fileID: 11400000, guid: 04c5a9eec99301a40964a2d6b152e777, type: 2}
   HPBar: {fileID: 7063542326886841365}
   HPText: {fileID: 6181205174844992674}
   maxHP: 1
   HPScales: 0
   playerIsImmune: {fileID: 11400000, guid: e5ff2e634e9e1334ca25860d4b588faf, type: 2}
   ExpValue: 0
+  BreaksPerfection: 0
   DestroyParticle: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56, type: 3}
   ImmuneParticle: {fileID: 0}
   saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
@@ -374,6 +376,8 @@ MonoBehaviour:
   direction: {x: -1, y: 0, z: 0}
   isMoving: 1
   Destroyable: 1
+  clearCombo: {fileID: 0}
+  AddCombo: {fileID: 0}
 --- !u!114 &4238564161310023073
 MonoBehaviour:
   m_ObjectHideFlags: 0

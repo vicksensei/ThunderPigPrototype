@@ -26,6 +26,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10.791337}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9201886156361982712}
   - {fileID: 9201886157823864104}
@@ -45,6 +46,7 @@ GameObject:
   - component: {fileID: 4832144811336925878}
   - component: {fileID: 6593763495189776206}
   - component: {fileID: 3764451307725616145}
+  - component: {fileID: 1662115423555228260}
   m_Layer: 0
   m_Name: Cloud Spawner
   m_TagString: Untagged
@@ -62,6 +64,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 12.16, y: 0, z: -13.173099}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9201886155878582449}
   m_RootOrder: 0
@@ -82,12 +85,21 @@ MonoBehaviour:
   - prefab: {fileID: 54195042960089795, guid: 7d35b2f30ed53b142a41fececb7115b1, type: 3}
     distanceFromBottom: 0
     distanceFromTop: 0
+    randomizeHeight: 1
+    Distancex: 0
+    randomizeLR: 0
   - prefab: {fileID: 8961500667155527131, guid: 0d023b28fcd7f854fa7cf3549acb8093, type: 3}
     distanceFromBottom: 0
     distanceFromTop: 0
+    randomizeHeight: 1
+    Distancex: 0
+    randomizeLR: 0
   - prefab: {fileID: 1097746845703253440, guid: 22db119879dbcde4a984711751615be3, type: 3}
     distanceFromBottom: 0
     distanceFromTop: 0
+    randomizeHeight: 1
+    Distancex: 0
+    randomizeLR: 0
   screenTop: {fileID: 0}
   screenBottom: {fileID: 0}
   spawnRate: {fileID: 11400000, guid: 5d7e33bf72274814eb1004f0b6707a3b, type: 2}
@@ -215,6 +227,46 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1662115423555228260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9201886156361982713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 6cb03ba8782529c43928b59cda54946a, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1234494458}
+        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
+        m_MethodName: ScrollOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1234494458}
+        m_TargetAssemblyTypeName: Spawner, Assembly-CSharp
+        m_MethodName: SpawningOff
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &9201886157823864106
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +299,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 13, y: -4, z: -13.173099}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9201886155878582449}
   m_RootOrder: 1
@@ -267,12 +320,21 @@ MonoBehaviour:
   - prefab: {fileID: 2561275011410693782, guid: c024c24f8430bcb48b123839dae264ef, type: 3}
     distanceFromBottom: 3
     distanceFromTop: 0
+    randomizeHeight: 1
+    Distancex: 0
+    randomizeLR: 0
   - prefab: {fileID: 5342095078689989892, guid: 8ec69bb0fcb6e7b41ae53f3cfb42ba51, type: 3}
     distanceFromBottom: 0
     distanceFromTop: 3
+    randomizeHeight: 1
+    Distancex: 0
+    randomizeLR: 0
   - prefab: {fileID: 1741507363953347243, guid: e17a8596f1d5a13479a4f4a97b5b3a01, type: 3}
     distanceFromBottom: 3
     distanceFromTop: 3
+    randomizeHeight: 1
+    Distancex: 0
+    randomizeLR: 0
   screenTop: {fileID: 0}
   screenBottom: {fileID: 0}
   spawnRate: {fileID: 11400000, guid: 5d7e33bf72274814eb1004f0b6707a3b, type: 2}

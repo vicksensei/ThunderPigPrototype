@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7202473300124670302}
   - component: {fileID: 6689889168787994243}
   - component: {fileID: 117316936260728548}
+  - component: {fileID: 7552264838892083022}
   m_Layer: 0
   m_Name: ParalaxLayer
   m_TagString: Untagged
@@ -105,6 +106,34 @@ MonoBehaviour:
   rightEdge: {fileID: 6431336608559218271}
   multiplier: {fileID: 0}
   GS: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
+--- !u!114 &7552264838892083022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575378800599703630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 6cb03ba8782529c43928b59cda54946a, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 117316936260728548}
+        m_TargetAssemblyTypeName: SlowScroll, Assembly-CSharp
+        m_MethodName: StopMoving
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2645681328851792632
 GameObject:
   m_ObjectHideFlags: 0

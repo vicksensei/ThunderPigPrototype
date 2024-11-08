@@ -51,6 +51,7 @@ public class TestHighScoreDisplay : MonoBehaviour
                     temp = temp.Replace("</table>", "");
                     temp = temp.Replace("</tr>", "");
                     temp = temp.Replace("</td>", "");
+                    temp = temp.Replace("\n", "");
                     scoreText.text = temp;
                     break;
                 default:

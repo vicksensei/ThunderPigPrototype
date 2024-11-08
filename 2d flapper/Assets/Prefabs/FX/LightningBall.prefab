@@ -4880,7 +4880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PO: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
-  timer: 3
+  timer: 4
 --- !u!1 &5964373592927645554
 GameObject:
   m_ObjectHideFlags: 0
@@ -14690,6 +14690,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   isMoving: 0
   Destroyable: 0
+  clearCombo: {fileID: 0}
+  AddCombo: {fileID: 0}
 --- !u!50 &3854062290882291914
 Rigidbody2D:
   serializedVersion: 4

@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561275011410693782, guid: c024c24f8430bcb48b123839dae264ef, type: 3}
       propertyPath: m_Name
-      value: Enemy UpDown V
+      value: Wasp Enemy UpDown
       objectReference: {fileID: 0}
     - target: {fileID: 3732100209616816534, guid: c024c24f8430bcb48b123839dae264ef, type: 3}
       propertyPath: m_RootOrder
@@ -57,6 +57,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3732100209616816534, guid: c024c24f8430bcb48b123839dae264ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8766342331064523232, guid: c024c24f8430bcb48b123839dae264ef, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8766342331064523232, guid: c024c24f8430bcb48b123839dae264ef, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9032368215154623614, guid: c024c24f8430bcb48b123839dae264ef, type: 3}

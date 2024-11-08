@@ -24,7 +24,7 @@ public class StageProgressBar : MonoBehaviour
 
     public void updateBar()
     {
-        Debug.Log("Updating score count: " + count.ToString() + " >> " + (count + 1).ToString());
+        //Debug.Log("Updating score count: " + count.ToString() + " >> " + (count + 1).ToString());
         count++;
         StartCoroutine(doUpdate());
     }

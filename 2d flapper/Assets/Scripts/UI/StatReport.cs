@@ -18,6 +18,8 @@ public class StatReport : MonoBehaviour
     Text SP;
     [SerializeField]
     ProgressionObject saveFile;
+    [SerializeField]
+    Text MC;
 
     private void Awake()
     {
@@ -31,6 +33,6 @@ public class StatReport : MonoBehaviour
         Charge.text = saveFile.MaxCharge.ToString();
         MHP.text = saveFile.MaxHP.ToString();
         SP.text = saveFile.Skillpoints.ToString();
-
+        MC.text = saveFile.MaxCombo.ToString();
     }
 }

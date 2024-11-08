@@ -61,10 +61,10 @@ public class SkillDisplay : MonoBehaviour
         if (skill.isLocked)
         {
             TTText += "\n [LOCKED]";
-            foreach(SkillPreReq req in skill.skillPreReqs)
+            foreach (SkillPreReq req in skill.skillPreReqs)
             {
-                TTText +="\n " + req.SkillName + ": " + SkillDict[req.SkillName].points + "/" + req.requiredPoints;
-                if(SkillDict[req.SkillName].points >= req.requiredPoints)
+                TTText += "\n " + req.SkillName + ": " + SkillDict[req.SkillName].points + "/" + req.requiredPoints;
+                if (SkillDict[req.SkillName].points >= req.requiredPoints)
                 {
                     TTText += " [DONE!]";
                 }
@@ -108,7 +108,7 @@ public class SkillDisplay : MonoBehaviour
                 Debug.Log("Incorrect Skill");
             }
         }
-        if(countPreReqMet >= SkillDict[skillName].skillPreReqs.Length)
+        if (countPreReqMet >= SkillDict[skillName].skillPreReqs.Length)
         {
             SkillDict[skillName].isLocked = false;
         }
@@ -130,9 +130,12 @@ public class SkillDisplay : MonoBehaviour
 
     public void onClicked()
     {
-        skillClicked.Raise(skillName);
-        updateAllSkills.Raise();
-        setSkill(); 
+        if (SkillDict[skillName].isLocked == false)
+        {
+            skillClicked.Raise(skillName);
+            updateAllSkills.Raise();
+            setSkill();
+        }
     }
 
 }

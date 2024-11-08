@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 3953459956776157512}
   - component: {fileID: 1139545925880498118}
   - component: {fileID: 6946220968244866047}
-  - component: {fileID: 7433673805719198269}
   - component: {fileID: 7135365991713332521}
   - component: {fileID: 5773908390360955117}
   - component: {fileID: 2895220113981408634}
@@ -216,7 +215,7 @@ MonoBehaviour:
   gameState: {fileID: 11400000, guid: 7a963a9947a367c4aa6331675c3cee29, type: 2}
   PotionEffect: {fileID: 728444671085414844, guid: c019570d95ae50d4bad928fc7829454e, type: 3}
   HealSound: {fileID: 8300000, guid: 746cf5b8b254de845bfc3b87a88ce2e1, type: 3}
-  HurtSound: {fileID: 8300000, guid: 5ce64381205dea84ea23e12499d786ce, type: 3}
+  HurtSound: {fileID: 8300000, guid: 6dc03ac8ec471b04695a3df854fbec60, type: 3}
 --- !u!114 &6498394322062975238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,34 +360,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &6946220968244866047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204172446629243294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 6cb03ba8782529c43928b59cda54946a, type: 2}
-  unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 204172446629243289}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: GravityOff
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &7433673805719198269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

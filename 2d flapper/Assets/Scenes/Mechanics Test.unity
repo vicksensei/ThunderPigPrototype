@@ -1133,6 +1133,18 @@ PrefabInstance:
       propertyPath: DeathSound
       value: 
       objectReference: {fileID: 8300000, guid: e818b32203f11e447b7b52346df5c667, type: 3}
+    - target: {fileID: 5694963974401968720, guid: dcab786ceb3321242915c71d063d716d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 12.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 5694963974401968720, guid: dcab786ceb3321242915c71d063d716d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031144674690358444, guid: dcab786ceb3321242915c71d063d716d, type: 3}
+      propertyPath: killPerfection
+      value: 
+      objectReference: {fileID: 11400000, guid: 07665a4049df1e14cb81b8101a77cf7c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcab786ceb3321242915c71d063d716d, type: 3}
 --- !u!1001 &6632819881916459520

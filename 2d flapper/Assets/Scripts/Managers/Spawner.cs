@@ -39,10 +39,10 @@ public class Spawner : MonoBehaviour
         if (canSpawn.Value) //when spawning is on
         {
             // create a random number to select which spawnable to spawn
-            int randomizer = Random.Range(0, spawnables.Length); 
+            int randomizer = Random.Range(0, spawnables.Length);
             Spawnable current;
-            current = spawnables[randomizer]; 
-            
+            current = spawnables[randomizer];
+
             //create values for the spawnable's position
             float y, x;
 
@@ -61,7 +61,7 @@ public class Spawner : MonoBehaviour
             //if we will randomize the left right positon (rare)
             if (current.randomizeLR)
             {//create a random number between the  X position and Distance X
-                x = Random.Range(transform.position.x -3, current.Distancex);
+                x = Random.Range(transform.position.x - 3, current.Distancex);
             }
             else
             {//otherwise, place it a specific distance from positionX
@@ -71,8 +71,8 @@ public class Spawner : MonoBehaviour
             GameObject spawned;
 
             spawned = Instantiate(spawnables[randomizer].prefab,
-                new Vector3(x, y, 0), 
-                Quaternion.identity, 
+                new Vector3(x, y, 0),
+                Quaternion.identity,
                 transform);
         }
     }
@@ -93,6 +93,14 @@ public class Spawner : MonoBehaviour
     {
         canScroll.Value = false;
     }
+
+    public void DestroyChildren()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
 }
 
 
@@ -101,8 +109,8 @@ public class Spawner : MonoBehaviour
 public class Spawnable
 {
     public GameObject prefab;
-    public float distanceFromBottom =0;
-    public float distanceFromTop =0;
+    public float distanceFromBottom = 0;
+    public float distanceFromTop = 0;
     public bool randomizeHeight = true;
     public float Distancex = 0;
     public bool randomizeLR = false;

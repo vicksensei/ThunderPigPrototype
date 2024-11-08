@@ -36,7 +36,7 @@ public class SkillsManager : MonoBehaviour
         GenerateSkillDisplays();
         SortSkills();
     }
-    
+
     void GenerateSkillDisplays()
     {
         skillsDispDict = new Dictionary<string, SkillDisplay>();
@@ -45,7 +45,7 @@ public class SkillsManager : MonoBehaviour
             GameObject GO = Instantiate(SkillDisplay, childContainer);
             string sName = currentProgression.SkillsList[i].skillName;
             CheckPreReq(sName);
-            Debug.Log(sName);
+            //Debug.Log(sName);
             GO.GetComponent<SkillDisplay>().SetSkillName(sName);
             skillsDispDict.Add(sName, GO.GetComponent<SkillDisplay>());
         }
@@ -54,7 +54,7 @@ public class SkillsManager : MonoBehaviour
 
     void SortSkills()
     {
-        foreach(KeyValuePair<string, SkillDisplay> SD in skillsDispDict)
+        foreach (KeyValuePair<string, SkillDisplay> SD in skillsDispDict)
         {// check every Skill Display
             //get their name
             string myName = SD.Key;
@@ -72,7 +72,7 @@ public class SkillsManager : MonoBehaviour
                     if (skillsDispDict.ContainsKey(nameOfPreReq))
                     {
                         if (i == 0)
-                        { 
+                        {
                             //get the Display container's transform that maatches the name of the first prerequisite on the list
                             SD.Value.transform.SetParent(skillsDispDict[nameOfPreReq].childContainer);
                             //Make that transform the parent of the Display we're checking.
@@ -91,9 +91,10 @@ public class SkillsManager : MonoBehaviour
     void CheckPreReq(string SkillName)
     {
         int count = 0;
-        foreach(SkillPreReq req in skillDict[SkillName].skillPreReqs)
+        foreach (SkillPreReq req in skillDict[SkillName].skillPreReqs)
         {
-            if(skillDict[req.SkillName].points >= req.requiredPoints){
+            if (skillDict[req.SkillName].points >= req.requiredPoints)
+            {
                 count++;
             }
         }

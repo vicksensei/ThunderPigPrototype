@@ -12,7 +12,8 @@ public class ScoreDisplay : MonoBehaviour
     ProgressionObject saveFile;
     [SerializeField]
     bool isHighScore = false;
-
+    [SerializeField]
+    bool isEndingScore = false;
     private void Start()
     {
         UpdateScore();
@@ -31,7 +32,18 @@ public class ScoreDisplay : MonoBehaviour
     {
         string toShow;
         if (isHighScore) { toShow = saveFile.HighScore.ToString(); }
-        else{ toShow = saveFile.CurScore.ToString(); }
+        else
+        {
+            if (isEndingScore)
+            {
+                toShow = saveFile.CurRunScoreWithBonus.ToString();
+            }
+            else
+            {
+                toShow = saveFile.CurRunKills.ToString();
+
+            }
+        }
         scoreDisplay.text = toShow;
     }
 }

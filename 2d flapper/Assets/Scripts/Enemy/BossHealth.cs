@@ -83,6 +83,7 @@ public class BossHealth : MonoBehaviour
                 SoundManager.instance.PlayClip(DeathSound, transform, 1f);
                 bossDead.Raise();
                 dead = true;
+                gameObject.SetActive(false);
             }
 
             if (currentHP <= (maximumHP * 2 / 3) && !bloodied)
@@ -123,26 +124,30 @@ public class BossHealth : MonoBehaviour
     {
         if (collision.tag == "Projectile")
         {
+            projectile p = collision.gameObject.GetComponent<projectile>();
+
             projectileCol.Raise();
-            if (collision.GetComponent<projectile>() != null)
+            if (p != null)
             {
-                TakeDamage(collision.GetComponent<projectile>().damage + saveFile.GetSkillDict()["Damage"].points);
+                p.HitSomething();
+                TakeDamage(p.damage + saveFile.GetSkillDict()["Damage"].points);
+
+                if (hasSuperArmor)
+                {
+                    ShowImmuneParticle();
+                    Destroy(collision.gameObject);
+                }
+                else
+                {
+                    p.ShowHitParticle();
+                    p.TryToDestroy();
+                }
             }
             else
             {
                 TakeDamage(1 + saveFile.GetSkillDict()["Damage"].points);
             }
 
-            if (hasSuperArmor)
-            {
-                ShowImmuneParticle();
-            }
-            else
-            {
-                collision.gameObject.GetComponent<projectile>().ShowHitParticle();
-            }
-
-            Destroy(collision.gameObject);
         }
         if (collision.tag == "Player")
         {

@@ -16,6 +16,9 @@ public class EnemyDestroy : MonoBehaviour
     SOEvents.VoidEvent AnyCol;
     [SerializeField]
     SOEvents.IntEvent GiveXP;
+    [SerializeField]
+    SOEvents.VoidEvent EnemyEscaped;
+
     [Header("UI")]
     [SerializeField]
     Slider HPBar;
@@ -31,6 +34,9 @@ public class EnemyDestroy : MonoBehaviour
     BoolValue playerIsImmune;
     [SerializeField]
     int ExpValue = 1;
+
+    [SerializeField]
+    bool BreaksPerfection = true;
     [Header("Prefabs")]
     [SerializeField]
     GameObject DestroyParticle;
@@ -60,8 +66,8 @@ public class EnemyDestroy : MonoBehaviour
         if (HPScales)
         {
             maxHP += (int)(saveFile.CurrentDifficulty - 1);
-            Debug.Log("Max HP: " + maxHP.ToString());
-            Debug.Log(saveFile.CurrentDifficulty.ToString());
+            //Debug.Log("Max HP: " + maxHP.ToString());
+            //Debug.Log(saveFile.CurrentDifficulty.ToString());
         }
         curHP = maxHP;
         if (HPBar != null)
@@ -86,10 +92,12 @@ public class EnemyDestroy : MonoBehaviour
         {
             if (other.GetComponent<projectile>().IsFromPlayer)
             {
+                projectile p = other.gameObject.GetComponent<projectile>();
                 projectileCol.Raise();
-                other.gameObject.GetComponent<projectile>().ShowHitParticle();
-                curHP -= other.gameObject.GetComponent<projectile>().damage;
-                other.gameObject.GetComponent<projectile>().TryToDestroy();
+                p.ShowHitParticle();
+                p.HitSomething();
+                curHP -= p.damage;
+                p.TryToDestroy();
                 if (curHP <= 0)
                 {
                     dt.BeforeDestroy();
@@ -127,5 +135,14 @@ public class EnemyDestroy : MonoBehaviour
     public void ShowDestroyParticle()
     {
         Instantiate(DestroyParticle, transform.position, Quaternion.identity);
+    }
+    public void Escaped()
+    {
+        if (BreaksPerfection)
+        {
+            EnemyEscaped.Raise();
+            Debug.Log("Enemy Escaped! No longer perfect");
+            Destroy(transform.parent.gameObject);
+        }
     }
 }

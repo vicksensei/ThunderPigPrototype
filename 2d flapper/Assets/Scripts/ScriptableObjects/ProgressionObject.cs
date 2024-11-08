@@ -51,6 +51,17 @@ public class ProgressionObject : ScriptableObject
     [SerializeField]
     int progrssionMult = 10;
 
+    [SerializeField]
+    int maxCombo = 0;
+    [SerializeField]
+    int curCombo = 0;
+    [SerializeField]
+    int curRunMaxCombo = 0;
+    [SerializeField]
+    int curRunKills = 0;
+    [SerializeField]
+    int curRunScoreWithBonus = 0;
+
     public int ExperiencePoints { get => experiencePoints; set => experiencePoints = value; }
     public int Currency { get => currency; set => currency = value; }
     public int Level { get => level; set => level = value; }
@@ -68,6 +79,11 @@ public class ProgressionObject : ScriptableObject
     public int Skillpoints { get => skillpoints; set => skillpoints = value; }
     public List<Skill> SkillsList { get => skillsList; set => skillsList = value; }
     public int ProgrssionMult { get => progrssionMult; set => progrssionMult = value; }
+    public int MaxCombo { get => maxCombo; set => maxCombo = value; }
+    public int CurCombo { get => curCombo; set => curCombo = value; }
+    public int CurRunMaxCombo { get => curRunMaxCombo; set => curRunMaxCombo = value; }
+    public int CurRunKills { get => curRunKills; set => curRunKills = value; }
+    public int CurRunScoreWithBonus { get => curRunScoreWithBonus; set => curRunScoreWithBonus = value; }
 
     private void OnEnable()
     {
@@ -76,26 +92,26 @@ public class ProgressionObject : ScriptableObject
 
     public void Clone(ProgressionObject original)
     {
-        experiencePoints= original.experiencePoints;
-        level= original.level;
+        experiencePoints = original.experiencePoints;
+        level = original.level;
 
-        currency= original.currency;
-    
-        maxHP= original.maxHP;
-        curHP= original.curHP;
+        currency = original.currency;
 
-        maxCharge= original.maxCharge;
-        curCharge= original.curCharge;
-        flapsToCharge= original.flapsToCharge;
+        maxHP = original.maxHP;
+        curHP = original.curHP;
 
-        pierceCount= original.pierceCount;
-        numDrops= original.numDrops;
+        maxCharge = original.maxCharge;
+        curCharge = original.curCharge;
+        flapsToCharge = original.flapsToCharge;
 
-        furthestDifficulty= original.furthestDifficulty;
-        currentDifficulty= original.currentDifficulty;
+        pierceCount = original.pierceCount;
+        numDrops = original.numDrops;
 
-        highScore= original.highScore;
-        curScore= original.curScore;
+        furthestDifficulty = original.furthestDifficulty;
+        currentDifficulty = original.currentDifficulty;
+
+        highScore = original.highScore;
+        curScore = original.curScore;
 
         skillsList = new List<Skill>();
         for (int i = 0; i < original.skillsDB.skillsList.Count; i++)
@@ -104,6 +120,13 @@ public class ProgressionObject : ScriptableObject
         }
 
         skillpoints = original.skillpoints;
+        curCombo = original.curCombo;
+        curRunMaxCombo = original.curRunMaxCombo;
+        maxCombo = original.maxCombo;
+
+        curRunKills = original.curRunKills;
+        curRunScoreWithBonus = original.curRunScoreWithBonus;
+
     }
     public void Load(SaveFile saveFile)
     {
@@ -131,6 +154,12 @@ public class ProgressionObject : ScriptableObject
         skillsList = new List<Skill>(saveFile.skillsList);
         skillpoints = saveFile.skillPoints;
 
+        maxCombo = saveFile.maxCombo;
+        curCombo = saveFile.curCombo;
+        curRunMaxCombo = saveFile.curRunMaxCombo;
+
+        curRunKills = saveFile.curRunKills;
+        curRunScoreWithBonus = saveFile.curRunScoreWithBonus;
     }
 
     public Dictionary<string, Skill> GetSkillDict()

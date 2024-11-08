@@ -40,7 +40,7 @@ public class GameStateManager : MonoBehaviour
     public void Continue()
     {
         gameState.state = lastGameState;
-        Debug.Log("Gamestate: "+ gameState.state);
+        Debug.Log("Gamestate: " + gameState.state);
         RestartTime();
     }
 
@@ -48,7 +48,8 @@ public class GameStateManager : MonoBehaviour
     {
         gameState.state = GameState.State.End;
         Debug.Log("Gamestate: " + gameState.state);
-        Time.timeScale = 0;
+        RestartTime();
+        //Time.timeScale = 0;
     }
 
     public void BossFight()

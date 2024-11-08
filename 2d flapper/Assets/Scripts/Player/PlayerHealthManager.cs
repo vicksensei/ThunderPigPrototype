@@ -37,10 +37,11 @@ public class PlayerHealthManager : MonoBehaviour
     {
         SaveFile.CurHP--;
         HealthChangedEvent.Raise();
+        SoundManager.instance.PlayClipRandomPitch(HurtSound, transform, 1f, .8f, 1.3f);
         if (SaveFile.CurHP == 0)
         {
             PlayerDeadEvent.Raise();
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
         }
     }
     public void IncreaseHealth()

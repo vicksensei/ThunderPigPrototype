@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using SOEvents;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,10 +27,21 @@ public class projectile : MonoBehaviour
     [SerializeField]
     bool Destroyable = true;
 
+    [SerializeField]
+    bool canMiss = true;
+    [Header("Events")]
+    [SerializeField]
+    VoidEvent clearCombo;
+    [SerializeField]
+    VoidEvent AddCombo;
+    bool isMissedShot = true;
+
     public bool IsFromPlayer { get => isFromPlayer; set => isFromPlayer = value; }
+    public bool IsMissedShot { get => isMissedShot; set => isMissedShot = value; }
 
     public void Awake()
     {
+        if (!canMiss) { isMissedShot = false; }
         piercedSoFar = saveFile.PierceCount + saveFile.GetSkillDict()["Pierce"].points;
         if (IsFromPlayer)
         {
@@ -54,7 +66,18 @@ public class projectile : MonoBehaviour
     {
         Instantiate(DestroyParticle, transform.position, Quaternion.identity);
     }
-
+    public void HitSomething()
+    {
+        if (!canMiss && isFromPlayer)
+        {
+            isMissedShot = false;
+            AddCombo.Raise();
+        }
+    }
+    public void ResetCombo()
+    {
+        clearCombo.Raise();
+    }
     public void TryToDestroy()
     {
         if (Destroyable)
@@ -62,6 +85,10 @@ public class projectile : MonoBehaviour
             if (IsFromPlayer)
             {
                 ShowHitParticle();
+                if (isMissedShot == true)
+                {
+                    clearCombo.Raise();
+                }
                 if (piercedSoFar <= 0)
                 {
                     Destroy(gameObject);
@@ -81,10 +108,22 @@ public class projectile : MonoBehaviour
     }
 
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log(name + " triggered " + collision.gameObject.name);
+        doCollision(collision);
+    }
     private void OnCollisionEnter2D(Collision2D other)
     {
+        Debug.Log(name + " hit " + other.gameObject.name);
+        doCollision(other.collider);
+    }
 
-        if (other.gameObject.tag == "Player")
+    void doCollision(Collider2D collision)
+    {
+
+
+        if (collision.gameObject.tag == "Player")
         {
             if (!IsFromPlayer)
             {
@@ -93,6 +132,5 @@ public class projectile : MonoBehaviour
             }
         }
     }
-
 
 }

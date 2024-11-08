@@ -16,6 +16,9 @@ GameObject:
   - component: {fileID: 4448611934706126619}
   - component: {fileID: 5771399811199852684}
   - component: {fileID: 3168136642758101232}
+  - component: {fileID: 1018730979672715977}
+  - component: {fileID: 8017667702415160939}
+  - component: {fileID: 1875356134308061110}
   m_Layer: 0
   m_Name: ScoreManager
   m_TagString: Untagged
@@ -33,6 +36,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.0921865, y: -1.2420777, z: -37.949154}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,6 +59,8 @@ MonoBehaviour:
   ScoreChanged: {fileID: 11400000, guid: 18ed13bde51ec564a899675c8e5c4197, type: 2}
   HiScoreChanged: {fileID: 11400000, guid: 1b90eb27f1781c84b858e5f27e164f38, type: 2}
   waspBossTime: {fileID: 11400000, guid: e80f14b760de0a44da8f2936ae240d42, type: 2}
+  ComboChanged: {fileID: 11400000, guid: 29be4d0e0c4bfcc4bb0829bb731f3f26, type: 2}
+  newHigh: 0
 --- !u!114 &6632819881611852144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,6 +105,18 @@ MonoBehaviour:
   unityEventResponse:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 6632819881611852145}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: Died
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 6632819881611852145}
         m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
         m_MethodName: SetHighScore
@@ -214,6 +232,90 @@ MonoBehaviour:
       - m_Target: {fileID: 6632819881611852145}
         m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
         m_MethodName: ReportScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1018730979672715977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6632819881611852143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 61b3d9e23beab0b4dbd6771b415578a7, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6632819881611852145}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: ClearCombo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8017667702415160939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6632819881611852143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: f8673101ffc8ee54cad052985beef69a, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6632819881611852145}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: AddToCombo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1875356134308061110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6632819881611852143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 04c5a9eec99301a40964a2d6b152e777, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6632819881611852145}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: KillPerfection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

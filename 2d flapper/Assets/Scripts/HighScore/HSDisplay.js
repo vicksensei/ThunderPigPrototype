@@ -23,6 +23,7 @@ function getScores() {
         scoreText.text = "No Data Record";
     } else {
         // This is a GUIText that will display the scores in game
+        print("WWW Ok!: " + wwwDisplay.text);
         scoreText.text = wwwDisplay.text; 
     }
 }
