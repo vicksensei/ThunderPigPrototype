@@ -7,8 +7,6 @@ public class Bounds : MonoBehaviour
 {
     [SerializeField]
     string tagToDestroy;
-    [SerializeField]
-    VoidEvent killPerfection;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

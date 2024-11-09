@@ -1249,6 +1249,8 @@ GameObject:
   - component: {fileID: 7485351236353936415}
   - component: {fileID: 5902041589787572615}
   - component: {fileID: 6172247927532494039}
+  - component: {fileID: 1577504121063450325}
+  - component: {fileID: 7422191494997117603}
   m_Layer: 0
   m_Name: Skill Points Label
   m_TagString: Untagged
@@ -1318,6 +1320,48 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Skill Points:'
+--- !u!114 &1577504121063450325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5461152955940431627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7422191494997117603}
+          m_TargetAssemblyTypeName: RaiseEvent, Assembly-CSharp
+          m_MethodName: Raise
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &7422191494997117603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5461152955940431627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 912189d8bc937824ead9891ed648d395, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventToRaise: {fileID: 11400000, guid: 6fc6ccc5fe4764b44b4f5b77d51623f2, type: 2}
 --- !u!1 &6422582318575795323
 GameObject:
   m_ObjectHideFlags: 0
