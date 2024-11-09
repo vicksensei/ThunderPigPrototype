@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 2683931368456337167}
   - component: {fileID: 2683931368456337165}
   - component: {fileID: 2683931368456337164}
+  - component: {fileID: 7796357797377138058}
   m_Layer: 5
   m_Name: Box
   m_TagString: Untagged
@@ -160,6 +161,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7796357797377138058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2683931368456337166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a15afdf729794449a866d83254e0d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClipToPlay: {fileID: 8300000, guid: 4fbe50e314ae7f242a75ef3dc818a7d5, type: 3}
+  randomize: 1
+  min: 0.7
+  max: 1
 --- !u!1 &2683931368601821957
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +247,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 20
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 5
@@ -239,7 +256,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Your Score
+  m_Text: Your Total Score
 --- !u!1 &2683931368634397306
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +649,7 @@ GameObject:
   - component: {fileID: 2683931369987372711}
   - component: {fileID: 2683931369987372710}
   - component: {fileID: 796469911550741227}
+  - component: {fileID: 4945714351348691056}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -768,6 +786,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EventToRaise: {fileID: 11400000, guid: 0c8682b4924d2004ebb11ea4c23ae07a, type: 2}
+--- !u!114 &4945714351348691056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2683931369987372707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7796357797377138058}
+          m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+          m_MethodName: play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2683931370151265170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,7 +1064,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &469512524854971072
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1167,6 +1214,7 @@ GameObject:
   - component: {fileID: 5029477087239744080}
   - component: {fileID: 718255820563916276}
   - component: {fileID: 7536322817898263583}
+  - component: {fileID: 8317478951916024009}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -1303,6 +1351,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EventToRaise: {fileID: 11400000, guid: 03c347d9f5d0b0641976f1fe1e107a02, type: 2}
+--- !u!114 &8317478951916024009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4591707053467564689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7796357797377138058}
+          m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+          m_MethodName: play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &4973007279536347284
 GameObject:
   m_ObjectHideFlags: 0

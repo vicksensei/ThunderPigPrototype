@@ -93,7 +93,7 @@ public class WaspRatBossMovement : MonoBehaviour
             float step = speed * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, StartPos, step);
 
-            if(transform.position == StartPos)
+            if (transform.position == StartPos)
             {
                 currentPhase = CombatPhase.Healthy;
                 superArmorOff.Raise();
@@ -107,7 +107,7 @@ public class WaspRatBossMovement : MonoBehaviour
         {
             if (minionCount < minions)
             {
-                Invoke("SpawnMinions", minionCount*1.33f);
+                Invoke("SpawnMinions", minionCount * 1.33f);
                 minionCount++;
             }
             Move();
@@ -117,7 +117,7 @@ public class WaspRatBossMovement : MonoBehaviour
     {
         if (currentPhase == CombatPhase.Enraged)
         {
-            if (minionCount < minions )
+            if (minionCount < minions)
             {
                 Invoke("SpawnMinions", minionCount);
                 minionCount++;
@@ -175,7 +175,7 @@ public class WaspRatBossMovement : MonoBehaviour
             float step = speed * 10 * Time.deltaTime;
             pos = Vector2.MoveTowards(transform.position, PreChargePos, step);
             if (transform.position == PreChargePos)
-               stopReset();
+                stopReset();
         }
         transform.parent.position = pos;
     }
@@ -191,7 +191,7 @@ public class WaspRatBossMovement : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(ProjectilePrefab,transform);
+        Instantiate(ProjectilePrefab, transform);
     }
 
 
@@ -242,7 +242,7 @@ public class WaspRatBossMovement : MonoBehaviour
     public void stopCharging()
     {
         superArmorOff.Raise();
-        transform.parent.position= new Vector3(PreChargePos.x, PreChargePos.y +10);
+        transform.parent.position = new Vector3(PreChargePos.x, PreChargePos.y + 10);
         isCharging = false;
     }
     public void startReset()
@@ -253,7 +253,10 @@ public class WaspRatBossMovement : MonoBehaviour
     {
         isReseting = false;
     }
-
+    public void onPlayerDeath()
+    {
+        CancelInvoke();
+    }
 }
 
 

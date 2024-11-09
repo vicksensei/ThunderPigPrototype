@@ -14690,6 +14690,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   isMoving: 0
   Destroyable: 0
+  canMiss: 0
   clearCombo: {fileID: 0}
   AddCombo: {fileID: 0}
 --- !u!50 &3854062290882291914

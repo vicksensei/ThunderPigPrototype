@@ -22,7 +22,7 @@ public class Bounds : MonoBehaviour
     void DestroyThing(Collider2D collision)
     {
 
-        Debug.Log("Collision with " + collision.name + " tagged as " + collision.gameObject.tag);
+        //Debug.Log("Collision with " + collision.name + " tagged as " + collision.gameObject.tag);
         if (collision.tag == tagToDestroy)
         {
             if (collision.gameObject.tag == "Enemy")

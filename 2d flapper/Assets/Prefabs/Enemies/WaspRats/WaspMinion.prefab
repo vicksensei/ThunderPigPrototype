@@ -439,6 +439,7 @@ GameObject:
   - component: {fileID: 4370902016955686314}
   - component: {fileID: 1076686021217195416}
   - component: {fileID: 3417283455407452554}
+  - component: {fileID: 4265313609294354386}
   m_Layer: 0
   m_Name: WaspMinion
   m_TagString: Untagged
@@ -617,7 +618,39 @@ MonoBehaviour:
     chance: 0.1
     lbound: 0
     ubound: 0
+  - prefab: {fileID: 4142833076707678937, guid: 0ad81595fd8414c4c8ab286dd5146355, type: 3}
+    chance: 0.01
+    lbound: 0
+    ubound: 0
   saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
+--- !u!114 &4265313609294354386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8104057976579118000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ebb9efd273f209348b475261cee867ae, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4370902016955686314}
+        m_TargetAssemblyTypeName: EnemyDestroy, Assembly-CSharp
+        m_MethodName: DestroyWithThunder
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8898282457596039153
 GameObject:
   m_ObjectHideFlags: 0

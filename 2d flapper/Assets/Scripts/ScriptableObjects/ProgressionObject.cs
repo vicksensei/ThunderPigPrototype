@@ -61,6 +61,11 @@ public class ProgressionObject : ScriptableObject
     int curRunKills = 0;
     [SerializeField]
     int curRunScoreWithBonus = 0;
+    [SerializeField]
+    bool isCurrentRunPerfect = true;
+    [SerializeField]
+    bool isCurrentRunAccurate = true;
+
 
     public int ExperiencePoints { get => experiencePoints; set => experiencePoints = value; }
     public int Currency { get => currency; set => currency = value; }
@@ -71,7 +76,15 @@ public class ProgressionObject : ScriptableObject
     public int CurCharge { get => curCharge; set => curCharge = value; }
     public float FurthestDifficulty { get => furthestDifficulty; set => furthestDifficulty = value; }
     public float CurrentDifficulty { get => currentDifficulty; set => currentDifficulty = value; }
-    public int HighScore { get => highScore; set => highScore = value; }
+    public int HighScore
+    {
+        get => highScore;
+        set
+        {
+            highScore = value;
+            Debug.Log("High score set to = " + value);
+        }
+    }
     public int CurScore { get => curScore; set => curScore = value; }
     public int FlapsToCharge { get => flapsToCharge; set => flapsToCharge = value; }
     public int PierceCount { get => pierceCount; set => pierceCount = value; }
@@ -84,6 +97,8 @@ public class ProgressionObject : ScriptableObject
     public int CurRunMaxCombo { get => curRunMaxCombo; set => curRunMaxCombo = value; }
     public int CurRunKills { get => curRunKills; set => curRunKills = value; }
     public int CurRunScoreWithBonus { get => curRunScoreWithBonus; set => curRunScoreWithBonus = value; }
+    public bool IsCurrentRunPerfect { get => isCurrentRunPerfect; set => isCurrentRunPerfect = value; }
+    public bool IsCurrentRunAccurate { get => isCurrentRunAccurate; set => isCurrentRunAccurate = value; }
 
     private void OnEnable()
     {
@@ -160,6 +175,9 @@ public class ProgressionObject : ScriptableObject
 
         curRunKills = saveFile.curRunKills;
         curRunScoreWithBonus = saveFile.curRunScoreWithBonus;
+
+        isCurrentRunAccurate = true;
+        IsCurrentRunPerfect = true;
     }
 
     public Dictionary<string, Skill> GetSkillDict()

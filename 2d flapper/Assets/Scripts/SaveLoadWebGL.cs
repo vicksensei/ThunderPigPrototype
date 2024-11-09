@@ -23,6 +23,7 @@ public class SaveLoadWebGL : MonoBehaviour
 
     void Save(SaveFile gameDetails)
     {
+        Debug.Log("saving...");
         string dataPath = string.Format("{0}/SaveFile.dat", Application.persistentDataPath);
         BinaryFormatter binaryFormatter = new BinaryFormatter();
         FileStream fileStream;
@@ -77,6 +78,7 @@ public class SaveLoadWebGL : MonoBehaviour
 
     void Load()
     {
+        Debug.Log("Loading..");
         SaveFile gameDetails = null;
         string dataPath = string.Format("{0}/SaveFile.dat", Application.persistentDataPath);
         //Debug.Log("Data path: " + dataPath);

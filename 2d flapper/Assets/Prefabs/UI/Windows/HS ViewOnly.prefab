@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 5136938588865230104}
   - component: {fileID: 8076860300116349661}
   - component: {fileID: 8587631995854698501}
+  - component: {fileID: 2846602572685231704}
+  - component: {fileID: 7468767184949388870}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -134,6 +136,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2846602572685231704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2373176777751939645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7468767184949388870}
+          m_TargetAssemblyTypeName: PlaySound, Assembly-CSharp
+          m_MethodName: play
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &7468767184949388870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2373176777751939645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a15afdf729794449a866d83254e0d73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioClipToPlay: {fileID: 8300000, guid: 4fbe50e314ae7f242a75ef3dc818a7d5, type: 3}
+  randomize: 1
+  min: 0.7
+  max: 1
 --- !u!1 &5210514688588390766
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,7 +365,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1761119176911632980, guid: c6e3eaac55a5c93458c7fa088d5dca4a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 153.7142
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1761119176911632980, guid: c6e3eaac55a5c93458c7fa088d5dca4a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1761119176911632980, guid: c6e3eaac55a5c93458c7fa088d5dca4a, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -574,11 +625,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2330159958194419701, guid: c6e3eaac55a5c93458c7fa088d5dca4a, type: 3}
       propertyPath: m_Size
-      value: 0.7810212
+      value: 0.7634837
       objectReference: {fileID: 0}
     - target: {fileID: 2330159958194419701, guid: c6e3eaac55a5c93458c7fa088d5dca4a, type: 3}
       propertyPath: m_Value
-      value: 0.9999999
+      value: 1.0000002
       objectReference: {fileID: 0}
     - target: {fileID: 2330159958606552210, guid: c6e3eaac55a5c93458c7fa088d5dca4a, type: 3}
       propertyPath: m_IsActive
@@ -606,7 +657,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4551558781289633147, guid: c6e3eaac55a5c93458c7fa088d5dca4a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 15.7478
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4551558781289633147, guid: c6e3eaac55a5c93458c7fa088d5dca4a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4551558781289633147, guid: c6e3eaac55a5c93458c7fa088d5dca4a, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -654,7 +709,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5625275211767702102}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
   m_Name: 

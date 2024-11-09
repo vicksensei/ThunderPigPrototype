@@ -68,7 +68,7 @@ public class projectile : MonoBehaviour
     }
     public void HitSomething()
     {
-        if (!canMiss && isFromPlayer)
+        if (canMiss && isFromPlayer)
         {
             isMissedShot = false;
             AddCombo.Raise();
@@ -85,7 +85,7 @@ public class projectile : MonoBehaviour
             if (IsFromPlayer)
             {
                 ShowHitParticle();
-                if (isMissedShot == true)
+                if (canMiss == true && isMissedShot == true)
                 {
                     clearCombo.Raise();
                 }
@@ -110,12 +110,12 @@ public class projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(name + " triggered " + collision.gameObject.name);
+        //Debug.Log(name + " triggered " + collision.gameObject.name);
         doCollision(collision);
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log(name + " hit " + other.gameObject.name);
+        //Debug.Log(name + " hit " + other.gameObject.name);
         doCollision(other.collider);
     }
 

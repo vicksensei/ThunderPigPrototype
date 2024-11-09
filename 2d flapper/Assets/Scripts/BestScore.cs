@@ -43,10 +43,10 @@ public class BestScore : MonoBehaviour
         int kills = p.CurRunKills;
         int combo = p.CurRunMaxCombo;
         int bonus = SM.getComboBonus();
-        bool perfection = SM.PerfectRun;
-        bool noMiss = SM.NoMiss;
+        bool perfection = p.IsCurrentRunPerfect;
+        bool noMiss = p.IsCurrentRunAccurate;
 
-        Debug.Log("Kills: " + kills + " combo: " + combo + " Perfect?:" + perfection + " no Miss?:" + noMiss);
+        Debug.Log("Kills: " + kills + " combo: " + combo + " Perfect?:" + perfection + " no Miss?:" + noMiss + " bonus: " + bonus + " .. Total score: " + p.CurRunScoreWithBonus);
         Kills.text = "Kills..." + kills;
         Combo.text = "Max Combo..." + combo + "... Score + " + bonus + "!";
         Accuracy.text = "100% Accuracy Bonus...x2!";
@@ -54,19 +54,19 @@ public class BestScore : MonoBehaviour
         Kills.gameObject.SetActive(true);
         yield return CoroutineAnims.growShrink(Kills.transform, 2);
         Debug.Log("Kills done, checking combo");
-        if (combo > 10)
+        if (combo >= 10)
         {
             Combo.gameObject.SetActive(true);
             yield return CoroutineAnims.growShrink(Combo.transform, 2);
         }
 
-        if (combo < 1 && noMiss)
+        if (combo >= 10 && noMiss)
         {
             Accuracy.gameObject.SetActive(true);
             yield return CoroutineAnims.growShrink(Accuracy.transform, 2);
         }
 
-        if (perfection)
+        if (perfection && kills > 1)
         {
             PerfectionBonus.gameObject.SetActive(true);
             yield return CoroutineAnims.growShrink(PerfectionBonus.transform, 2);

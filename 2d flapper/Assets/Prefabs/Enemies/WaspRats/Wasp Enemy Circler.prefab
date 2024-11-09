@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 2772936212881571909}
   - component: {fileID: 4766527791499974686}
   - component: {fileID: 2387992611464626596}
+  - component: {fileID: 2829635349422301522}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -392,7 +393,11 @@ MonoBehaviour:
     lbound: 0
     ubound: 0
   - prefab: {fileID: 8823283016118893942, guid: 3a3cedd5ba52f6449817416e95e26a89, type: 3}
-    chance: 0.5
+    chance: 0.05
+    lbound: 0
+    ubound: 0
+  - prefab: {fileID: 4142833076707678937, guid: 0ad81595fd8414c4c8ab286dd5146355, type: 3}
+    chance: 0.02
     lbound: 0
     ubound: 0
   saveFile: {fileID: 11400000, guid: 0a17eb32c6246764f87ceebbedcd5b92, type: 2}
@@ -417,6 +422,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2829635349422301522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3783939891723034491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac422fbb81f24cd99ac7d930e1f5e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: ebb9efd273f209348b475261cee867ae, type: 2}
+  unityEventResponse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7166587002751783517}
+        m_TargetAssemblyTypeName: EnemyDestroy, Assembly-CSharp
+        m_MethodName: DestroyWithThunder
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4292192093179558693
 GameObject:
   m_ObjectHideFlags: 0

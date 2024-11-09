@@ -102,7 +102,8 @@ public class EnemyDestroy : MonoBehaviour
                 {
                     dt.BeforeDestroy();
                     SoundManager.instance.PlayClipRandomPitch(DeathSound, transform, 1f, 0.8f, 1f);
-                    GiveXP.Raise(ExpValue); ShowHitParticle();
+                    GiveXP.Raise(ExpValue);
+                    ShowHitParticle();
                     Destroy(transform.parent.gameObject);
                     //Debug.Log("collision with " + other.gameObject.name);
                 }
@@ -135,6 +136,17 @@ public class EnemyDestroy : MonoBehaviour
     public void ShowDestroyParticle()
     {
         Instantiate(DestroyParticle, transform.position, Quaternion.identity);
+    }
+
+    public void DestroyWithThunder()
+    {
+        projectileCol.Raise();
+        dt.BeforeDestroy();
+        SoundManager.instance.PlayClipRandomPitch(DeathSound, transform, 1f, 0.8f, 1f);
+        GiveXP.Raise(ExpValue);
+        ShowHitParticle();
+        Destroy(transform.parent.gameObject);
+
     }
     public void Escaped()
     {

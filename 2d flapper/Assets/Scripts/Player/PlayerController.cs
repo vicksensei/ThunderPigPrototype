@@ -90,53 +90,16 @@ public class PlayerController : MonoBehaviour
 
 
             if (Input.touchCount == 1)
-                {
-                    if (Input.touches[0].phase == TouchPhase.Began)
-                    {
-                        fingerDown = Input.touches[0].position;
-                        fingerUp = Input.touches[0].position;
-                        fingerDownTime = DateTime.Now;
-                    }
-                    if (Input.touches[0].phase == TouchPhase.Ended)
-                    {
-                        fingerUp = Input.touches[0].position;
-                        fingerUpTime = DateTime.Now;
-                        if (IsSwipe())
-                        {
-                            CheckSwipeDirection();
-                        }
-                        else
-                        {
-                            Flap();
-                        }
-
-                    }
-
-                    if (Input.touchCount == 2)
-                    {
-                        if (Input.touches[1].phase == TouchPhase.Ended)
-                        {
-                            Fire();
-                        }
-
-                    }
-            }
-
-
-            //
-            // Mouse controls
-            // 
-
-            if (Input.GetMouseButtonDown(0))
             {
-                    fingerDown = Input.mousePosition;
-                    fingerUp = Input.mousePosition;
-                fingerDownTime = DateTime.Now;
-            }
-
-            if (Input.GetMouseButtonUp(0))
+                if (Input.touches[0].phase == TouchPhase.Began)
                 {
-                    fingerUp = Input.mousePosition;
+                    fingerDown = Input.touches[0].position;
+                    fingerUp = Input.touches[0].position;
+                    fingerDownTime = DateTime.Now;
+                }
+                if (Input.touches[0].phase == TouchPhase.Ended)
+                {
+                    fingerUp = Input.touches[0].position;
                     fingerUpTime = DateTime.Now;
                     if (IsSwipe())
                     {
@@ -149,11 +112,48 @@ public class PlayerController : MonoBehaviour
 
                 }
 
+                if (Input.touchCount == 2)
+                {
+                    if (Input.touches[1].phase == TouchPhase.Ended)
+                    {
+                        Fire();
+                    }
+
+                }
             }
-            if (Input.GetMouseButtonUp(1))
+
+
+            //
+            // Mouse controls
+            // 
+
+            if (Input.GetMouseButtonDown(0))
             {
-                Fire();
+                fingerDown = Input.mousePosition;
+                fingerUp = Input.mousePosition;
+                fingerDownTime = DateTime.Now;
             }
+
+            if (Input.GetMouseButtonUp(0))
+            {
+                fingerUp = Input.mousePosition;
+                fingerUpTime = DateTime.Now;
+                if (IsSwipe())
+                {
+                    CheckSwipeDirection();
+                }
+                else
+                {
+                    Flap();
+                }
+
+            }
+
+        }
+        if (Input.GetMouseButtonUp(1))
+        {
+            Fire();
+        }
 
 
     }
@@ -223,15 +223,19 @@ public class PlayerController : MonoBehaviour
     }
     public void OnPlayerCol()
     {
-        rb.AddForce(Vector2.up*4);
+        rb.AddForce(Vector2.up * 4);
     }
-    
+
     public void OnScreenTransition()
     {
         GravityOff();
         rb.velocity = Vector2.zero;
     }
 
-
+    public void OnPlayerDead()
+    {
+        rb.velocity = Vector2.zero;
+        GravityOff();
+    }
 
 }

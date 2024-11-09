@@ -24,12 +24,8 @@ public class ScoreManager : MonoBehaviour
 
     public bool newHigh = false;
     int waspBossCounter = 0;
-    bool perfectRun = true;
-    bool noMiss = true;
     bool isDead = false;
     public ProgressionObject CurSavefile { get => curSavefile; }
-    public bool PerfectRun { get => perfectRun; }
-    public bool NoMiss { get => noMiss; set => noMiss = value; }
 
     public int getComboBonus()
     {
@@ -41,21 +37,23 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
-            bonus = (combo / 10 * 10) * (1 + combo / 100);
+            bonus = (combo / 10 * 10) * (1 + (combo / 100));
         }
-
+        //Debug.Log("Bonus:  " + bonus);
         return bonus;
     }
     public int getRealScore()
     {
         int score = CurSavefile.CurRunKills;
         score += getComboBonus();
-        if (perfectRun)
+        if (curSavefile.IsCurrentRunPerfect)
         {
+            //Debug.Log("perfect run");
             score *= 2;
         }
-        if (noMiss)
+        if (curSavefile.IsCurrentRunAccurate && curSavefile.CurCombo >= 10)
         {
+            //Debug.Log("accurate run");
             score *= 2;
         }
         return score;
@@ -68,8 +66,8 @@ public class ScoreManager : MonoBehaviour
         curSavefile.CurrentDifficulty = 1;
         curSavefile.CurCombo = 0;
         curSavefile.CurRunMaxCombo = 0;
-        perfectRun = true;
-        noMiss = true;
+        curSavefile.IsCurrentRunPerfect = true;
+        curSavefile.IsCurrentRunAccurate = true;
         curSavefile.CurRunScoreWithBonus = 0;
         curSavefile.CurRunKills = 0;
         ScoreChanged.Raise();
@@ -80,16 +78,14 @@ public class ScoreManager : MonoBehaviour
     }
     public void KillPerfection()
     {
-        perfectRun = false;
+        curSavefile.IsCurrentRunPerfect = false;
     }
     public void AddToScore(int amount)
     {
         waspBossCounter += amount;
         curSavefile.CurRunKills += amount;
         curSavefile.CurScore += amount;
-        curSavefile.CurRunScoreWithBonus = getRealScore();
         ScoreChanged.Raise();
-        SetHighScore();
         if (waspBossCounter >= waspBossScore.Value && gameState.state != GameState.State.BossFighting)
         {
             waspBossTime.Raise();
@@ -111,19 +107,25 @@ public class ScoreManager : MonoBehaviour
     public void ClearCombo()
     {
         curSavefile.CurCombo = 0;
-        noMiss = false;
-        Debug.Log("No  Accuracy bonus");
+        curSavefile.IsCurrentRunAccurate = false;
+        //Debug.Log("No  Accuracy bonus");
         ComboChanged.Raise();
     }
     public void SetHighScore()
     {
-        curSavefile.CurRunScoreWithBonus = getRealScore();
-        if (curSavefile.CurRunScoreWithBonus > curSavefile.HighScore)
+        Debug.Log("Setting High score. This should only show up if this is true: " + isDead);
+        if (isDead)
         {
-            curSavefile.CurScore = curSavefile.CurRunScoreWithBonus;
-            curSavefile.HighScore = curSavefile.CurRunScoreWithBonus;
-            newHigh = true;
-            HiScoreChanged.Raise();
+            curSavefile.CurRunScoreWithBonus = getRealScore();
+
+            if (curSavefile.CurRunScoreWithBonus > curSavefile.HighScore)
+            {
+                curSavefile.CurScore = curSavefile.CurRunScoreWithBonus;
+                curSavefile.HighScore = curSavefile.CurRunScoreWithBonus;
+
+                newHigh = true;
+                HiScoreChanged.Raise();
+            }
         }
     }
     public void ReportScore()
@@ -138,5 +140,6 @@ public class ScoreManager : MonoBehaviour
     public void Died()
     {
         isDead = true;
+        SetHighScore();
     }
 }

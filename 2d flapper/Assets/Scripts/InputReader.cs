@@ -34,7 +34,6 @@ public class InputReader : MonoBehaviour
         {
             keyboard.SetActive(true);
         }
-        closeButton.SetActive(false);
     }
 
     public void onKeyEvent(string s)
@@ -68,20 +67,22 @@ public class InputReader : MonoBehaviour
 
     IEnumerator ScoreProcess()
     {
-        StartCoroutine(DoPostScores(Output.text, current.HighScore));
+        StartCoroutine(DoPostScores(Output.text, current.HighScore, current.CurCombo, current.IsCurrentRunPerfect));
         keyboard.SetActive(false);
         closeButton.SetActive(true);
         yield return new WaitForSeconds(2);
         StartCoroutine(GetScores(displayScoreURL));
     }
 
-    IEnumerator DoPostScores(string name, int score)
+    IEnumerator DoPostScores(string name, int score, int combo, bool perfect)
     {
         WWWForm form = new WWWForm();
 
 
         form.AddField("namePost", name);
         form.AddField("scorePost", score);
+        form.AddField("comboPost", combo);
+        form.AddField("perfectionPost", perfect ? 1 : 0);
         //form.AddField("hashPost", hashPost);
 
         using (UnityWebRequest www = UnityWebRequest.Post(addScoreURL, form))
@@ -120,7 +121,7 @@ public class InputReader : MonoBehaviour
                     scoreText.text = "HTTP Error: " + webRequest.error;
                     break;
                 case UnityWebRequest.Result.Success:
-                    Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
+                    //Debug.Log(pages[page] + ":\nReceived: " + webRequest.downloadHandler.text);
                     string temp = webRequest.downloadHandler.text;
                     temp = temp.Replace("<table>", "");
                     temp = temp.Replace("<tr>", "");
@@ -130,13 +131,14 @@ public class InputReader : MonoBehaviour
                     temp = temp.Replace("</td>", "");
                     temp = temp.Replace("</>", "");
                     temp = temp.Replace("</b>", "");
-                    Debug.Log(temp);
+                    //Debug.Log(temp);
                     string[] lines = temp.Split("<split/>");
 
                     temp = "<b>Name" +
-                        "<pos=25%> High Score" +
-                        "<pos=50%> Max Combo" +
-                        "<pos=75%> Perfection </b>\n";
+                        "<pos=25%> Score" +
+                        "<pos=50%> Combo" +
+                        "<pos=75%> Perfect" +
+                        " </b>\n";
                     string curline = "";
                     for (int i = 0; i < lines.Length; i++)
                     {
@@ -144,14 +146,14 @@ public class InputReader : MonoBehaviour
                         {
                             curline = "";
                         }
-                        curline += "<pos=" + (28 * (i % 4)) + "%>";
+                        curline += "<pos=" + (26 * (i % 4)) + "%>";
                         if (i % 4 != 3)
                         {
                             curline += lines[i].Trim();
                         }
                         else
                         {
-                            curline += lines[i].Trim() == "0" ? "No" : "PERFECT";
+                            curline += lines[i].Trim().Contains('0') ? "No" : "Yes";
                             curline += "\n";
                         }
                         temp += curline;
